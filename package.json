@@ -1,0 +1,29 @@
+{
+  "name": "watermark_app",
+  "version": "0.1.0",
+  "description": "Сервис генерации вотермарков",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chekit/loftschool_hw3.git"
+  },
+  "author": "Anton Cherepov, Bogdan Ponomarenko, Sergey Yampolskiy",
+  "homepage": "https://github.com/chekit/loftschool_hw3",
+  "devDependencies": {
+    "del": "^1.0.0",
+    "gulp": "^3.8.10",
+    "gulp-cache": "^0.2.4",
+    "gulp-csscomb": "^3.0.3",
+    "gulp-csso": "^0.2.9",
+    "gulp-if": "^1.2.5",
+    "gulp-load-plugins": "^0.7.1",
+    "gulp-notify": "^2.0.1",
+    "gulp-ruby-sass": "^0.7.1",
+    "gulp-size": "^1.1.0",
+    "gulp-uglify": "^1.0.1",
+    "gulp-useref": "^1.0.2",
+    "jshint": "^2.5.10",
+    "jshint-stylish": "^1.0.0",
+    "require-dir": "^0.1.0",
+    "wiredep": "^2.2.0"
+  }
+}
