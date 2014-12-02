@@ -6,7 +6,7 @@
     "type": "git",
     "url": "https://github.com/chekit/loftschool_hw3.git"
   },
-  "author": "Anton Cherepov, Bogdan Ponomarenko, Sergey Yampolskiy, Nikolay Juravlev",
+  "author": "Anton Cherepov, Bogdan Ponomarenko, Sergey Yampolskiy, Nikolay Juravlev, Granev Kirill",
   "homepage": "https://github.com/chekit/loftschool_hw3",
   "devDependencies": {
     "del": "^1.0.0",
