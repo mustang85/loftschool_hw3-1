@@ -6,3 +6,4 @@ node_modules/
 #Files
 npm-debug.log
 .sublime-gulp.cache
+sublime-gulp.log

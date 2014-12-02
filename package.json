@@ -11,10 +11,12 @@
   "devDependencies": {
     "del": "^1.0.0",
     "gulp": "^3.8.10",
+    "gulp-autoprefixer": "^1.0.1",
     "gulp-cache": "^0.2.4",
     "gulp-csscomb": "^3.0.3",
     "gulp-csso": "^0.2.9",
     "gulp-if": "^1.2.5",
+    "gulp-jade": "^0.10.0",
     "gulp-load-plugins": "^0.7.1",
     "gulp-notify": "^2.0.1",
     "gulp-ruby-sass": "^0.7.1",
