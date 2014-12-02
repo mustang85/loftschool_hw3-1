@@ -15,32 +15,32 @@
 <h2>Структура проекта</h2>
 <h3>Дирректоррии</h3>
 <p>
-<em>app/</em>- дирреткория разработки проекта<br />
-&nbsp;&nbsp;&nbsp;&nbsp;|_ sass/- все стили (используется препроцессор Sass)<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_base/ (базовые стили, без классов)<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_layout/ (стили, касающиеся, струкртуры макета)<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_modules/ (стлили, касающиеся всех элементов, блоков макета дизайна)<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_tools/ (все необходимые данные: переменный mixins, placehoders, functions)<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_styles.scss - файл где собираются все стили вметсе<sup>*</sup><br />
+<em><code>app/</code></em>- дирреткория разработки проекта<br />
+&nbsp;&nbsp;&nbsp;&nbsp;|_ <code>sass/</code>- все стили (используется препроцессор Sass)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_<code>base/</code> (базовые стили, без классов)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_<code>layout/</code> (стили, касающиеся, струкртуры макета)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_<code>modules/</code> (стлили, касающиеся всех элементов, блоков макета дизайна)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_<code>tools/</code> (все необходимые данные: переменный mixins, placehoders, functions)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_<code>styles.scss</code> - файл где собираются все стили вметсе<sup>*</sup><br />
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;|_ templates/- разметка макета с использованием препроцессора jade<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_includes/ - head и body<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_mixins/ - необходимые миксины<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_partials/ - контент страницы<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_vars/ - переменные<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_index.jade - собираем все части страницы вместе<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_<code>includes/</code> - head и body<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_<code>mixins/</code> - необходимые миксины<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_<code>partials/</code> - контент страницы<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_<code>vars/</code> - переменные<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_<code>index.jade</code> - собираем все части страницы вместе<br />
 <br />
-<em>gulp<sup>**</sup>/</em>-<br />
-&nbsp;&nbsp;&nbsp;&nbsp;|_ build.gulp.js - основные команды для разбора jade, sass, создания дирректории dist, вставки необходмых компонентов bower<br />
-&nbsp;&nbsp;&nbsp;&nbsp;|_ watch.gulp.js - следим за изменениями в проекте<br />
-&nbsp;&nbsp;&nbsp;&nbsp;|_ wiredep.gulp.js - вставляем bower зависимости<br />
+<em><code>gulp</code><sup>**</sup>/</em>-<br />
+&nbsp;&nbsp;&nbsp;&nbsp;|_ <code>build.gulp.js</code> - основные команды для разбора jade, sass, создания дирректории dist, вставки необходмых компонентов bower<br />
+&nbsp;&nbsp;&nbsp;&nbsp;|_ <code>watch.gulp.js</code> - следим за изменениями в проекте<br />
+&nbsp;&nbsp;&nbsp;&nbsp;|_ <code>wiredep.gulp.js</code> - вставляем bower зависимости<br />
 <br />
-.bowerrc - указываем куда устанавливаются bower пакеты<br />
-.gitignore - исключаем папки с установкой bower, npm модулей<br />
-.jshint - для проверки js, исключаем ошибки при использовании $, jQuery<br />
-gulpfile.js - основной файл, по деволту запускает build<br />
-package.json - все необходимые пакеты для gulp<br />
-README.md - описание проекта
+<code>.bowerrc</code> - указываем куда устанавливаются bower пакеты<br />
+<code>.gitignore</code> - исключаем папки с установкой bower, npm модулей<br />
+<code>.jshint</code> - для проверки js, исключаем ошибки при использовании $, jQuery<br />
+<code>gulpfile.js</code> - основной файл, по деволту запускает build<br />
+<code>package.json</code> - все необходимые пакеты для gulp<br />
+<code>README.md</code> - описание проекта
 </p>
 <blockquote>
 	<p><sup>*</sup> &mdash; в самом styles подключаются только _index.scss каждой папки, в коорых, соответственно, подключены соответствующие части. В <em>base/</em> уже присутствует reset.scss</p>
