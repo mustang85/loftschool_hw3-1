@@ -7,4 +7,5 @@
   <li>Черепов Антон (<a href="https://github.com/chekit/">chekit</a>)</li>
   <li>Сергей Ямпольский (<a href="https://github.com/serjyamp">serjyamp</a>)</li>
   <li>Богдан Пономаренко (<a href="https://github.com/bogdan1995">bogdan1995</a>)</li>
+  <li>Николай Журавлёв (<a href="https://github.com/verbaux">verbaux</a>)</li>
 </ul>
