@@ -1,3 +1,28 @@
-block content
-	p.
-		Hello, World
+//Global Container
+.container
+	//Share Buttons and Language Buttons
+	.container__globals
+		ul.globals__lang
+			li.lang__item
+				button.globals__btn Рус
+				button.globals__btn Eng
+		.socials
+			ul.socials__list
+				li.list__item
+					button.globals__btn.btn--socials.btn--fb Facebook
+				li.list__item
+					button.globals__btn.btn--socials.btn--tw Twitter
+				li.list__item
+					button.globals__btn.btn--socials.btn--vk Vkontakte
+			button.globals__btn.btn--socials_open Поделиться
+	//Generator container
+	.container__generator
+		.generator__result
+			h1.h1 Генератор водяных знаков
+			.result__block
+				.block__root
+					img.root__image(src = 'images/', alt = "картинка")
+				.block__watermark
+					img.watermark__image(src = 'images/', alt = "картинка")
+		.generator__settings
+			h1.h2 Настройки
