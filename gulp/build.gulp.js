@@ -15,7 +15,7 @@ var errorLog = function (error) {
 
 //Paths
 var paths = {
-	jade: 'app/templates/index.jade',
+	jade: 'app/jade/index.jade',
 	sass: 'app/sass/styles.scss',
 	html: 'app/*.html'
 };
