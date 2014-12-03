@@ -6,7 +6,6 @@
 <ul>
   <li>Черепов Антон (<a href="https://github.com/chekit/">chekit</a>)</li>
   <li>Сергей Ямпольский (<a href="https://github.com/serjyamp">serjyamp</a>)</li>
-  <li>Богдан Пономаренко (<a href="https://github.com/bogdan1995">bogdan1995</a>)</li>
   <li>Николай Журавлёв (<a href="https://github.com/verbaux">verbaux</a>)</li>
   <li>Граневв Кирилл (<a href="https://github.com/mustang85">mustang85</a>)</li>
 </ul>
@@ -48,6 +47,7 @@
 </blockquote>
 <h3>Инициализация проекта</h3>
 <p>Для начала работы необходимо склонировать себе репозиторий, далее в консоли выполнить <code>npm install</code>, далее <code>bower install</code></p>
+<p>Для работы над проектом в консоли набираем <code>gulp server</code> (выполняется build, подключается watch и запускается browser-sync), просто "сбилдить проект" <code>gulp</code></p> 
 <h2>Ветки</h2>
 <ul>
 	<li><strong>static</strong> &mdash; статичная версия макета</li>
