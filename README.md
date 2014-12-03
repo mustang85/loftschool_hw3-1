@@ -57,3 +57,5 @@
 </ul>
 <h3>Соглашения по коммитам</h3>
 <p>каждый коммит должен быть подписан следующим образом:<br/><code>git commit -m '&lt;что сделано&gt; | &lt;кто сделал&gt;'</p>
+
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/chekit/loftschool_hw3?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
