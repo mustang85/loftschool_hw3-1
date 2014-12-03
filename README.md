@@ -40,7 +40,7 @@
 <code>.jshint</code> - для проверки js, исключаем ошибки при использовании $, jQuery<br />
 <code>gulpfile.js</code> - основной файл, по деволту запускает build<br />
 <code>package.json</code> - все необходимые пакеты для gulp<br />
-<code>README.md</code> - описание проекта
+<code>README.md</code> - описание проекта<br />
 <code>.ccscomb.json</code> - описание сортировки правил CSS для модуля CSSComb (сортирует по <a href="https://code.google.com/p/zen-coding/downloads/detail?name=ZenCodingCheatSheet.pdf">ZEN</a>)
 </p>
 <blockquote>
