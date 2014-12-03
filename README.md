@@ -33,6 +33,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;|_ <code>build.gulp.js</code> - основные команды для разбора jade, sass, создания дирректории dist, вставки необходмых компонентов bower<br />
 &nbsp;&nbsp;&nbsp;&nbsp;|_ <code>watch.gulp.js</code> - следим за изменениями в проекте<br />
 &nbsp;&nbsp;&nbsp;&nbsp;|_ <code>wiredep.gulp.js</code> - вставляем bower зависимости<br />
+&nbsp;&nbsp;&nbsp;&nbsp;|_ <code>server.gulp.js</code> - запуск локального сервера<br />
 <br />
 <code>.bowerrc</code> - указываем куда устанавливаются bower пакеты<br />
 <code>.gitignore</code> - исключаем папки с установкой bower, npm модулей<br />
@@ -43,7 +44,6 @@
 </p>
 <blockquote>
 	<p><sup>*</sup> &mdash; в самом styles подключаются только _index.scss каждой папки, в коорых, соответственно, подключены соответствующие части. В <em>base/</em> уже присутствует reset.scss</p>
-	<p><sup>**</sup> &mdash; ещё будет дописан server.gulp.js для запуска локального сервера</p>
 </blockquote>
 <h3>Инициализация проекта</h3>
 <p>Для начала работы необходимо склонировать себе репозиторий, далее в консоли выполнить <code>npm install</code>, далее <code>bower install</code></p>
