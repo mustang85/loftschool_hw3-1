@@ -22,7 +22,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_<code>tools/</code> (все необходимые данные: переменный mixins, placehoders, functions)<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_<code>styles.scss</code> - файл где собираются все стили вметсе<sup>*</sup><br />
 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;<code>|_ templates/</code>- разметка макета с использованием препроцессора jade<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<code>|_ jade/</code>- разметка макета с использованием препроцессора jade<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_<code>includes/</code> - head и body<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_<code>mixins/</code> - необходимые миксины<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_<code>partials/</code> - контент страницы<br />
