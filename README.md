@@ -41,6 +41,7 @@
 <code>gulpfile.js</code> - основной файл, по деволту запускает build<br />
 <code>package.json</code> - все необходимые пакеты для gulp<br />
 <code>README.md</code> - описание проекта
+<code>.ccscomb.json</code> - описание сортировки правил CSS для модуля CSSComb (сортирует по <a href="https://code.google.com/p/zen-coding/downloads/detail?name=ZenCodingCheatSheet.pdf">ZEN</a>)
 </p>
 <blockquote>
 	<p><sup>*</sup> &mdash; в самом styles подключаются только _index.scss каждой папки, в коорых, соответственно, подключены соответствующие части. В <em>base/</em> уже присутствует reset.scss</p>
