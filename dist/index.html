@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Watermark App - Группа №2</title>
+    <title> Watermark App - Группа №2</title>
     <meta name="description" content="">
     <link rel="stylesheet" href="css/styles.min.css">
     <script src="js/libs/modernizr.min.js"></script>
@@ -14,7 +14,45 @@
       Please <a href="http://browsehappy.com/">upgrade your browser</a>
       to improve your experience.
     </p><![endif]-->
-    <p>Hello, World</p>
+    <!--Global Container-->
+    <div class="container">
+      <!--Share Buttons and Language Buttons-->
+      <div class="container__globals">
+        <ul class="globals__lang">
+          <li class="lang__item">
+            <button class="globals__btn">Рус</button>
+            <button class="globals__btn">Eng</button>
+          </li>
+        </ul>
+        <div class="socials">
+          <ul class="socials__list">
+            <li class="list__item">
+              <button class="globals__btn btn--socials btn--fb">Facebook</button>
+            </li>
+            <li class="list__item">
+              <button class="globals__btn btn--socials btn--tw">Twitter</button>
+            </li>
+            <li class="list__item">
+              <button class="globals__btn btn--socials btn--vk">Vkontakte</button>
+            </li>
+          </ul>
+          <button class="globals__btn btn--socials_open">Поделиться</button>
+        </div>
+      </div>
+      <!--Generator container-->
+      <div class="container__generator">
+        <div class="generator__result">
+          <h1 class="h1">Генератор водяных знаков</h1>
+          <div class="result__block">
+            <div class="block__root"><img src="images/" alt="картинка" class="root__image"></div>
+            <div class="block__watermark"><img src="images/" alt="картинка" class="watermark__image"></div>
+          </div>
+        </div>
+        <div class="generator__settings">
+          <h1 class="h2">Настройки</h1>
+        </div>
+      </div>
+    </div>
     
     <!--TODO uncomment when deploy final-->
     <!--script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')-->
