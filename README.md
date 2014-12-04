@@ -59,6 +59,6 @@
 <p>каждый коммит должен быть подписан следующим образом:<br/><code>git commit -m '&lt;что сделано&gt; | &lt;кто сделал&gt;'</p>
 
 <h3>Ссылка на методичку</h3>
-<p><a href="https://docs.google.com/document/d/1ukji85Sgfkp9Wn9dSSa6oiCoWXsjTYBBNm_Xox11zto/edit?usp=sharing">Схема взаимодействия на GitHub</a></p>
+<p><a href="https://docs.google.com/document/d/1ukji85Sgfkp9Wn9dSSa6oiCoWXsjTYBBNm_Xox11zto/edit?usp=sharing">Схема взаимодействия на GitHub</a> (документ Google Docs)</p>
 
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/chekit/loftschool_hw3?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
