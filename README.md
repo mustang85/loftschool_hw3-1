@@ -7,7 +7,7 @@
   <li>Черепов Антон (<a href="https://github.com/chekit/">chekit</a>)</li>
   <li>Сергей Ямпольский (<a href="https://github.com/serjyamp">serjyamp</a>)</li>
   <li>Николай Журавлёв (<a href="https://github.com/verbaux">verbaux</a>)</li>
-  <li>Граневв Кирилл (<a href="https://github.com/mustang85">mustang85</a>)</li>
+  <li>Гранев Кирилл (<a href="https://github.com/mustang85">mustang85</a>)</li>
 </ul>
 <h3>Роли</h3>
 
