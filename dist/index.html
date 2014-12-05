@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Watermark App - Группа №2</title>
+    <title> Watermark App - Группа №2</title>
     <meta name="description" content="">
     <link rel="stylesheet" href="css/styles.min.css">
     <script src="js/libs/modernizr.min.js"></script>
@@ -14,7 +14,229 @@
       Please <a href="http://browsehappy.com/">upgrade your browser</a>
       to improve your experience.
     </p><![endif]-->
-    <p>Hello, World</p>
+    <!--Global Container-->
+    <div class="container">
+      <!--Share Buttons and Language Buttons-->
+      <div class="container__globals">
+        <ul class="globals__lang">
+          <li class="lang__item">
+            <button class="globals__btn">Рус</button>
+            <button class="globals__btn">Eng</button>
+          </li>
+        </ul>
+        <!--Вырвнивается с помощью float, при наведении просто выезжает блок через margin: left-->
+        <div class="socials">
+          <ul class="socials__list">
+            <li class="list__item">
+              <button class="globals__btn btn--socials btn--fb">Facebook</button>
+            </li>
+            <li class="list__item">
+              <button class="globals__btn btn--socials btn--tw">Twitter</button>
+            </li>
+            <li class="list__item">
+              <button class="globals__btn btn--socials btn--vk">Vkontakte</button>
+            </li>
+          </ul>
+          <button class="globals__btn btn--socials_open">Поделиться</button>
+        </div>
+      </div>
+      <!--Generator container-->
+      <div class="container__generator">
+        <div class="generator__result">
+          <h1 class="h1">Генератор водяных знаков</h1>
+          <div class="result__block">
+            <div class="block__root"><img src="images/" alt="картинка" class="root__image"></div>
+            <!--Если один вотермарк-->
+            <div class="block__watermark"><img src="images/" alt="картинка" class="watermark__image"></div>
+            <!--Если два вотермарка-->
+            <table class="block__watermark watrmark--table">
+              <body class="watrmark--table__body">
+                <tr class="watrmark--table__raw">
+                  <td class="watrmark--table__cell"><img src="images/" alt="картинка" class="watermark__image"></td>
+                  <td class="watrmark--table__cell"><img src="images/" alt="картинка" class="watermark__image"></td>
+                </tr>
+                <tr class="watrmark--table__raw">
+                  <td class="watrmark--table__cell"><img src="images/" alt="картинка" class="watermark__image"></td>
+                  <td class="watrmark--table__cell"><img src="images/" alt="картинка" class="watermark__image"></td>
+                </tr>
+              </body>
+            </table>
+          </div>
+        </div>
+        <!--Setting Block-->
+        <div class="generator__settings">
+          <h2 class="h2">Настройки</h2>
+          <!--Отправляем/получаем данные через ajax-->
+          <form class="settings__form" action="#" method="post">
+            <fieldset class="form__block">
+              <div class="form__upload-block">
+                <label class="p">Исходное изображение</label>
+                <div class="upload-block__wrap">
+                  <!--Стилизуем загрузку-->
+                  <div class="upload-block__style">
+                    <div class="form__input style__input">Image.png</div>
+                    <div class="btn btn--red btn--upload"></div>
+                  </div>
+                  <!--Само поле загрузки, opacity: 0-->
+                  <input class="form__input input--upload" type="file" name="original" id="file-original">
+                </div>
+              </div>
+              <div class="form__upload-block">
+                <label class="p">Водяной знак </label>
+                <div class="upload-block__wrap">
+                  <!--Стилизуем загрузку-->
+                  <div class="upload-block__style">
+                    <div class="form__input style__input">Image.png</div>
+                    <div class="btn btn--red btn--upload"></div>
+                  </div>
+                  <!--Само поле загрузки, opacity: 0-->
+                  <input class="form__input input--upload" type="file" name="watermark" id="file-watermark">
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="form__block">
+              <div class="block__header">
+                <p class="p">Положение</p>
+                <!--Выбор типа наложения -->
+                <div class="application-types">
+                  <button class="btn btn--four-marks js-use-four">4 Вотермарка</button>
+                  <button class="btn btn--noe-mark js-use-one">1 Вотермарк</button>
+                </div>
+              </div>
+              <div class="positioning">
+                <!--Настройки для одного вотермарка -->
+                <div class="positioning__block block--coordinates">
+                  <div class="positioning__visual">
+                    <!--Визуальное отображение расположения вотермарка-->
+                    <table class="visual__table">
+                      <body class="table__body">
+                        <tr class="visual__raw">
+                          <!--При клике на кнопку будем сразу получать координаты кнопки в data атрибуте и интерпретировать касательно вотермарка-->
+                          <td class="visual__cell cell--active">
+                            <button data-cord="11" class="btn btn--set-cell js-set-cord">11</button>
+                          </td>
+                          <td class="visual__cell">
+                            <button data-cord="12" class="btn btn--set-cell js-set-cord">12</button>
+                          </td>
+                          <td class="visual__cell">
+                            <button data-cord="13" class="btn btn--set-cell js-set-cord">13</button>
+                          </td>
+                        </tr>
+                        <tr class="visual__raw">
+                          <td class="visual__cell">
+                            <button data-cord="21" class="btn btn--set-cell js-set-cord">21</button>
+                          </td>
+                          <td class="visual__cell">
+                            <button data-cord="22" class="btn btn--set-cell js-set-cord">22</button>
+                          </td>
+                          <td class="visual__cell">
+                            <button data-cord="23" class="btn btn--set-cell js-set-cord">23</button>
+                          </td>
+                        </tr>
+                        <tr class="visual__raw">
+                          <td class="visual__cell">
+                            <button data-cord="31" class="btn btn--set-cell js-set-cord">31</button>
+                          </td>
+                          <td class="visual__cell">
+                            <button data-cord="32" class="btn btn--set-cell js-set-cord">32</button>
+                          </td>
+                          <td class="visual__cell">
+                            <button data-cord="33" class="btn btn--set-cell js-set-cord">33</button>
+                          </td>
+                        </tr>
+                      </body>
+                    </table>
+                  </div>
+                  <div class="positioning__switch">
+                    <div class="switch__block">
+                      <p class="p p--big">X</p>
+                      <input id="x-cord" class="form__input input--switch" type="text" name="xValue" value="0">
+                      <div class="switch__controls">
+                        <button data-direction="x-up" class="btn btn--control btn--up js-move-obj">Больше</button>
+                        <button data-direction="x-down" class="btn btn--control btn--down js-move-obj">Меньше</button>
+                      </div>
+                      <div class="switch__block"></div>
+                      <p class="p p--big">Y</p>
+                      <input id="y-cord" class="form__input input--switch" type="text" name="yValue" value="0">
+                      <div class="switch__controls">
+                        <button data-direction="y-up" class="btn btn--control btn--up js-move-obj">Больше</button>
+                        <button data-direction="y-down" class="btn btn--control btn--down js-move-obj">Меньше	</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="positioning__block block--borders">
+                  <div class="positioning__visual">
+                    <table class="visual__table table--borders">
+                      <body class="table__body">
+                        <tr class="visual__raw">
+                          <td class="visual__cell"></td>
+                          <td class="visual__cell"></td>
+                        </tr>
+                        <tr class="visual__raw">
+                          <td class="visual__cell"></td>
+                          <td class="visual__cell"></td>
+                        </tr>
+                      </body>
+                    </table>
+                    <table class="visual__table">
+                      <body class="table__body">
+                        <tr class="visual__raw">
+                          <td class="visual__cell"> </td>
+                          <td class="visual__cell"> </td>
+                          <td class="visual__cell"> </td>
+                        </tr>
+                        <tr class="visual__raw">
+                          <td class="visual__cell"> </td>
+                          <td class="visual__cell"> </td>
+                          <td class="visual__cell"> </td>
+                        </tr>
+                        <tr class="visual__raw">
+                          <td class="visual__cell"> </td>
+                          <td class="visual__cell"> </td>
+                          <td class="visual__cell"> </td>
+                        </tr>
+                      </body>
+                    </table>
+                  </div>
+                  <div class="positioning__switch">
+                    <div class="switch__block">
+                      <p class="p p--big">По вертикали</p>
+                      <input id="y-border" class="form__input input--switch" type="text" value="12" name="yBorder">
+                      <div class="switch__controls">
+                        <button data-border="y-b-up" class="btn btn--control btn--up js-switch-border">Больше</button>
+                        <button data-border="y-b-down" class="btn btn--control btn--down js-switch-border">Меньше</button>
+                      </div>
+                      <div class="switch__block"></div>
+                      <p class="p p--big">По горизонтали</p>
+                      <input id="x-border" class="form__input input--switch" type="text" value="12" name="xBorder">
+                      <div class="switch__controls">
+                        <button data-border="x-b-up" class="btn btn--control btn--up js-switch-border">Больше</button>
+                        <button data-border="x-b-down" class="btn btn--control btn--down js-switch-border">Меньше</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="form__block">
+              <div class="block__header">
+                <p class="p">Прозрачность</p>
+                <!--TODO: Подключить default слайдер из jQuery UI и стилизовать его (http://jqueryui.com/slider/#default) -->
+                <div class="opacity__slider">				</div>
+              </div>
+            </fieldset>
+            <fieldset class="form__block">
+              <button type="reset" class="btn btn--submit btn--grey">Сброс</button>
+              <button type="submit" class="btn btn--submit btn--red">Скачать</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <footer id="footer"> 
+        <p class="p p--small">&copy; 2014, Это мой сайт, пожалуйста, не копируйте и не воруйте его</p>
+      </footer>
+    </div>
     
     <!--TODO uncomment when deploy final-->
     <!--script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')-->

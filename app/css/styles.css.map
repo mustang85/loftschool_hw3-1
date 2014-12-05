@@ -1,7 +1,7 @@
 {
 "version": 3,
 "mappings": "AAAA;;;;;;;;;;;;wBAYyB;EACxB,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;EACT,SAAS,EAAE,IAAI;EACf,IAAI,EAAE,OAAO;EACb,cAAc,EAAE,QAAQ;;;AAGzB;0CAC2C;EAC1C,OAAO,EAAE,KAAK;;AAEf,IAAK;EACJ,WAAW,EAAE,CAAC;;AAEf,MAAO;EACN,UAAU,EAAE,IAAI;;AAEjB,aAAc;EACb,MAAM,EAAE,IAAI;;AAEb;iBACkB;EACjB,OAAO,EAAE,EAAE;EACX,OAAO,EAAE,IAAI;;AAEd,KAAM;EACL,eAAe,EAAE,QAAQ;EACzB,cAAc,EAAE,CAAC;;AAElB,0BAA2B;EAC1B,OAAO,EAAE,YAAY;EACrB,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,IAAI;EAChB,MAAM,EAAE,IAAI;EACZ,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,OAAO;EACpB,MAAM,EAAE,OAAO",
-"sources": ["file:///d:/Documents/Education/loftSchool/Loftschool_project/homework_3/app/sass/base/_reset.scss"],
+"sources": ["../../../../../Desktop/private/Projects/education/loftschool/loftschool_hw3/app/sass/base/_reset.scss"],
 "names": [],
 "file": "styles.css"
 }
