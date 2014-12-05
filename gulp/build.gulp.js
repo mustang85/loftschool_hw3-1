@@ -36,7 +36,7 @@ gulp.task('html', ['wiredep'], function () {
 		.pipe(gulp.dest('dist'));
 });
 
-//HTML
+//Images
 gulp.task('images', function () {
 	return gulp.src(paths.images)
 		.pipe(cache(pls.imagemin({
