@@ -17,7 +17,8 @@ var errorLog = function (error) {
 var paths = {
 	jade: 'app/jade/index.jade',
 	sass: 'app/sass/styles.scss',
-	html: 'app/*.html'
+	html: 'app/*.html',
+	images: 'app/images/**/*.{png,jpg,gif,svg}'
 };
 
 //HTML
@@ -33,6 +34,18 @@ gulp.task('html', ['wiredep'], function () {
 		.pipe(assets.restore())
 		.pipe(pls.useref())
 		.pipe(gulp.dest('dist'));
+});
+
+//HTML
+gulp.task('images', function () {
+	return gulp.src(paths.images)
+		.pipe(cache(pls.imagemin({
+			optimizationLevel: 5,
+			progressive: true,
+			interlaced: true
+		})))
+		.pipe(gulp.dest('dist'))
+		.pipe(pls.size());
 });
 
 //Jade to HTML
@@ -69,6 +82,6 @@ gulp.task('clear', function (done) {
 
 //Build
 gulp.task('build', ['sass', 'jade'], function () {
-	gulp.start('html');
+	gulp.start('html', 'images');
 });
 
