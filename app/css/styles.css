@@ -1,4 +1,16 @@
 /* sprite */
+.container__generator:after
+{
+    display: block;
+    visibility: hidden;
+    clear: both;
+
+    width: 0;
+    height: 0;
+
+    content: '';
+}
+
 html,
 body,
 div,
@@ -177,12 +189,12 @@ input[type=submit]
 }
 @font-face
 {
-    font-family: 'segoeui';
+    font-family: 'segoeuil';
     font-weight: normal;
     font-style: normal; 
 
-    src: url('fonts/segoe/segoeui.eot');
-    src: url('fonts/segoe/segoeui.eot?#iefix') format('embedded-opentype'), url('fonts/segoe/segoeui.woff') format('woff'), url('fonts/segoe/segoeui.ttf') format('truetype'), url('fonts/segoe/segoeui.svg#segoeui') format('svg');
+    src: url('fonts/segoe/segoeui-light.eot');
+    src: url('fonts/segoe/segoeui-light.eot?#iefix') format('embedded-opentype'), url('fonts/segoe/segoeui-light.woff') format('woff'), url('fonts/segoe/segoeui-light.ttf') format('truetype'), url('fonts/segoe/segoeui-light.svg#segoeui-light') format('svg');
 }
 @font-face
 {
@@ -204,7 +216,11 @@ body
 
 html
 {
-    font-size: .625em;
+    font-size: .625em; 
+
+    position: relative;
+
+    min-height: 100%;
 }
 
 body
@@ -233,6 +249,11 @@ p
     font-size: 1.4rem;
 }
 
+.container
+{
+    margin-bottom: 50px;
+}
+
 .container__generator
 {
     width: 960px; 
@@ -241,25 +262,35 @@ p
     padding: 60px 0 0;
 }
 
-.container__generator:after,
-.container__generator:before
+#footer
 {
-    display: table; 
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
 
-    content: '';
-}
+    width: 100%;
 
-footer
-{
     text-align: center; 
 
     color: white;
 }
-footer p
+#footer p
 {
     line-height: 48px; 
 
     height: 48px;
+}
+
+.h1
+{
+    font-family: 'segoeuil', 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 3.6rem;
+    line-height: 1em; 
+
+    margin: 0 0 54px;
+
+    color: white;
 }
 
 html,
@@ -273,7 +304,11 @@ body
 
 html
 {
-    font-size: .625em;
+    font-size: .625em; 
+
+    position: relative;
+
+    min-height: 100%;
 }
 
 body
@@ -313,14 +348,6 @@ p
     background: #5b535a;
 
         -ms-box-sizing: border-box;
-}
-.generator__result .h1
-{
-    font-family: 'segoeui', 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
-
-    margin: 0 0 54px; 
-
-    color: white;
 }
 
 .result__block
@@ -417,7 +444,11 @@ body
 
 html
 {
-    font-size: .625em;
+    font-size: .625em; 
+
+    position: relative;
+
+    min-height: 100%;
 }
 
 body
@@ -601,7 +632,7 @@ p
 
 .globals__btn
 {
-    font-family: 'segoeui', 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'segoeuil', 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
 
     display: block;
 

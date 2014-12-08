@@ -12,8 +12,8 @@
 	line-height: $line-height;
 }
 //Segou UI
-@mixin SegoeUI($font-size, $line-height: 1em) {
-	font-family: $ff_segoeui;
+@mixin segoeuil($font-size, $line-height: 1em) {
+	font-family: $ff_segoeuil;
 	font-size: $font-size;
 	line-height: $line-height;
 }
