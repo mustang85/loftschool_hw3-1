@@ -5,6 +5,7 @@ var gulp = require('gulp'),
 	gulpif = require('gulp-if'),
 	cache = require('gulp-cache'),
 	del = require('del'),
+	imagemin = require('gulp-imagemin'),
 	pls = require('gulp-load-plugins')();
 
 //Error Handler
@@ -18,7 +19,8 @@ var paths = {
 	jade: 'app/jade/index.jade',
 	sass: 'app/sass/styles.scss',
 	html: 'app/*.html',
-	images: 'app/images/**/*.{png,jpg,gif,svg}'
+	images: 'app/images/**/*.{png,jpg,gif,svg}',
+	fonts: 'app/sass/base/fonts/**/*'
 };
 
 //HTML
@@ -39,13 +41,21 @@ gulp.task('html', ['wiredep'], function () {
 //Images
 gulp.task('images', function () {
 	return gulp.src(paths.images)
-		.pipe(cache(pls.imagemin({
+		.pipe(pls.size())
+		.pipe(cache(imagemin({
 			optimizationLevel: 5,
 			progressive: true,
 			interlaced: true
 		})))
-		.pipe(gulp.dest('dist'))
+		.pipe(gulp.dest('dist/images'))
 		.pipe(pls.size());
+});
+
+//Fonts
+gulp.task('fonts', function () {
+	return gulp.src(paths.fonts)
+		.pipe(gulp.dest('app/css/fonts'))
+		.pipe(gulp.dest('dist/css/fonts'));
 });
 
 //Jade to HTML
@@ -60,7 +70,7 @@ gulp.task('jade', function () {
 });
 
 //Sass to CSS
-gulp.task('sass', function () {
+gulp.task('sass', ['fonts'], function () {
 	return gulp.src(paths.sass)
 		.pipe(pls.rubySass())
 		.on('error', errorLog)

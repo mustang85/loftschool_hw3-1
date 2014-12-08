@@ -1,0 +1,32 @@
+//===Font Sizes
+$font-size: (
+  exlg: 3.6rem,
+  lg: 2.6rem,
+  big: 1.8rem,
+  md: 1.4rem,
+  sm: 1.2rem
+);
+
+//===Colors
+$colors: (
+  'pink': #d5b39c
+);
+
+//===Font families
+$ff_robotolight: "robotolight", "Helvetica Neue",Helvetica,Arial,sans-serif;
+$ff_robotomedium: "robotomedium", "Helvetica Neue",Helvetica,Arial,sans-serif;
+$ff_segoeui: "segoeui", "Segoe UI",Frutiger,"Frutiger Linotype","Dejavu Sans","Helvetica Neue",Arial,sans-serif;
+$ff_firasans: "fira_sanslight", "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+
+/* sprite */
+@mixin graphics($pos-x, $pos-y) {
+  background-image: url(../imgages/graphics.png);
+  background-repeat: no-repeat;
+  background-position: $pos-x $pos-y;
+}
+
+@mixin alignCell($pos-h, $pos-v) {
+  text-align: $pos-h;
+  vertical-align: $pos-v;
+}
