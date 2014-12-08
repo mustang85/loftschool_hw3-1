@@ -1,0 +1,29 @@
+html, body {
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+html {
+	position: relative;
+	min-height: 100%;
+	font-size: .625em;
+}
+
+body {
+	background: color('pink') url('../images/main-bg.jpg') no-repeat center center fixed;
+	background-size: cover;
+	@include robotolight(1rem, 1.5em);
+}
+
+h1 {
+	font-size: fs(exlg);
+}
+
+h2 {
+	font: fs(lg);
+}
+
+h3, p {
+	font-size: fs(md);
+}

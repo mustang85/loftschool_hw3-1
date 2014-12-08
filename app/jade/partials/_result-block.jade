@@ -1,0 +1,29 @@
+block result
+	.generator__result
+		h1.h1 Генератор водяных знаков
+		//чтобы показать таблицу из 4 элементов, добавь к result__block класс result-block--four
+		.result__block
+			.block__root
+				img.root__image(src = 'images/root.jpg', alt = "Основная картинка")
+			//Если один вотермарк
+			.block__watermark
+				img.watermark__image(src = 'images/watermark.png', alt = "Вотермарк")
+			//Если вотермарков должно быть много
+			table.block__watermark--four
+				tbody.watrmark--table__body
+					tr.watrmark--table__row
+						td.watrmark--table__cell
+							img.watermark__image(src = 'images/watermark.png', alt = "Вотермарк")
+						td.watrmark--table__cell.cell--separator
+						td.watrmark--table__cell
+							img.watermark__image(src = 'images/watermark.png', alt = "Вотермарк")
+					tr.watrmark--table__row.row--separator
+						td.watrmark--table__cell
+						td.watrmark--table__cell
+						td.watrmark--table__cell
+					tr.watrmark--table__row
+						td.watrmark--table__cell
+							img.watermark__image(src = 'images/watermark.png', alt = "Вотермарк")
+						td.watrmark--table__cell.cell--separator
+						td.watrmark--table__cell
+							img.watermark__image(src = 'images/watermark.png', alt = "Вотермарк")

@@ -15,51 +15,56 @@
       to improve your experience.
     </p><![endif]-->
     <!--Global Container-->
+    <!--TO show share buttons we need to add .show--share-->
     <div class="container">
       <!--Share Buttons and Language Buttons-->
       <div class="container__globals">
+        <!--Choose Language-->
         <ul class="globals__lang">
           <li class="lang__item">
             <button class="globals__btn">Рус</button>
             <button class="globals__btn">Eng</button>
           </li>
         </ul>
-        <!--Вырвнивается с помощью float, при наведении просто выезжает блок через margin: left-->
+        <!--Share-->
         <div class="socials">
-          <ul class="socials__list">
-            <li class="list__item">
-              <button class="globals__btn btn--socials btn--fb">Facebook</button>
-            </li>
-            <li class="list__item">
-              <button class="globals__btn btn--socials btn--tw">Twitter</button>
-            </li>
-            <li class="list__item">
-              <button class="globals__btn btn--socials btn--vk">Vkontakte</button>
-            </li>
-          </ul>
+                <ul class="socials__list">
+                  <li class="list__item"><a href="#" class="globals__btn btn--socials btn--fb">Facebook</a></li>
+                  <li class="list__item"><a href="#" class="globals__btn btn--socials btn--fb">Twitter</a></li>
+                  <li class="list__item"><a href="#" class="globals__btn btn--socials btn--fb">Vkontakte</a></li>
+                </ul>
           <button class="globals__btn btn--socials_open">Поделиться</button>
         </div>
       </div>
       <!--Generator container-->
       <div class="container__generator">
+        <!--Result Block-->
         <div class="generator__result">
           <h1 class="h1">Генератор водяных знаков</h1>
+          <!--чтобы показать таблицу из 4 элементов, добавь к result__block класс result-block--four-->
           <div class="result__block">
-            <div class="block__root"><img src="images/" alt="картинка" class="root__image"></div>
+            <div class="block__root"><img src="images/root.jpg" alt="Основная картинка" class="root__image"></div>
             <!--Если один вотермарк-->
-            <div class="block__watermark"><img src="images/" alt="картинка" class="watermark__image"></div>
-            <!--Если два вотермарка-->
-            <table class="block__watermark watrmark--table">
-              <body class="watrmark--table__body">
-                <tr class="watrmark--table__raw">
-                  <td class="watrmark--table__cell"><img src="images/" alt="картинка" class="watermark__image"></td>
-                  <td class="watrmark--table__cell"><img src="images/" alt="картинка" class="watermark__image"></td>
+            <div class="block__watermark"><img src="images/watermark.png" alt="Вотермарк" class="watermark__image"></div>
+            <!--Если вотермарков должно быть много-->
+            <table class="block__watermark--four">
+              <tbody class="watrmark--table__body">
+                <tr class="watrmark--table__row">
+                  <td class="watrmark--table__cell"><img src="images/watermark.png" alt="Вотермарк" class="watermark__image"></td>
+                  <td class="watrmark--table__cell cell--separator"></td>
+                  <td class="watrmark--table__cell"><img src="images/watermark.png" alt="Вотермарк" class="watermark__image"></td>
                 </tr>
-                <tr class="watrmark--table__raw">
-                  <td class="watrmark--table__cell"><img src="images/" alt="картинка" class="watermark__image"></td>
-                  <td class="watrmark--table__cell"><img src="images/" alt="картинка" class="watermark__image"></td>
+                <tr class="watrmark--table__row row--separator">
+                  <td class="watrmark--table__cell"></td>
+                  <td class="watrmark--table__cell"></td>
+                  <td class="watrmark--table__cell"></td>
                 </tr>
-              </body>
+                <tr class="watrmark--table__row">
+                  <td class="watrmark--table__cell"><img src="images/watermark.png" alt="Вотермарк" class="watermark__image"></td>
+                  <td class="watrmark--table__cell cell--separator"></td>
+                  <td class="watrmark--table__cell"><img src="images/watermark.png" alt="Вотермарк" class="watermark__image"></td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>
@@ -75,7 +80,7 @@
                   <!--Стилизуем загрузку-->
                   <div class="upload-block__style">
                     <div class="form__input style__input">Image.png</div>
-                    <div class="btn btn--red btn--upload"></div>
+                    <div class="btn btn--red btn--upload">Загрузить</div>
                   </div>
                   <!--Само поле загрузки, opacity: 0-->
                   <input class="form__input input--upload" type="file" name="original" id="file-original">
@@ -87,7 +92,7 @@
                   <!--Стилизуем загрузку-->
                   <div class="upload-block__style">
                     <div class="form__input style__input">Image.png</div>
-                    <div class="btn btn--red btn--upload"></div>
+                    <div class="btn btn--red btn--upload">Загрузить</div>
                   </div>
                   <!--Само поле загрузки, opacity: 0-->
                   <input class="form__input input--upload" type="file" name="watermark" id="file-watermark">
@@ -108,44 +113,17 @@
                 <div class="positioning__block block--coordinates">
                   <div class="positioning__visual">
                     <!--Визуальное отображение расположения вотермарка-->
-                    <table class="visual__table">
-                      <tbody class="table__body">
-                        <tr class="visual__raw">
-                          <!--При клике на кнопку будем сразу получать координаты кнопки в data атрибуте и интерпретировать касательно вотермарка-->
-                          <td class="visual__cell cell--active">
-                            <button data-cord="11" class="btn btn--set-cell js-set-cord">11</button>
-                          </td>
-                          <td class="visual__cell">
-                            <button data-cord="12" class="btn btn--set-cell js-set-cord">12</button>
-                          </td>
-                          <td class="visual__cell">
-                            <button data-cord="13" class="btn btn--set-cell js-set-cord">13</button>
-                          </td>
-                        </tr>
-                        <tr class="visual__raw">
-                          <td class="visual__cell">
-                            <button data-cord="21" class="btn btn--set-cell js-set-cord">21</button>
-                          </td>
-                          <td class="visual__cell">
-                            <button data-cord="22" class="btn btn--set-cell js-set-cord">22</button>
-                          </td>
-                          <td class="visual__cell">
-                            <button data-cord="23" class="btn btn--set-cell js-set-cord">23</button>
-                          </td>
-                        </tr>
-                        <tr class="visual__raw">
-                          <td class="visual__cell">
-                            <button data-cord="31" class="btn btn--set-cell js-set-cord">31</button>
-                          </td>
-                          <td class="visual__cell">
-                            <button data-cord="32" class="btn btn--set-cell js-set-cord">32</button>
-                          </td>
-                          <td class="visual__cell">
-                            <button data-cord="33" class="btn btn--set-cell js-set-cord">33</button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <ul class="visual__box">
+                      <li data-cord="11" class="visual__cell cell--current js-set-cord"></li>
+                      <li data-cord="12" class="visual__cell js-set-cord"></li>
+                      <li data-cord="13" class="visual__cell js-set-cord"></li>
+                      <li data-cord="21" class="visual__cell js-set-cord"></li>
+                      <li data-cord="22" class="visual__cell js-set-cord"></li>
+                      <li data-cord="23" class="visual__cell js-set-cord"></li>
+                      <li data-cord="31" class="visual__cell js-set-cord"></li>
+                      <li data-cord="32" class="visual__cell js-set-cord"></li>
+                      <li data-cord="33" class="visual__cell js-set-cord"></li>
+                    </ul>
                   </div>
                   <div class="positioning__switch">
                     <div class="switch__block">
@@ -169,11 +147,11 @@
                   <div class="positioning__visual">
                     <table class="visual__table table--borders">
                       <tbody class="table__body">
-                        <tr class="visual__raw">
+                        <tr class="visual__row">
                           <td class="visual__cell"></td>
                           <td class="visual__cell"></td>
                         </tr>
-                        <tr class="visual__raw">
+                        <tr class="visual__row">
                           <td class="visual__cell"></td>
                           <td class="visual__cell"></td>
                         </tr>
@@ -181,17 +159,17 @@
                     </table>
                     <table class="visual__table">
                       <tbody class="table__body">
-                        <tr class="visual__raw">
+                        <tr class="visual__row">
                           <td class="visual__cell"> </td>
                           <td class="visual__cell"> </td>
                           <td class="visual__cell"> </td>
                         </tr>
-                        <tr class="visual__raw">
+                        <tr class="visual__row">
                           <td class="visual__cell"> </td>
                           <td class="visual__cell"> </td>
                           <td class="visual__cell"> </td>
                         </tr>
-                        <tr class="visual__raw">
+                        <tr class="visual__row">
                           <td class="visual__cell"> </td>
                           <td class="visual__cell"> </td>
                           <td class="visual__cell"> </td>
@@ -233,11 +211,12 @@
           </form>
         </div>
       </div>
-      <footer id="footer"> 
-        <p class="p p--small">&copy; 2014, Это мой сайт, пожалуйста, не копируйте и не воруйте его</p>
-      </footer>
     </div>
-    
+    <!--Footer-->
+    <footer id="footer"> 
+      <p class="p p--small">&copy; 2014, Это мой сайт, пожалуйста, не копируйте и не воруйте его</p>
+    </footer>
+    <script src="js/libs/libs.min.js"></script>
     <!--TODO uncomment when deploy final-->
     <!--script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')-->
     <!--script window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.11.0.min.js"><\/script>')-->

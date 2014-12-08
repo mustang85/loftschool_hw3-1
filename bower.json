@@ -21,6 +21,8 @@
     "tests"
   ],
   "dependencies": {
-    "modernizr": "~2.8.3"
+    "modernizr": "~2.8.3",
+    "jquery-ui": "~1.11.2",
+    "jquery": "~2.1.1"
   }
 }

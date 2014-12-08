@@ -1,0 +1,51 @@
+@import '../base/base';
+
+.generator__settings {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	background: #f1f1f5;
+	box-sizing: border-box;
+	border-left: 1px solid #b4b2b3;
+	float: left;
+	height: 670px;
+	padding: 27px 0 25px 0;
+	width: 260px;
+
+	h2 {
+		text-align: center;
+		margin: 0 0 35px;
+	}
+
+	.p {
+		display: inline-block;
+		@include robotolight(14px, normal);
+		margin: 0 0 8px;
+		
+		.form__block--position & {
+			margin-right: 77px;
+		}
+	}
+}
+
+.form__block {
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+
+
+	&--download,
+	&--opacity {
+	  padding-right: 20px;
+	  padding-left: 20px;
+	}
+
+	&--position {
+	  padding-right: 10px;
+	  padding-left: 20px;
+	}
+
+	&--btn {
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+}

@@ -1,0 +1,17 @@
+include ../mixins/_mixins
+
+block lang-social
+	.container__globals
+		//Choose Language
+		ul.globals__lang
+			li.lang__item
+				button.globals__btn Рус
+				button.globals__btn Eng
+		//Share
+		.socials
+			+socials([
+				{'title': 'Facebook', 'link': '#', 'className': 'globals__btn btn--socials btn--fb' },
+				{'title': 'Twitter', 'link': '#', 'className': 'globals__btn btn--socials btn--fb' },
+				{'title': 'Vkontakte', 'link': '#', 'className': 'globals__btn btn--socials btn--fb' }
+			])
+			button.globals__btn.btn--socials_open Поделиться

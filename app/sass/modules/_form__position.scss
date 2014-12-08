@@ -1,0 +1,257 @@
+.form__block--border {
+  
+  position: relative;
+  border-bottom: 1px solid #f97e76;
+  &:after {
+    
+    position: absolute;
+    content: "";
+    left: 50%;
+    margin-left: -9px;
+    bottom: -10px;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 10px solid #f97e76;
+    z-index: 2;
+  }
+  &:before {
+    
+    position: absolute;
+    content: "";
+    left: 50%;
+    margin-left: -9px;
+    bottom: -9px;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 10px solid #f1f1f5;
+    z-index: 5;
+  }
+}
+
+.application-types {
+  margin: 0;
+  float: right;
+  display: inline-block;
+  vertical-align: top;
+  text-align: right;
+  width: 60px;
+  font-size: 0;
+  line-height: 0;
+  &__item {
+
+    display: inline-block;
+    margin: 0;
+    margin-left: 10px; 
+    width: 19px;
+    height: 19px;
+    cursor: pointer;
+    &--four {
+      @include graphics(-37px, 0px);
+    }
+    &--four--active {
+      @include graphics(-57px, 0px); 
+    }
+    &--four:hover {
+      @include graphics(-77px, 0px); 
+    }
+    &--one {
+      @include graphics(-37px, -26px);
+    }
+    &--one:hover {
+      @include graphics(-77px, -26px);
+    }
+    &--one--active {
+      @include graphics(-37px, -26px);
+    }
+  } 
+}
+
+.visual__table {
+  position: relative;
+  margin-top: 14px;
+  float: left;
+  padding: 0;
+  display: inline-block;
+  list-style: none;  
+  width: 99px;
+  font-size: 0;
+  &__item {
+    
+    margin: 0 -1px -1px 0;
+    display: inline-block;
+    border: 1px solid #9eb2c0;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    &__11 {
+      
+      border-top-left-radius: 2px;
+    }
+    &__13 {
+      
+      border-top-right-radius: 2px;
+    }
+    &__33 {
+      
+      border-bottom-right-radius: 2px;
+    }
+    &__31 {
+      
+      border-bottom-left-radius: 2px;
+    }
+    .form__block--onemark & {
+      pointer-events: none;
+    }
+    
+  }
+  &--current {
+    
+    background-color: none;
+    .form__block--onemark & {
+      
+      background: #f97e76;
+    }
+  }
+  &__line {
+    
+    display: block;
+    position: absolute;
+    font-size: 0;
+    line-height: 0;
+    background-color: #f97e76;
+    .form__block--onemark & {
+      
+      display: none;
+    }
+    &--x {
+    
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      height: 5px;
+      width: 100px;
+    }
+    &--y {
+      
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      height: 100px;
+      width: 15px;
+    }
+  }
+}
+
+.positioning-switch {
+  float: right;
+  margin-top: 14px;
+  width: 80px;
+  &__item {
+    
+    position: relative;
+    margin-bottom: 12px;
+    width: 80px;
+    vertical-align: top;
+    text-align: right;
+  }
+  &__data {
+
+    position: relative;
+    padding: 8px 0;
+    background-color: #fff;
+    width: 44px;
+    text-align: center;
+    font-size: 24px;
+    border: 1px solid #9eb2c0;
+    border-radius: 3px;
+    &:after {
+
+      position: absolute;
+      content: "";
+      top: 50%;
+    }  
+    &--x:after {
+      left: -14px;
+      margin-top: -15px;
+      width: 9px;
+      height: 29px;
+      @include graphics(-98px, 0);
+
+      .form__block--onemark & {
+        content: "Y";
+        top: 50%;
+        left: -19px;
+        margin-top: -8px;
+        background: none;
+        font-size: 16px;  
+        width: 16px;
+        height: 16px;
+      }
+    }
+    &--y:after {
+      left: -35px;
+      margin-top: -4px;
+      width: 29px;
+      height: 9px;
+      @include graphics(-37px, -50px);
+      
+      .form__block--onemark & {
+        
+        content: "X";
+        top: 50%;
+        left: -19px;
+        margin-top: -8px;
+        background: none;
+        font-size: 16px;  
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+  &__link {
+    
+    display: block;
+    position: absolute;
+    right: 12px;    
+    width: 13px;
+    height: 8px;
+    font-size: 0;
+    line-height: 0;
+    &--up {
+      
+      top: 4px;
+      @include graphics(0, -21px);
+      &:hover {
+        @include graphics(-19px, -21px);
+      }
+    }
+    &--down {
+      bottom: 4px;
+      @include graphics(0, -51px);
+      &:hover {
+        @include graphics(-19px, -51px);
+      }
+    }
+  }
+}
+
+.btn-g {
+  
+  width: 100px;
+  font-size: 18px;
+  line-height: 42px;
+  border: none;
+  border-radius: 3px;
+  color: #f1f1f5;
+  
+  &-reset {
+    
+    background-color: #c1cfd9;
+  }
+  &-download {
+    
+    float: right;
+    background-color: #f97e76;
+  }
+}
