@@ -86,39 +86,18 @@
 						.positioning__block.block--coordinates
 							.positioning__visual
 								//Визуальное отображение расположения вотермарка
-								table.visual__table
-									tbody.table__body
-										tr.visual__raw
-											//При клике на кнопку будем сразу получать координаты кнопки в data атрибуте и интерпретировать касательно вотермарка
-											td.visual__cell.cell--active
-												button.btn.btn--set-cell.js-set-cord(data-cord="11")
-													| 11
-											td.visual__cell
-												button.btn.btn--set-cell.js-set-cord(data-cord="12")
-													| 12
-											td.visual__cell
-												button.btn.btn--set-cell.js-set-cord(data-cord="13")
-													| 13
-										tr.visual__raw
-											td.visual__cell
-												button.btn.btn--set-cell.js-set-cord(data-cord="21")
-													| 21
-											td.visual__cell
-												button.btn.btn--set-cell.js-set-cord(data-cord="22")
-													| 22
-											td.visual__cell
-												button.btn.btn--set-cell.js-set-cord(data-cord="23")
-													| 23
-										tr.visual__raw
-											td.visual__cell
-												button.btn.btn--set-cell.js-set-cord(data-cord="31")
-													| 31
-											td.visual__cell
-												button.btn.btn--set-cell.js-set-cord(data-cord="32")
-													| 32
-											td.visual__cell
-												button.btn.btn--set-cell.js-set-cord(data-cord="33")
-													| 33
+								ul.visual__box
+									li.visual__cell__11.js-set-cord(data-cord="11")
+									li.visual__cell__11.js-set-cord(data-cord="12")
+									li.visual__cell__11.js-set-cord(data-cord="13")
+									li.visual__cell__11.js-set-cord(data-cord="21")
+									li.visual__cell__11.js-set-cord(data-cord="22")
+									li.visual__cell__11.js-set-cord(data-cord="23")
+									li.visual__cell__11.js-set-cord(data-cord="31")
+									li.visual__cell__11.js-set-cord(data-cord="32")
+									li.visual__cell__11.js-set-cord(data-cord="33")
+
+									
 							.positioning__switch
 								.switch__block
 									p.p.p--big X

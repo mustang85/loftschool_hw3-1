@@ -1,0 +1,28 @@
+@import '../base/base';
+
+.container {
+	background: #b7a399 url('../img/bg.jpg') center 0 no-repeat;
+}
+
+.container__generator {
+	margin: 0 auto 26px;
+	padding: 60px 0 0;
+	height: 670px;
+	width: 960px;
+}
+
+.container__generator:after,
+.container__generator:before {
+	content: '';
+	display: table;
+}
+
+footer {
+	color: $color_wh;
+	text-align: center;
+
+	p {
+		height: 48px;
+		line-height: 48px;
+	}
+}

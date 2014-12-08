@@ -1,0 +1,95 @@
+@import '../tools/var';
+@import '../base/icons';
+
+.container__globals {
+	position: absolute;
+	top: 102px;
+}
+
+.globals__btn {
+	background: #d7d6d8;
+	display: block;
+	color: #8e9298;
+	font-family: $ff_segoeui;
+	height: 35px;
+	margin: 0 0 1px 0;
+	text-transform: uppercase;
+	width: 44px;
+}
+
+.socials {
+	margin: 20px 0 0;
+	position: relative;
+	
+
+	.list__item {
+		background-color: #d6d3d2;
+		height: 41px;
+		width: 43px;
+	}
+
+	.globals__btn  {
+		@extend .icon;
+
+		content: '';
+		position: absolute;
+		height: 33px;
+		width: 29px;
+	}
+
+	.btn--fb {
+		background-position: 1px -70px;
+		position: relative;
+		top: 6px;
+		left: 5px;
+	}
+
+	.btn--fb:hover {
+		background-position: 1px -190px;
+	}
+
+	.btn--tw {
+		background-position: 0 -102px;
+		left: 6px;
+	}
+
+	.btn--tw:hover {
+		background-position: 0 -222px;
+	}
+
+	.btn--vk {
+		background-position: 0px -142px;
+		left: 4px;
+		margin: -3px 0px 0;
+		width: 33px;
+	}
+
+	.btn--vk:hover {
+		background-position: 0 -262px;
+	}
+
+	.btn--socials,
+	.btn--socials_open {
+		text-indent: -10000em;
+	}
+
+	.btn--socials_open {
+		background-color: #d6d3d2;
+		background-position: -24px -64px;
+		height: 41px;
+		position: absolute;
+		top: 0;
+		left: 43px;
+		width: 43px;
+	}
+
+	.btn--socials_open:hover {
+		background-position: -24px -186px;
+	}
+}
+
+.container__globals__active {
+	.generator__result {
+		background: #40444d;
+	}
+}

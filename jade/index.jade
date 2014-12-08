@@ -1,0 +1,38 @@
+doctype
+include vars/vars
+include mixins/index
+- var num = 3
+
+html(lang="ru", class="no-js")
+	include includes/head
+	body
+		<!--[if lt IE 8]>
+		<p class="browsehappy">You are using an <strong>outdated</strong> browser.Please 
+		<a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+
+		// Global Container
+		div.container
+			// Share Buttons and Language Buttons
+			div.container__globals
+				+langList(langItem)
+				div.socials
+					+socialsList(socialItem)
+					button(class="btn btn--socials_open") Поделиться
+			// Generator container		
+			main.generator
+				div.preview
+					h1.h1 #{h1}
+					div.result
+						div.block__root
+							img(src="images/", alt="img", class="root__image")
+						div.watermark
+							img(src="images/", alt="img", class="watermark__image")
+						
+			aside.settings
+				h2.h2 #{h2}
+				form(class="settings__form", action="#" method="post")
+			footer#footer
+				p.copy()!= footer
+
+

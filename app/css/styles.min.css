@@ -1,0 +1,733 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+button, input[type=submit] {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: 100%;
+  font-family: inherit;
+  cursor: pointer; }
+
+/* font-family */
+@font-face {
+  font-family: 'fira_sanslight';
+  font-weight: 100;
+  font-style: normal;
+  src: url('../fonts/firasans-light-webfont.eot');
+  src: url('../fonts/firasans-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/firasans-light-webfont.woff2') format('woff2'), url('../fonts/firasans-light-webfont.woff') format('woff'), url('../fonts/firasans-light-webfont.ttf') format('truetype'); }
+
+@font-face {
+  font-family: 'SegoeUILight';
+  font-weight: 100;
+  font-style: normal;
+  src: url('../fonts/SegoeUI-Light.eot');
+  src: url('../fonts/SegoeUI-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-Light.woff') format('woff'), url('../fonts/SegoeUI-Light.ttf') format('truetype'); }
+
+@font-face {
+  font-family: 'robotolight';
+  font-weight: 100;
+  font-style: normal;
+  src: url('../fonts/roboto-light-webfont.eot');
+  src: url('../fonts/roboto-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/roboto-light-webfont.woff2') format('woff2'), url('../fonts/roboto-light-webfont.woff') format('woff'), url('../fonts/roboto-light-webfont.ttf') format('truetype'); }
+
+/* font-size */
+/* color text */
+/* sprite */
+h1 {
+  font-size: 36px; }
+
+h2 {
+  font: 26px robotolight, Arial, Helvetica, sans-serif; }
+
+h3 {
+  font-size: 14px; }
+
+p {
+  font-family: "robotolight", Arial, sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  line-height: normal; }
+
+.icon, .upload-block__wrap .btn--red:after, .socials .globals__btn {
+  background: transparent url('../img/sprite.png') 0 0 no-repeat;
+  display: inline-block;
+  font: 0px/0 a;
+  overflow: hidden;
+  position: relative;
+  vertical-align: baseline; }
+
+/* font-family */
+@font-face {
+  font-family: 'fira_sanslight';
+  font-weight: 100;
+  font-style: normal;
+  src: url('../fonts/firasans-light-webfont.eot');
+  src: url('../fonts/firasans-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/firasans-light-webfont.woff2') format('woff2'), url('../fonts/firasans-light-webfont.woff') format('woff'), url('../fonts/firasans-light-webfont.ttf') format('truetype'); }
+
+@font-face {
+  font-family: 'SegoeUILight';
+  font-weight: 100;
+  font-style: normal;
+  src: url('../fonts/SegoeUI-Light.eot');
+  src: url('../fonts/SegoeUI-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-Light.woff') format('woff'), url('../fonts/SegoeUI-Light.ttf') format('truetype'); }
+
+@font-face {
+  font-family: 'robotolight';
+  font-weight: 100;
+  font-style: normal;
+  src: url('../fonts/roboto-light-webfont.eot');
+  src: url('../fonts/roboto-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/roboto-light-webfont.woff2') format('woff2'), url('../fonts/roboto-light-webfont.woff') format('woff'), url('../fonts/roboto-light-webfont.ttf') format('truetype'); }
+
+/* font-size */
+/* color text */
+/* sprite */
+/* font-family */
+@font-face {
+  font-family: 'fira_sanslight';
+  font-weight: 100;
+  font-style: normal;
+  src: url('../fonts/firasans-light-webfont.eot');
+  src: url('../fonts/firasans-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/firasans-light-webfont.woff2') format('woff2'), url('../fonts/firasans-light-webfont.woff') format('woff'), url('../fonts/firasans-light-webfont.ttf') format('truetype'); }
+
+@font-face {
+  font-family: 'SegoeUILight';
+  font-weight: 100;
+  font-style: normal;
+  src: url('../fonts/SegoeUI-Light.eot');
+  src: url('../fonts/SegoeUI-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-Light.woff') format('woff'), url('../fonts/SegoeUI-Light.ttf') format('truetype'); }
+
+@font-face {
+  font-family: 'robotolight';
+  font-weight: 100;
+  font-style: normal;
+  src: url('../fonts/roboto-light-webfont.eot');
+  src: url('../fonts/roboto-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/roboto-light-webfont.woff2') format('woff2'), url('../fonts/roboto-light-webfont.woff') format('woff'), url('../fonts/roboto-light-webfont.ttf') format('truetype'); }
+
+/* font-size */
+/* color text */
+/* sprite */
+h1 {
+  font-size: 36px; }
+
+h2 {
+  font: 26px robotolight, Arial, Helvetica, sans-serif; }
+
+h3 {
+  font-size: 14px; }
+
+p {
+  font-family: "robotolight", Arial, sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  line-height: normal; }
+
+.container {
+  background: #b7a399 url('../img/bg.jpg') center 0 no-repeat; }
+
+.container__generator {
+  margin: 0 auto 26px;
+  padding: 60px 0 0;
+  height: 670px;
+  width: 960px; }
+
+.container__generator:after, .container__generator:before {
+  content: '';
+  display: table; }
+
+footer {
+  color: #fff;
+  text-align: center; }
+  footer p {
+    height: 48px;
+    line-height: 48px; }
+
+/* font-family */
+@font-face {
+  font-family: 'fira_sanslight';
+  font-weight: 100;
+  font-style: normal;
+  src: url('../fonts/firasans-light-webfont.eot');
+  src: url('../fonts/firasans-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/firasans-light-webfont.woff2') format('woff2'), url('../fonts/firasans-light-webfont.woff') format('woff'), url('../fonts/firasans-light-webfont.ttf') format('truetype'); }
+
+@font-face {
+  font-family: 'SegoeUILight';
+  font-weight: 100;
+  font-style: normal;
+  src: url('../fonts/SegoeUI-Light.eot');
+  src: url('../fonts/SegoeUI-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-Light.woff') format('woff'), url('../fonts/SegoeUI-Light.ttf') format('truetype'); }
+
+@font-face {
+  font-family: 'robotolight';
+  font-weight: 100;
+  font-style: normal;
+  src: url('../fonts/roboto-light-webfont.eot');
+  src: url('../fonts/roboto-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/roboto-light-webfont.woff2') format('woff2'), url('../fonts/roboto-light-webfont.woff') format('woff'), url('../fonts/roboto-light-webfont.ttf') format('truetype'); }
+
+/* font-size */
+/* color text */
+/* sprite */
+h1 {
+  font-size: 36px; }
+
+h2 {
+  font: 26px robotolight, Arial, Helvetica, sans-serif; }
+
+h3 {
+  font-size: 14px; }
+
+p {
+  font-family: "robotolight", Arial, sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  line-height: normal; }
+
+.generator__result {
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #5b535a;
+  float: left;
+  height: 670px;
+  padding: 23px 26px 25px 24px;
+  width: 700px; }
+  .generator__result .h1 {
+    color: #fff;
+    font-family: SegoeUILight, Arial, Helvetica, sans-serif;
+    margin: 0 0 54px; }
+
+.result__block {
+  background: #FFF;
+  height: 514px;
+  padding: 10px;
+  position: relative;
+  width: 631px; }
+
+.block__root {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  height: 514px;
+  position: relative;
+  width: 631px; }
+
+.watermark__image {
+  position: absolute;
+  top: 25px;
+  left: 25px; }
+
+.result__block .block__watermark {
+  display: block; }
+.result-block--four .block__watermark {
+  display: none; }
+.block__watermark--four {
+  position: absolute;
+  display: none;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0; }
+  .result-block--four .block__watermark--four {
+    display: block; }
+.block__watermark__item {
+  width: 325px;
+  height: 266.5px; }
+  .block__watermark__item-11 {
+    text-align: right;
+    vertical-align: bottom; }
+  .block__watermark__item-12 {
+    text-align: left;
+    vertical-align: bottom; }
+  .block__watermark__item-21 {
+    text-align: right;
+    vertical-align: top; }
+  .block__watermark__item-22 {
+    text-align: left;
+    vertical-align: top; }
+.block__watermark__vertical-separator {
+  width: 12px; }
+
+/* font-family */
+@font-face {
+  font-family: 'fira_sanslight';
+  font-weight: 100;
+  font-style: normal;
+  src: url('../fonts/firasans-light-webfont.eot');
+  src: url('../fonts/firasans-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/firasans-light-webfont.woff2') format('woff2'), url('../fonts/firasans-light-webfont.woff') format('woff'), url('../fonts/firasans-light-webfont.ttf') format('truetype'); }
+
+@font-face {
+  font-family: 'SegoeUILight';
+  font-weight: 100;
+  font-style: normal;
+  src: url('../fonts/SegoeUI-Light.eot');
+  src: url('../fonts/SegoeUI-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-Light.woff') format('woff'), url('../fonts/SegoeUI-Light.ttf') format('truetype'); }
+
+@font-face {
+  font-family: 'robotolight';
+  font-weight: 100;
+  font-style: normal;
+  src: url('../fonts/roboto-light-webfont.eot');
+  src: url('../fonts/roboto-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/roboto-light-webfont.woff2') format('woff2'), url('../fonts/roboto-light-webfont.woff') format('woff'), url('../fonts/roboto-light-webfont.ttf') format('truetype'); }
+
+/* font-size */
+/* color text */
+/* sprite */
+h1 {
+  font-size: 36px; }
+
+h2 {
+  font: 26px robotolight, Arial, Helvetica, sans-serif; }
+
+h3 {
+  font-size: 14px; }
+
+p {
+  font-family: "robotolight", Arial, sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  line-height: normal; }
+
+.generator__settings {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  background: #f1f1f5;
+  box-sizing: border-box;
+  border-left: 1px solid #b4b2b3;
+  float: left;
+  height: 670px;
+  padding: 27px 0 25px 0;
+  width: 260px; }
+  .generator__settings h2 {
+    text-align: center;
+    margin: 0 0 35px; }
+  .generator__settings .p {
+    display: inline-block;
+    font-family: "robotolight", Arial, sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    line-height: normal;
+    margin: 0 0 8px; }
+    .form__block--position .generator__settings .p {
+      margin-right: 77px; }
+
+.form__block {
+  margin-bottom: 14px;
+  padding-bottom: 14px; }
+  .form__block--download, .form__block--opacity {
+    padding-right: 20px;
+    padding-left: 20px; }
+  .form__block--position {
+    padding-right: 10px;
+    padding-left: 20px; }
+  .form__block--btn {
+    padding-right: 10px;
+    padding-left: 10px; }
+
+.icon, .upload-block__wrap .btn--red:after, .socials .globals__btn {
+  background: transparent url('../img/sprite.png') 0 0 no-repeat;
+  display: inline-block;
+  font: 0px/0 a;
+  overflow: hidden;
+  position: relative;
+  vertical-align: baseline; }
+
+.upload-block__wrap {
+  position: relative; }
+  .upload-block__wrap input[type="file"] {
+    display: none; }
+  .upload-block__wrap .btn {
+    border-radius: 0 3px 3px 0;
+    cursor: pointer; }
+  .upload-block__wrap .btn--red {
+    background-color: #f97e76;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 27px;
+    width: 39px; }
+    .upload-block__wrap .btn--red:after {
+      content: '';
+      display: block;
+      height: 16px;
+      left: 9px;
+      position: absolute;
+      top: 5px;
+      width: 21px; }
+
+.form__upload-block {
+  margin: 0 0 24px; }
+
+.upload-block__style {
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 2px;
+  border: 1px solid #9eb2c0;
+  color: #9eb2c0;
+  height: 27px;
+  line-height: 24px;
+  padding: 0 45px 0 4px;
+  width: 219px; }
+
+/* font-family */
+@font-face {
+  font-family: 'fira_sanslight';
+  font-weight: 100;
+  font-style: normal;
+  src: url('../fonts/firasans-light-webfont.eot');
+  src: url('../fonts/firasans-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/firasans-light-webfont.woff2') format('woff2'), url('../fonts/firasans-light-webfont.woff') format('woff'), url('../fonts/firasans-light-webfont.ttf') format('truetype'); }
+
+@font-face {
+  font-family: 'SegoeUILight';
+  font-weight: 100;
+  font-style: normal;
+  src: url('../fonts/SegoeUI-Light.eot');
+  src: url('../fonts/SegoeUI-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/SegoeUI-Light.woff') format('woff'), url('../fonts/SegoeUI-Light.ttf') format('truetype'); }
+
+@font-face {
+  font-family: 'robotolight';
+  font-weight: 100;
+  font-style: normal;
+  src: url('../fonts/roboto-light-webfont.eot');
+  src: url('../fonts/roboto-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/roboto-light-webfont.woff2') format('woff2'), url('../fonts/roboto-light-webfont.woff') format('woff'), url('../fonts/roboto-light-webfont.ttf') format('truetype'); }
+
+/* font-size */
+/* color text */
+/* sprite */
+.icon, .upload-block__wrap .btn--red:after, .socials .globals__btn {
+  background: transparent url('../img/sprite.png') 0 0 no-repeat;
+  display: inline-block;
+  font: 0px/0 a;
+  overflow: hidden;
+  position: relative;
+  vertical-align: baseline; }
+
+.container__globals {
+  position: absolute;
+  top: 102px; }
+
+.globals__btn {
+  background: #d7d6d8;
+  display: block;
+  color: #8e9298;
+  font-family: SegoeUILight, Arial, Helvetica, sans-serif;
+  height: 35px;
+  margin: 0 0 1px 0;
+  text-transform: uppercase;
+  width: 44px; }
+
+.socials {
+  margin: 20px 0 0;
+  position: relative; }
+  .socials .list__item {
+    background-color: #d6d3d2;
+    height: 41px;
+    width: 43px; }
+  .socials .globals__btn {
+    content: '';
+    position: absolute;
+    height: 33px;
+    width: 29px; }
+  .socials .btn--fb {
+    background-position: 1px -70px;
+    position: relative;
+    top: 6px;
+    left: 5px; }
+  .socials .btn--fb:hover {
+    background-position: 1px -190px; }
+  .socials .btn--tw {
+    background-position: 0 -102px;
+    left: 6px; }
+  .socials .btn--tw:hover {
+    background-position: 0 -222px; }
+  .socials .btn--vk {
+    background-position: 0px -142px;
+    left: 4px;
+    margin: -3px 0px 0;
+    width: 33px; }
+  .socials .btn--vk:hover {
+    background-position: 0 -262px; }
+  .socials .btn--socials, .socials .btn--socials_open {
+    text-indent: -10000em; }
+  .socials .btn--socials_open {
+    background-color: #d6d3d2;
+    background-position: -24px -64px;
+    height: 41px;
+    position: absolute;
+    top: 0;
+    left: 43px;
+    width: 43px; }
+  .socials .btn--socials_open:hover {
+    background-position: -24px -186px; }
+
+.container__globals__active .generator__result {
+  background: #40444d; }
+
+.ui-slider {
+  margin: 15px 2px;
+  height: 3px;
+  border: none; }
+  .ui-slider-handle {
+    position: relative;
+    margin-top: -5px;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    background: #dbe1e8;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.38); }
+    .ui-slider-handle:after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 50%;
+      margin: -4px 0 0 -4px;
+      width: 8px;
+      height: 8px;
+      background-color: #9eb2c0;
+      border-radius: 50%; }
+
+.form__block .ui-widget-header {
+  background-color: #9eb2c0; }
+.form__block .ui-widget-content {
+  background-color: #dbe1e8; }
+
+.form__block--border {
+  position: relative;
+  border-bottom: 1px solid #f97e76; }
+  .form__block--border:after {
+    position: absolute;
+    content: "";
+    left: 50%;
+    margin-left: -9px;
+    bottom: -10px;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 10px solid #f97e76;
+    z-index: 2; }
+  .form__block--border:before {
+    position: absolute;
+    content: "";
+    left: 50%;
+    margin-left: -9px;
+    bottom: -9px;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 10px solid #f1f1f5;
+    z-index: 5; }
+
+.application-types {
+  margin: 0;
+  float: right;
+  display: inline-block;
+  vertical-align: top;
+  text-align: right;
+  width: 60px;
+  font-size: 0;
+  line-height: 0; }
+  .application-types__item {
+    display: inline-block;
+    margin: 0;
+    margin-left: 10px;
+    width: 19px;
+    height: 19px;
+    cursor: pointer; }
+    .application-types__item--four {
+      background-image: url(../img/graphics.png);
+      background-repeat: no-repeat;
+      background-position: -37px 0px; }
+    .application-types__item--four--active {
+      background-image: url(../img/graphics.png);
+      background-repeat: no-repeat;
+      background-position: -57px 0px; }
+    .application-types__item--four:hover {
+      background-image: url(../img/graphics.png);
+      background-repeat: no-repeat;
+      background-position: -77px 0px; }
+    .application-types__item--one {
+      background-image: url(../img/graphics.png);
+      background-repeat: no-repeat;
+      background-position: -37px -26px; }
+    .application-types__item--one:hover {
+      background-image: url(../img/graphics.png);
+      background-repeat: no-repeat;
+      background-position: -77px -26px; }
+    .application-types__item--one--active {
+      background-image: url(../img/graphics.png);
+      background-repeat: no-repeat;
+      background-position: -37px -26px; }
+
+.visual__table {
+  position: relative;
+  margin-top: 14px;
+  float: left;
+  padding: 0;
+  display: inline-block;
+  list-style: none;
+  width: 99px;
+  font-size: 0; }
+  .visual__table__item {
+    margin: 0 -1px -1px 0;
+    display: inline-block;
+    border: 1px solid #9eb2c0;
+    width: 32px;
+    height: 32px;
+    cursor: pointer; }
+    .visual__table__item__11 {
+      border-top-left-radius: 2px; }
+    .visual__table__item__13 {
+      border-top-right-radius: 2px; }
+    .visual__table__item__33 {
+      border-bottom-right-radius: 2px; }
+    .visual__table__item__31 {
+      border-bottom-left-radius: 2px; }
+    .form__block--onemark .visual__table__item {
+      pointer-events: none; }
+  .visual__table--current {
+    background-color: none; }
+    .form__block--onemark .visual__table--current {
+      background: #f97e76; }
+  .visual__table__line {
+    display: block;
+    position: absolute;
+    font-size: 0;
+    line-height: 0;
+    background-color: #f97e76; }
+    .form__block--onemark .visual__table__line {
+      display: none; }
+    .visual__table__line--x {
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      height: 5px;
+      width: 100px; }
+    .visual__table__line--y {
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      height: 100px;
+      width: 15px; }
+
+.positioning-switch {
+  float: right;
+  margin-top: 14px;
+  width: 80px; }
+  .positioning-switch__item {
+    position: relative;
+    margin-bottom: 12px;
+    width: 80px;
+    vertical-align: top;
+    text-align: right; }
+  .positioning-switch__data {
+    position: relative;
+    padding: 8px 0;
+    background-color: #fff;
+    width: 44px;
+    text-align: center;
+    font-size: 24px;
+    border: 1px solid #9eb2c0;
+    border-radius: 3px; }
+    .positioning-switch__data:after {
+      position: absolute;
+      content: "";
+      top: 50%; }
+    .positioning-switch__data--x:after {
+      left: -14px;
+      margin-top: -15px;
+      width: 9px;
+      height: 29px;
+      background-image: url(../img/graphics.png);
+      background-repeat: no-repeat;
+      background-position: -98px 0; }
+      .form__block--onemark .positioning-switch__data--x:after {
+        content: "Y";
+        top: 50%;
+        left: -19px;
+        margin-top: -8px;
+        background: none;
+        font-size: 16px;
+        width: 16px;
+        height: 16px; }
+    .positioning-switch__data--y:after {
+      left: -35px;
+      margin-top: -4px;
+      width: 29px;
+      height: 9px;
+      background-image: url(../img/graphics.png);
+      background-repeat: no-repeat;
+      background-position: -37px -50px; }
+      .form__block--onemark .positioning-switch__data--y:after {
+        content: "X";
+        top: 50%;
+        left: -19px;
+        margin-top: -8px;
+        background: none;
+        font-size: 16px;
+        width: 16px;
+        height: 16px; }
+  .positioning-switch__link {
+    display: block;
+    position: absolute;
+    right: 12px;
+    width: 13px;
+    height: 8px;
+    font-size: 0;
+    line-height: 0; }
+    .positioning-switch__link--up {
+      top: 4px;
+      background-image: url(../img/graphics.png);
+      background-repeat: no-repeat;
+      background-position: 0 -21px; }
+      .positioning-switch__link--up:hover {
+        background-image: url(../img/graphics.png);
+        background-repeat: no-repeat;
+        background-position: -19px -21px; }
+    .positioning-switch__link--down {
+      bottom: 4px;
+      background-image: url(../img/graphics.png);
+      background-repeat: no-repeat;
+      background-position: 0 -51px; }
+      .positioning-switch__link--down:hover {
+        background-image: url(../img/graphics.png);
+        background-repeat: no-repeat;
+        background-position: -19px -51px; }
+
+.btn-g {
+  width: 100px;
+  font-size: 18px;
+  line-height: 42px;
+  border: none;
+  border-radius: 3px;
+  color: #f1f1f5; }
+  .btn-g-reset {
+    background-color: #c1cfd9; }
+  .btn-g-download {
+    float: right;
+    background-color: #f97e76; }

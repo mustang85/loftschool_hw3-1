@@ -1,0 +1,22 @@
+mixin langList(items)
+	ul.lang
+		each item in items
+			li.lang__item: button(class="btn", href="#") #{item}
+
+mixin socialsList(items)
+	ul.socials__list
+		each item in items
+			if item == "Facebook"
+				li.list__item: button(class="btn btn--fb", href="#") #{item}
+			else if item == "Twitter"
+				li.list__item: button(class="btn btn--tw", href="#") #{item}
+			else
+				li.list__item: button(class="btn btn--vk", href="#") #{item}
+
+mixin watermakrTable()
+	- var n = 3
+	table.watermark.watermark--table
+		while n < num
+			tr.watermark--row
+				td.watermark--cell
+					img(src="images/", alt="img", class="watermark__image")
