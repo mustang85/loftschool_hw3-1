@@ -855,6 +855,7 @@ p
 .btn--app-type
 {
     float: left;
+    overflow: hidden;
 
     width: 20px;
     height: inherit;
@@ -862,7 +863,8 @@ p
 
     -webkit-transition: none;
 
-            transition: none; 
+            transition: none;
+    text-indent: -9999px; 
 
     background-image: url(../images/graphics.png);
     background-repeat: no-repeat;

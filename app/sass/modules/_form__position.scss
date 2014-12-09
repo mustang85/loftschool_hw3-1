@@ -15,11 +15,13 @@
 
 .btn--app-type {
   float: left;
+  overflow: hidden;
   margin: 0 10px 0 0;
   width: 20px;
   height: inherit;
   @include graphics(-37px, 0px);
   transition: none;
+  text-indent: -9999px;
 
   &:last-child {
 	margin-right: 0;
