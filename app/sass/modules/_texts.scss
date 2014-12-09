@@ -5,9 +5,23 @@
 }
 
 .h2 {
-
+	margin: 0 0 35px;
+	font-size: fs(lg);
+	text-align: center;
 }
 
 .p {
-	
+	display: block;
+	margin: 0 0 8px;
+	font-size: fs(md);
+}
+
+.p--big {
+	font-size: 1.6rem;
+
+	@at-root .block--borders & {
+		overflow: hidden;
+		text-align: left;
+		text-indent: -9999px;
+	}
 }

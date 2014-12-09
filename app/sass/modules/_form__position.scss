@@ -1,257 +1,218 @@
-.form__block--border {
-  
+.block__header {
   position: relative;
-  border-bottom: 1px solid #f97e76;
-  &:after {
-    
-    position: absolute;
-    content: "";
-    left: 50%;
-    margin-left: -9px;
-    bottom: -10px;
-    border-left: 9px solid transparent;
-    border-right: 9px solid transparent;
-    border-top: 10px solid #f97e76;
-    z-index: 2;
-  }
-  &:before {
-    
-    position: absolute;
-    content: "";
-    left: 50%;
-    margin-left: -9px;
-    bottom: -9px;
-    border-left: 9px solid transparent;
-    border-right: 9px solid transparent;
-    border-top: 10px solid #f1f1f5;
-    z-index: 5;
-  }
+  margin-bottom: 37px;
+  height: 20px;
 }
 
 .application-types {
-  margin: 0;
-  float: right;
-  display: inline-block;
-  vertical-align: top;
-  text-align: right;
-  width: 60px;
-  font-size: 0;
-  line-height: 0;
-  &__item {
-
-    display: inline-block;
-    margin: 0;
-    margin-left: 10px; 
-    width: 19px;
-    height: 19px;
-    cursor: pointer;
-    &--four {
-      @include graphics(-37px, 0px);
-    }
-    &--four--active {
-      @include graphics(-57px, 0px); 
-    }
-    &--four:hover {
-      @include graphics(-77px, 0px); 
-    }
-    &--one {
-      @include graphics(-37px, -26px);
-    }
-    &--one:hover {
-      @include graphics(-77px, -26px);
-    }
-    &--one--active {
-      @include graphics(-37px, -26px);
-    }
-  } 
+	position: absolute;
+	top: 0;
+	right: 0;
+	overflow: hidden;
+	margin: 0 0 -10px;
+	height: 20px;
 }
 
-.visual__table {
-  position: relative;
-  margin-top: 14px;
+.btn--app-type {
   float: left;
-  padding: 0;
-  display: inline-block;
-  list-style: none;  
-  width: 99px;
-  font-size: 0;
-  &__item {
-    
-    margin: 0 -1px -1px 0;
-    display: inline-block;
-    border: 1px solid #9eb2c0;
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-    &__11 {
-      
-      border-top-left-radius: 2px;
-    }
-    &__13 {
-      
-      border-top-right-radius: 2px;
-    }
-    &__33 {
-      
-      border-bottom-right-radius: 2px;
-    }
-    &__31 {
-      
-      border-bottom-left-radius: 2px;
-    }
-    .form__block--onemark & {
-      pointer-events: none;
-    }
-    
-  }
-  &--current {
-    
-    background-color: none;
-    .form__block--onemark & {
-      
-      background: #f97e76;
-    }
-  }
-  &__line {
-    
-    display: block;
-    position: absolute;
-    font-size: 0;
-    line-height: 0;
-    background-color: #f97e76;
-    .form__block--onemark & {
-      
-      display: none;
-    }
-    &--x {
-    
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      height: 5px;
-      width: 100px;
-    }
-    &--y {
-      
-      top: 0;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      height: 100px;
-      width: 15px;
-    }
+  margin: 0 10px 0 0;
+  width: 20px;
+  height: inherit;
+  @include graphics(-37px, 0px);
+  transition: none;
+
+  &:last-child {
+	margin-right: 0;
   }
 }
 
-.positioning-switch {
-  float: right;
-  margin-top: 14px;
-  width: 80px;
-  &__item {
-    
-    position: relative;
-    margin-bottom: 12px;
-    width: 80px;
-    vertical-align: top;
-    text-align: right;
-  }
-  &__data {
+.btn--four-marks {
+  background-position: -37px 0px;
 
-    position: relative;
-    padding: 8px 0;
-    background-color: #fff;
-    width: 44px;
-    text-align: center;
-    font-size: 24px;
-    border: 1px solid #9eb2c0;
-    border-radius: 3px;
-    &:after {
+ 	&:hover {
+		background-position: -77px 0px; 
+  	}
 
-      position: absolute;
-      content: "";
-      top: 50%;
-    }  
-    &--x:after {
-      left: -14px;
-      margin-top: -15px;
-      width: 9px;
-      height: 29px;
-      @include graphics(-98px, 0);
-
-      .form__block--onemark & {
-        content: "Y";
-        top: 50%;
-        left: -19px;
-        margin-top: -8px;
-        background: none;
-        font-size: 16px;  
-        width: 16px;
-        height: 16px;
-      }
-    }
-    &--y:after {
-      left: -35px;
-      margin-top: -4px;
-      width: 29px;
-      height: 9px;
-      @include graphics(-37px, -50px);
-      
-      .form__block--onemark & {
-        
-        content: "X";
-        top: 50%;
-        left: -19px;
-        margin-top: -8px;
-        background: none;
-        font-size: 16px;  
-        width: 16px;
-        height: 16px;
-      }
-    }
-  }
-  &__link {
-    
-    display: block;
-    position: absolute;
-    right: 12px;    
-    width: 13px;
-    height: 8px;
-    font-size: 0;
-    line-height: 0;
-    &--up {
-      
-      top: 4px;
-      @include graphics(0, -21px);
-      &:hover {
-        @include graphics(-19px, -21px);
-      }
-    }
-    &--down {
-      bottom: 4px;
-      @include graphics(0, -51px);
-      &:hover {
-        @include graphics(-19px, -51px);
-      }
-    }
-  }
+	&.btn--active,
+	&:active {
+		background-position: -57px 0px; 
+	}
 }
 
-.btn-g {
-  
-  width: 100px;
-  font-size: 18px;
-  line-height: 42px;
-  border: none;
-  border-radius: 3px;
-  color: #f1f1f5;
-  
-  &-reset {
-    
-    background-color: #c1cfd9;
-  }
-  &-download {
-    
-    float: right;
-    background-color: #f97e76;
-  }
+.btn--one-mark {
+	background-position: -37px -26px;
+ 	
+ 	&:hover {
+		background-position: -77px -26px;
+  	}
+
+	&.btn--active,
+	&:active {
+		background-position: -57px -26px; 
+	}
+}
+
+.positioning__block {
+	@extend %clearfix;
+}
+
+.positioning__visual {
+	position: relative;
+	float: left;
+}
+
+//===VISUAL BOX
+.visual__box {
+	overflow: hidden;
+	width: 100px;
+	height: 100px;
+	background-color: #dbe1e8;
+	border: 1px solid #cbd4dd;
+	border-radius: 3px;
+	border-spacing: 0;
+}
+
+.box__cell {
+	width: 33px;
+	height: 33px;
+	max-height: 33px;
+	border: 1px solid color('input-color');
+}
+
+.cell--active {
+	background-color: color('red');
+}
+
+//==VISUAL BOORDER
+.visual__borders {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.border__line {
+	position: absolute;
+	overflow: hidden;
+	text-indent: -9999px;
+	line-height: 0;
+	background-color: color('red');
+}
+
+.line--x {
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	height: 5px;
+	width: 100%;
+}
+.line--y {
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	height: 100%;
+	width: 15px;
+}
+
+.positioning__switch {
+	float: right;
+	width: 85px;
+}
+
+.switch__block {
+	position: relative;
+	float: right;
+	margin: 0 0 10px;
+	@extend %clearfix;
+
+	.p, .input--switch, .switch__controls {
+		float: left;
+		margin: 0 5px 0 0;
+	} 
+
+	.p {
+		width: 10px;
+		line-height: 44px;
+		text-align: center;
+	}
+
+	.switch__controls  {
+		margin-right: 0;
+	}
+}
+
+.block--vertical {
+	&:before {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 100%;
+		margin: auto 4px auto 0;
+		width: 9px;
+		height: 29px;
+		@include graphics(-98px, 0);
+		content: '';
+	}
+}
+
+.block--horizontal {
+	&:before {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 100%;
+		margin: auto 4px auto 0;
+		width: 29px;
+		height: 9px;
+		@include graphics(-37px, -50px);
+		content: '';
+	}
+}
+
+.input--switch {
+	padding: 0;
+	width: 44px;
+	height: 44px;
+	font-size: 2.4rem;
+	text-align: center;
+}
+
+.switch__controls {
+	position: relative;
+	width: 15px;
+	height: 46px;
+}
+
+.btn--control {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: inherit;
+	height: 10px;
+	@include graphics(0, -21px);
+	transition: none;
+}
+
+.btn--up {
+	top: 5px;
+
+	&:hover {
+		background-position: -19px -21px;
+	}
+}
+
+.btn--down {
+	bottom: 5px;
+	background-position: 0 -51px;
+
+	&:hover {
+		background-position: -19px -51px;
+	}
+}
+
+.block--hidden {
+	display: none;
 }

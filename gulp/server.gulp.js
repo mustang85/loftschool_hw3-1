@@ -4,10 +4,10 @@ var gulp = require('gulp'),
 	browserSync = require('browser-sync');
 
 var files = [
-	'app/sass/**/*',
-	'app/*.html',
-	'bower.json',
-	'app/jade/**/*.jade'
+	'./app/sass/**/*',
+	'./app/*.html',
+	'./bower.json',
+	'./app/jade/**/*.jade'
 ];
 
 gulp.task('browser-sync', function () {

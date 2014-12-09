@@ -35,26 +35,17 @@ block settings
 						})
 			fieldset.form__block
 				.block__header
-					p.p Положение
-					//Выбор типа наложения 
+					h3.p Положение
+					//Выбор типа наложения, .btn--active show active tab
 					.application-types
-						button.btn.btn--four-marks.js-use-four 4 Вотермарка
-						button.btn.btn--noe-mark.js-use-one 1 Вотермарк
+						button.btn.btn--app-type.btn--four-marks.js-use-four 4 Вотермарка
+						button.btn.btn--app-type.btn--one-mark.btn--active.js-use-one 1 Вотермарк
 				.positioning
 					//Настройки для одного вотермарка 
 					.positioning__block.block--coordinates
 						.positioning__visual
 							//Визуальное отображение расположения вотермарка
-							ul.visual__box
-								li.visual__cell.cell--current.js-set-cord(data-cord="11")
-								li.visual__cell.js-set-cord(data-cord="12")
-								li.visual__cell.js-set-cord(data-cord="13")
-								li.visual__cell.js-set-cord(data-cord="21")
-								li.visual__cell.js-set-cord(data-cord="22")
-								li.visual__cell.js-set-cord(data-cord="23")
-								li.visual__cell.js-set-cord(data-cord="31")
-								li.visual__cell.js-set-cord(data-cord="32")
-								li.visual__cell.js-set-cord(data-cord="33")
+							include _visual-box
 						.positioning__switch
 							.switch__block
 								p.p.p--big X
@@ -66,7 +57,7 @@ block settings
 								.switch__controls
 									button.btn.btn--control.btn--up.js-move-obj(data-direction="x-up") Больше
 									button.btn.btn--control.btn--down.js-move-obj(data-direction="x-down") Меньше
-								.switch__block
+							.switch__block
 								p.p.p--big Y
 								input#y-cord.form__input.input--switch&attributes({
 									type: "text",
@@ -76,33 +67,13 @@ block settings
 								.switch__controls
 									button.btn.btn--control.btn--up.js-move-obj(data-direction="y-up") Больше
 									button.btn.btn--control.btn--down.js-move-obj(data-direction="y-down") Меньше	
-					.positioning__block.block--borders
+					.positioning__block.block--borders.block--hidden
 						.positioning__visual
-							table.visual__table.table--borders
-								tbody.table__body
-									tr.visual__row
-										td.visual__cell
-										td.visual__cell
-									tr.visual__row
-										td.visual__cell
-										td.visual__cell
-							table.visual__table
-								tbody.table__body
-									tr.visual__row
-										td.visual__cell 
-										td.visual__cell 
-										td.visual__cell 
-									tr.visual__row
-										td.visual__cell 
-										td.visual__cell 
-										td.visual__cell 
-									tr.visual__row
-										td.visual__cell 
-										td.visual__cell 
-										td.visual__cell 
+							//Визуальное отображение расположения вотермарка (расстояние между границами)
+							include _visual-borders
+							include _visual-box
 						.positioning__switch
-							.switch__block
-								p.p.p--big По вертикали
+							.switch__block.block--vertical
 								input#y-border.form__input.input--switch&attributes({
 									type: "text",
 									value: "12",
@@ -111,8 +82,7 @@ block settings
 								.switch__controls
 									button.btn.btn--control.btn--up.js-switch-border(data-border="y-b-up") Больше
 									button.btn.btn--control.btn--down.js-switch-border(data-border="y-b-down") Меньше
-								.switch__block
-								p.p.p--big По горизонтали
+							.switch__block.block--horizontal
 								input#x-border.form__input.input--switch&attributes({
 									type: "text",
 									value: "12",
@@ -126,6 +96,6 @@ block settings
 					p.p Прозрачность
 					//TODO: Подключить default слайдер из jQuery UI и стилизовать его (http://jqueryui.com/slider/#default) 
 					.opacity__slider				
-			fieldset.form__block
-				button.btn.btn--submit.btn--grey(type="reset") Сброс
+			fieldset.form__block.block--send
+				button.btn.btn--reset.btn--grey(type="reset") Сброс
 				button.btn.btn--submit.btn--red(type="submit") Скачать

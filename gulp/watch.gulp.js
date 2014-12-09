@@ -8,4 +8,5 @@ gulp.task('watch', function () {
 	gulp.watch('app/*.html', ['html']);
 	gulp.watch('bower.json', ['wiredep']);
 	gulp.watch('app/jade/**/*.jade', ['jade']);
+	gulp.watch('app/images/**/*.{png,jpg,gif,svg}', ['images']);
 });

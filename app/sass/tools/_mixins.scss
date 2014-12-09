@@ -23,3 +23,10 @@
   font-size: $font-size;
   line-height: $line-height;
 }
+
+//Sprite
+@mixin graphics($pos-x, $pos-y) {
+  background-image: url(../images/graphics.png);
+  background-repeat: no-repeat;
+  background-position: $pos-x $pos-y;
+}

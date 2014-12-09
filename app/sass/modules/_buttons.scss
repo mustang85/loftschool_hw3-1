@@ -1,0 +1,66 @@
+.btn {
+	width: 97px;
+	height: 40px;
+	border: 1px solid transparent;
+	border-radius: 3px;
+	color: color('light-grey');
+	font-size: 1.8rem;
+	font-weight: bold;
+	line-height: 40px;
+	text-align: center;
+	transition: all .25s ease-in-out;
+	cursor: pointer;
+
+	@at-root .box__cell & {
+		display: block;
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+		background-color: transparent;
+		text-indent: -9999px;
+	}
+
+	&:hover {
+		color: color('light-grey');
+	}
+}
+
+.btn--red {
+	background-color: color('red');
+
+	&:hover {
+		border-color: #e3736c;
+	}
+}
+
+.btn--grey {
+	background-color: color('light-blue');
+
+	&:hover {
+		border-color: #a6b2bb;
+	}
+}
+
+.btn--upload {
+	float: right;
+	overflow: hidden;
+	width: 37px;
+	height: 25px;
+	text-indent: -9999px;
+	background-image: url('../images/download-icon.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+	border-radius: 0 3px 3px 0;
+
+	&:hover {
+		opacity: .8;
+	}
+}
+
+.btn--reset {
+	float: left;
+}
+
+.btn--submit {
+	float: right;
+}

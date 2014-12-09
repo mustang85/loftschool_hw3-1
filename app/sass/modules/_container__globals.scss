@@ -1,91 +1,99 @@
-@import '../base/icons';
-
 .container__globals {
 	position: absolute;
 	top: 102px;
 }
 
+//Select Language
+.globals__lang {
+	margin: 0 0 1em;
+	font-size: 2rem;
+	color: color('grey');
+}
+
 .globals__btn {
-	background: #d7d6d8;
 	display: block;
-	color: #8e9298;
-	font-family: $ff_segoeuil;
-	height: 35px;
-	margin: 0 0 1px 0;
-	text-transform: uppercase;
-	width: 44px;
+	width: 43px;
+	height: 34px;
+	background-color: rgba(color('light-grey'), .7);
+	border-bottom: 1px solid rgba(color('btn-border'), .75);
+	color: color('grey');
+	text-align: center;
+	transition: all .25s ease-in-out;
+
+	&:hover {
+		color: color('dark-blue');
+	}
+
+	&:last-child {
+		border-bottom: none;
+	}
 }
 
+//Share in socials
 .socials {
-	margin: 20px 0 0;
-	position: relative;
-	
+	transform: translate3D(-43px, 0, 0);
+	transition: transform .3s ease-in-out;
 
-	.list__item {
-		background-color: #d6d3d2;
-		height: 41px;
-		width: 43px;
-	}
+	@extend %clearfix;
 
-	.globals__btn  {
-		@extend .icon;
-
-		content: '';
-		position: absolute;
-		height: 33px;
-		width: 29px;
-	}
-
-	.btn--fb {
-		background-position: 1px -70px;
-		position: relative;
-		top: 6px;
-		left: 5px;
-	}
-
-	.btn--fb:hover {
-		background-position: 1px -190px;
-	}
-
-	.btn--tw {
-		background-position: 0 -102px;
-		left: 6px;
-	}
-
-	.btn--tw:hover {
-		background-position: 0 -222px;
-	}
-
-	.btn--vk {
-		background-position: 0px -142px;
-		left: 4px;
-		margin: -3px 0px 0;
-		width: 33px;
-	}
-
-	.btn--vk:hover {
-		background-position: 0 -262px;
-	}
-
-	.btn--socials,
-	.btn--socials_open {
-		text-indent: -10000em;
-	}
-
-	.btn--socials_open {
-		background-color: #d6d3d2;
-		background-position: -24px -64px;
-		height: 41px;
-		position: absolute;
-		top: 0;
-		left: 43px;
-		width: 43px;
-	}
-
-	.btn--socials_open:hover {
-		background-position: -24px -186px;
+	@at-root .show--share & {
+		transform: translate3D(0, 0, 0);
 	}
 }
+
+.socials__list,
+.btn--open {
+	float: left;
+}
+
+.btn--socials {
+	overflow: hidden;
+	display: block;
+	width: 43px;
+	height: 42px;
+	background: rgba(white, .6) url('../images/social-btns.png') no-repeat 0 0;
+	text-indent: -9999px;
+	transition: none;
+}
+
+
+.btn--fb {
+	background-position: 0 0;
+
+	&:hover,
+	&:active {
+		background-position: 0 -124px;
+	}
+}
+
+.btn--tw {
+	background-position: 0 -41px;
+
+	&:hover,
+	&:active {
+		background-position: 0 -165px;
+	}
+}
+
+.btn--vk {
+	background-position: 0 -82px;
+
+	&:hover,
+	&:active {
+		background-position: 0 -206px;
+	}
+}
+
+.btn--open {
+	width: 39px;
+	background-position: -43px 0;
+
+	&:hover,
+	&:active {
+		background-position: -43px -124px;
+	}
+}
+
 
 .container__globals__active {
 	.generator__result {
