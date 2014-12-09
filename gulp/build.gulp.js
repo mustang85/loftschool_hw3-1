@@ -20,7 +20,8 @@ var paths = {
 	sass: 'app/sass/styles.scss',
 	html: 'app/*.html',
 	images: 'app/images/**/*.{png,jpg,gif,svg}',
-	fonts: 'app/sass/base/fonts/**/*'
+	fonts: 'app/sass/base/fonts/**/*',
+	js: 'app/js/*.js'
 };
 
 //HTML
@@ -80,6 +81,13 @@ gulp.task('sass', ['fonts'], function () {
 		.pipe(pls.notify('Sass compile complete'));
 });
 
+//JS
+gulp.task('js', function() {
+	return gulp.src(paths.js)
+		.pipe(gulp.dest('dist/js'))
+		.pipe(pls.notify('JS compile complete!'));
+});
+
 //Clean Dirs
 gulp.task('clean', function (done) {
 	del(['app/css', 'dist'], done);
@@ -92,6 +100,6 @@ gulp.task('clear', function (done) {
 
 //Build
 gulp.task('build', ['sass', 'jade'], function () {
-	gulp.start('html', 'images');
+	gulp.start('html', 'images', 'js');
 });
 

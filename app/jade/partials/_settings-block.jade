@@ -38,13 +38,14 @@ block settings
 					h3.p Положение
 					//Выбор типа наложения, .btn--active show active tab
 					.application-types
-						button.btn.btn--app-type.btn--four-marks.js-use-four 4 Вотермарка
-						button.btn.btn--app-type.btn--one-mark.btn--active.js-use-one 1 Вотермарк
+						button.btn.btn--app-type.btn--four-marks(data-type="use-four") 4 Вотермарка
+						button.btn.btn--app-type.btn--one-mark.btn--active(data-type="use-one") 1 Вотермарк
 				.positioning
 					//Настройки для одного вотермарка 
 					.positioning__block.block--coordinates
 						.positioning__visual
 							//Визуальное отображение расположения вотермарка
+							- var firstCell = ['box__cell', 'cell--active']
 							include _visual-box
 						.positioning__switch
 							.switch__block
@@ -71,6 +72,7 @@ block settings
 						.positioning__visual
 							//Визуальное отображение расположения вотермарка (расстояние между границами)
 							include _visual-borders
+							- var firstCell = ['box__cell']
 							include _visual-box
 						.positioning__switch
 							.switch__block.block--vertical

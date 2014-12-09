@@ -1,8 +1,10 @@
 block visual-box
+	//- - var firstCell = ['box__cell', 'cell--active']
+
 	table.visual__box
 		tbody.box__body
 			tr.box__row
-				td.box__cell.cell--active
+				td(class = firstCell)
 					buttn.btn.js-set-cord&attributes({
 						"data-cord": "11"
 					})
