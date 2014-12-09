@@ -208,19 +208,17 @@ input[type=submit]
 html,
 body
 {
-    overflow: hidden;
+    overflow: auto;
 
-    width: 100%;
-    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 html
 {
     font-size: .625em; 
 
-    position: relative;
-
-    min-height: 100%;
+    height: 100%;
 }
 
 body
@@ -228,6 +226,8 @@ body
     font-family: 'robotolight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 1rem;
     line-height: 1.5em; 
+
+    position: relative;
 
     background: #d5b39c url('../images/main-bg.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -296,19 +296,17 @@ p
 html,
 body
 {
-    overflow: hidden;
+    overflow: auto;
 
-    width: 100%;
-    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 html
 {
     font-size: .625em; 
 
-    position: relative;
-
-    min-height: 100%;
+    height: 100%;
 }
 
 body
@@ -316,6 +314,8 @@ body
     font-family: 'robotolight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 1rem;
     line-height: 1.5em; 
+
+    position: relative;
 
     background: #d5b39c url('../images/main-bg.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -358,7 +358,7 @@ p
     height: 514px;
     padding: 10px;
 
-    background: #fff;
+    background: white url('../images/clear.png') repeat left top;
 }
 
 .block__root
@@ -436,19 +436,17 @@ p
 html,
 body
 {
-    overflow: hidden;
+    overflow: auto;
 
-    width: 100%;
-    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 html
 {
     font-size: .625em; 
 
-    position: relative;
-
-    min-height: 100%;
+    height: 100%;
 }
 
 body
@@ -456,6 +454,8 @@ body
     font-family: 'robotolight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 1rem;
     line-height: 1.5em; 
+
+    position: relative;
 
     background: #d5b39c url('../images/main-bg.jpg') no-repeat center center fixed;
     background-size: cover;

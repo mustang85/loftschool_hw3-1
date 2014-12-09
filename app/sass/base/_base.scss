@@ -1,16 +1,16 @@
 html, body {
-	overflow: hidden;
-	width: 100%;
-	height: 100%;
+	overflow: auto;
+	min-width: 100%;
+	min-height: 100%;
 }
 
 html {
-	position: relative;
-	min-height: 100%;
+	height: 100%;
 	font-size: .625em;
 }
 
 body {
+	position: relative;
 	background: color('pink') url('../images/main-bg.jpg') no-repeat center center fixed;
 	background-size: cover;
 	@include robotolight(1rem, 1.5em);
