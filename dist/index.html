@@ -16,7 +16,7 @@
     </p><![endif]-->
     <!--Global Container-->
     <!--TO show share buttons we need to add .show--share-->
-    <div class="container show--share">
+    <div class="container">
       <!--Share Buttons and Language Buttons-->
       <div class="container__globals">
         <!--Choose Language-->
@@ -33,7 +33,7 @@
                   <li class="list__item"><a href="#" class="globals__btn btn--socials btn--tw">Twitter</a></li>
                   <li class="list__item"><a href="#" class="globals__btn btn--socials btn--vk">Vkontakte</a></li>
                 </ul>
-          <button class="globals__btn btn--socials btn--open">Поделиться</button>
+          <button class="globals__btn btn--socials btn--open js-show-share">Поделиться</button>
         </div>
       </div>
       <!--Generator container-->
@@ -87,8 +87,8 @@
                 <h3 class="p">Положение</h3>
                 <!--Выбор типа наложения, .btn--active show active tab-->
                 <div class="application-types">
-                  <button class="btn btn--app-type btn--four-marks js-use-four">4 Вотермарка</button>
-                  <button class="btn btn--app-type btn--one-mark btn--active js-use-one">1 Вотермарк</button>
+                  <button data-type="use-four" class="btn btn--app-type btn--four-marks">4 Вотермарка</button>
+                  <button data-type="use-one" class="btn btn--app-type btn--one-mark btn--active">1 Вотермарк</button>
                 </div>
               </div>
               <div class="positioning">
@@ -160,7 +160,7 @@
                     <table class="visual__box">
                       <tbody class="box__body">
                         <tr class="box__row">
-                          <td class="box__cell cell--active">
+                          <td class="box__cell">
                             <buttn class="btn js-set-cord" data-cord="11"></buttn>
                           </td>
                           <td class="box__cell">
@@ -237,5 +237,6 @@
     <!--TODO uncomment when deploy final-->
     <!--script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')-->
     <!--script window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.11.0.min.js"><\/script>')-->
+    <script src="js/app.js"></script>
   </body>
 </html>
