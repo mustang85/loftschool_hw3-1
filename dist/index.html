@@ -29,11 +29,11 @@
         <!--Share-->
         <div class="socials">
                 <ul class="socials__list">
-                  <li class="list__item"><a href="#" class="globals__btn btn--socials btn--fb">Facebook</a></li>
-                  <li class="list__item"><a href="#" class="globals__btn btn--socials btn--tw">Twitter</a></li>
-                  <li class="list__item"><a href="#" class="globals__btn btn--socials btn--vk">Vkontakte</a></li>
+                  <li class="list__item"><a href="#" class="globals__btn--fb">Facebook</a></li>
+                  <li class="list__item"><a href="#" class="globals__btn--tw">Twitter</a></li>
+                  <li class="list__item"><a href="#" class="globals__btn--vk">Vkontakte</a></li>
                 </ul>
-          <button class="globals__btn btn--socials btn--open">Поделиться</button>
+          <button class="globals__btn--open">Поделиться</button>
         </div>
       </div>
       <!--Generator container-->
@@ -63,7 +63,7 @@
                   <!--Стилизуем загрузку-->
                   <div class="upload-block__style">
                     <div class="form__input style__input">Image.png</div>
-                    <div class="btn btn--red btn--upload">Загрузить</div>
+                    <div class="btn--upload">Загрузить</div>
                   </div>
                   <!--Само поле загрузки, opacity: 0-->
                   <input class="form__input input--upload" type="file" name="original" id="file-original">
@@ -75,7 +75,7 @@
                   <!--Стилизуем загрузку-->
                   <div class="upload-block__style">
                     <div class="form__input style__input">Image.png</div>
-                    <div class="btn btn--red btn--upload">Загрузить</div>
+                    <div class="btn--upload">Загрузить</div>
                   </div>
                   <!--Само поле загрузки, opacity: 0-->
                   <input class="form__input input--upload" type="file" name="watermark" id="file-watermark">
@@ -87,8 +87,8 @@
                 <h3 class="p">Положение</h3>
                 <!--Выбор типа наложения, .btn--active show active tab-->
                 <div class="application-types">
-                  <button class="btn btn--app-type btn--four-marks js-use-four">4 Вотермарка</button>
-                  <button class="btn btn--app-type btn--one-mark btn--active js-use-one">1 Вотермарк</button>
+                  <button class="btn--four-marks js-use-four">4 Вотермарка</button>
+                  <button class="btn--one-mark btn--active js-use-one">1 Вотермарк</button>
                 </div>
               </div>
               <div class="positioning">
@@ -139,16 +139,16 @@
                       <p class="p p--big">X</p>
                       <input id="x-cord" class="form__input input--switch" type="text" name="xValue" value="0">
                       <div class="switch__controls">
-                        <button data-direction="x-up" class="btn btn--control btn--up js-move-obj">Больше</button>
-                        <button data-direction="x-down" class="btn btn--control btn--down js-move-obj">Меньше</button>
+                        <button data-direction="x-up" class="btn--up js-move-obj">Больше</button>
+                        <button data-direction="x-down" class="btn--down js-move-obj">Меньше</button>
                       </div>
                     </div>
                     <div class="switch__block">
                       <p class="p p--big">Y</p>
                       <input id="y-cord" class="form__input input--switch" type="text" name="yValue" value="0">
                       <div class="switch__controls">
-                        <button data-direction="y-up" class="btn btn--control btn--up js-move-obj">Больше</button>
-                        <button data-direction="y-down" class="btn btn--control btn--down js-move-obj">Меньше	</button>
+                        <button data-direction="y-up" class="btn--up js-move-obj">Больше</button>
+                        <button data-direction="y-down" class="btn--down js-move-obj">Меньше	</button>
                       </div>
                     </div>
                   </div>
@@ -199,15 +199,15 @@
                     <div class="switch__block block--vertical">
                       <input id="y-border" class="form__input input--switch" type="text" value="12" name="yBorder">
                       <div class="switch__controls">
-                        <button data-border="y-b-up" class="btn btn--control btn--up js-switch-border">Больше</button>
-                        <button data-border="y-b-down" class="btn btn--control btn--down js-switch-border">Меньше</button>
+                        <button data-border="y-b-up" class="btn--up js-switch-border">Больше</button>
+                        <button data-border="y-b-down" class="btn--down js-switch-border">Меньше</button>
                       </div>
                     </div>
                     <div class="switch__block block--horizontal">
                       <input id="x-border" class="form__input input--switch" type="text" value="12" name="xBorder">
                       <div class="switch__controls">
-                        <button data-border="x-b-up" class="btn btn--control btn--up js-switch-border">Больше</button>
-                        <button data-border="x-b-down" class="btn btn--control btn--down js-switch-border">Меньше</button>
+                        <button data-border="x-b-up" class="btn--up js-switch-border">Больше</button>
+                        <button data-border="x-b-down" class="btn--down js-switch-border">Меньше</button>
                       </div>
                     </div>
                   </div>
@@ -222,8 +222,8 @@
               </div>
             </fieldset>
             <fieldset class="form__block block--send">
-              <button type="reset" class="btn btn--reset btn--grey">Сброс</button>
-              <button type="submit" class="btn btn--submit btn--red">Скачать</button>
+              <button type="reset" class="btn--reset">Сброс</button>
+              <button type="submit" class="btn--submit">Скачать</button>
             </fieldset>
           </form>
         </div>

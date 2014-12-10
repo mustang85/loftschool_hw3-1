@@ -13,7 +13,7 @@ block settings
 						//Стилизуем загрузку
 						.upload-block__style
 							.form__input.style__input Image.png
-							.btn.btn--red.btn--upload Загрузить
+							.btn--upload Загрузить
 						//Само поле загрузки, opacity: 0
 						input.form__input.input--upload&attributes({
 							type: "file",
@@ -26,7 +26,7 @@ block settings
 						//Стилизуем загрузку
 						.upload-block__style
 							.form__input.style__input Image.png
-							.btn.btn--red.btn--upload Загрузить
+							.btn--upload Загрузить
 						//Само поле загрузки, opacity: 0
 						input.form__input.input--upload&attributes({
 							type: "file",
@@ -38,8 +38,8 @@ block settings
 					h3.p Положение
 					//Выбор типа наложения, .btn--active show active tab
 					.application-types
-						button.btn.btn--app-type.btn--four-marks.js-use-four 4 Вотермарка
-						button.btn.btn--app-type.btn--one-mark.btn--active.js-use-one 1 Вотермарк
+						button.btn--four-marks.js-use-four 4 Вотермарка
+						button.btn--one-mark.btn--active.js-use-one 1 Вотермарк
 				.positioning
 					//Настройки для одного вотермарка 
 					.positioning__block.block--coordinates
@@ -55,8 +55,8 @@ block settings
 									value: "0"
 								})
 								.switch__controls
-									button.btn.btn--control.btn--up.js-move-obj(data-direction="x-up") Больше
-									button.btn.btn--control.btn--down.js-move-obj(data-direction="x-down") Меньше
+									button.btn--up.js-move-obj(data-direction="x-up") Больше
+									button.btn--down.js-move-obj(data-direction="x-down") Меньше
 							.switch__block
 								p.p.p--big Y
 								input#y-cord.form__input.input--switch&attributes({
@@ -65,8 +65,8 @@ block settings
 									value: "0"
 								})
 								.switch__controls
-									button.btn.btn--control.btn--up.js-move-obj(data-direction="y-up") Больше
-									button.btn.btn--control.btn--down.js-move-obj(data-direction="y-down") Меньше	
+									button.btn--up.js-move-obj(data-direction="y-up") Больше
+									button.btn--down.js-move-obj(data-direction="y-down") Меньше	
 					.positioning__block.block--borders.block--hidden
 						.positioning__visual
 							//Визуальное отображение расположения вотермарка (расстояние между границами)
@@ -80,8 +80,8 @@ block settings
 									name: "yBorder"
 								})
 								.switch__controls
-									button.btn.btn--control.btn--up.js-switch-border(data-border="y-b-up") Больше
-									button.btn.btn--control.btn--down.js-switch-border(data-border="y-b-down") Меньше
+									button.btn--up.js-switch-border(data-border="y-b-up") Больше
+									button.btn--down.js-switch-border(data-border="y-b-down") Меньше
 							.switch__block.block--horizontal
 								input#x-border.form__input.input--switch&attributes({
 									type: "text",
@@ -89,13 +89,13 @@ block settings
 									name: "xBorder"
 								})
 								.switch__controls
-									button.btn.btn--control.btn--up.js-switch-border(data-border="x-b-up") Больше
-									button.btn.btn--control.btn--down.js-switch-border(data-border="x-b-down") Меньше
+									button.btn--up.js-switch-border(data-border="x-b-up") Больше
+									button.btn--down.js-switch-border(data-border="x-b-down") Меньше
 			fieldset.form__block
 				.block__header
 					p.p Прозрачность
 					//TODO: Подключить default слайдер из jQuery UI и стилизовать его (http://jqueryui.com/slider/#default) 
 					.opacity__slider				
 			fieldset.form__block.block--send
-				button.btn.btn--reset.btn--grey(type="reset") Сброс
-				button.btn.btn--submit.btn--red(type="submit") Скачать
+				button.btn--reset(type="reset") Сброс
+				button.btn--submit(type="submit") Скачать

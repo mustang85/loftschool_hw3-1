@@ -13,47 +13,6 @@
 	height: 20px;
 }
 
-.btn--app-type {
-  float: left;
-  overflow: hidden;
-  margin: 0 10px 0 0;
-  width: 20px;
-  height: inherit;
-  @include graphics(-37px, 0px);
-  transition: none;
-  text-indent: -9999px;
-
-  &:last-child {
-	margin-right: 0;
-  }
-}
-
-.btn--four-marks {
-  background-position: -37px 0px;
-
- 	&:hover {
-		background-position: -77px 0px; 
-  	}
-
-	&.btn--active,
-	&:active {
-		background-position: -57px 0px; 
-	}
-}
-
-.btn--one-mark {
-	background-position: -37px -26px;
- 	
- 	&:hover {
-		background-position: -77px -26px;
-  	}
-
-	&.btn--active,
-	&:active {
-		background-position: -57px -26px; 
-	}
-}
-
 .positioning__block {
 	@extend %clearfix;
 }
@@ -185,34 +144,6 @@
 	position: relative;
 	width: 15px;
 	height: 46px;
-}
-
-.btn--control {
-	position: absolute;
-	left: 0;
-	right: 0;
-	margin: auto;
-	width: inherit;
-	height: 10px;
-	@include graphics(0, -21px);
-	transition: none;
-}
-
-.btn--up {
-	top: 5px;
-
-	&:hover {
-		background-position: -19px -21px;
-	}
-}
-
-.btn--down {
-	bottom: 5px;
-	background-position: 0 -51px;
-
-	&:hover {
-		background-position: -19px -51px;
-	}
 }
 
 .block--hidden {

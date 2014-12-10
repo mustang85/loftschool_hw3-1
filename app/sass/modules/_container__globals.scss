@@ -11,8 +11,7 @@
 }
 
 .globals__btn {
-	display: block;
-	width: 43px;
+	@extend %globals__btn;
 	height: 34px;
 	background-color: rgba(color('light-grey'), .7);
 	border-bottom: 1px solid rgba(color('btn-border'), .75);
@@ -26,6 +25,48 @@
 
 	&:last-child {
 		border-bottom: none;
+	}
+
+	&--fb {
+		@extend %btn--socials;
+		background-position: 0 0;
+
+		&:hover,
+		&:active {
+			background-position: 0 -124px;
+		}
+	}
+
+	&--tw {
+		@extend %btn--socials;
+		background-position: 0 -41px;
+
+		&:hover,
+		&:active {
+			background-position: 0 -165px;
+		}
+	}
+
+	&--vk {
+		@extend %btn--socials;
+		background-position: 0 -82px;
+
+		&:hover,
+		&:active {
+			background-position: 0 -206px;
+		}
+	}
+
+	&--open {
+		@extend %btn--socials;
+		float: left;
+		width: 39px;
+		background-position: -43px 0;
+
+		&:hover,
+		&:active {
+			background-position: -43px -124px;
+		}
 	}
 }
 
@@ -41,59 +82,9 @@
 	}
 }
 
-.socials__list,
-.btn--open {
+.socials__list {
 	float: left;
 }
-
-.btn--socials {
-	overflow: hidden;
-	display: block;
-	width: 43px;
-	height: 42px;
-	background: rgba(white, .6) url('../images/social-btns.png') no-repeat 0 0;
-	text-indent: -9999px;
-	transition: none;
-}
-
-
-.btn--fb {
-	background-position: 0 0;
-
-	&:hover,
-	&:active {
-		background-position: 0 -124px;
-	}
-}
-
-.btn--tw {
-	background-position: 0 -41px;
-
-	&:hover,
-	&:active {
-		background-position: 0 -165px;
-	}
-}
-
-.btn--vk {
-	background-position: 0 -82px;
-
-	&:hover,
-	&:active {
-		background-position: 0 -206px;
-	}
-}
-
-.btn--open {
-	width: 39px;
-	background-position: -43px 0;
-
-	&:hover,
-	&:active {
-		background-position: -43px -124px;
-	}
-}
-
 
 .container__globals__active {
 	.generator__result {
