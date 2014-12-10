@@ -40,7 +40,7 @@ var selectType = {
 		}
 	},
 	listener: function (obj) {
-		obj.on('click', '.btn--app-type', selectType.show)
+		obj.on('click', '.js-switch-type', selectType.show)
 	},
 	init: function ($object) {
 		this.obj = $object,
