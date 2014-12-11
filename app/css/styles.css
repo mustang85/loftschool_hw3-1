@@ -457,7 +457,7 @@ p
     text-indent: -9999px;
 }
 
-.box__cell .btn
+.btn--cell
 {
     display: block;
     overflow: hidden;
@@ -465,9 +465,15 @@ p
     width: 100%;
     height: 100%;
 
-    text-indent: -9999px; 
+    cursor: pointer; 
+    text-indent: -9999px;
 
+    border: none;
     background-color: transparent;
+}
+.btn--cell:hover
+{
+    background-color: #c7ccd2;
 }
 .btn:hover
 {
@@ -970,6 +976,11 @@ p
 .cell--active
 {
     background-color: #f97e76;
+}
+
+.cell--active .btn--cell
+{
+    visibility: hidden;
 }
 
 .visual__borders

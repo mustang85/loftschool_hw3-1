@@ -44,6 +44,10 @@
 	background-color: color('red');
 }
 
+.cell--active .btn--cell {
+	visibility: hidden;
+}
+
 //==VISUAL BOORDER
 .visual__borders {
 	position: absolute;
