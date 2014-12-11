@@ -7,7 +7,7 @@ var showShare = {
 		if ( gc.hasClass('show--share') ) {
 			timer = setTimeout(function () {
 				btn.trigger('click');
-			}, 1500);
+			}, 2500);
 		}
 	},
 	show: function () {

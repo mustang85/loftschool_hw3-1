@@ -42,7 +42,12 @@
 
 .cell--active {
 	background-color: color('red');
+	
+	.btn--cell {
+		visibility: hidden;
+	}
 }
+
 
 //==VISUAL BOORDER
 .visual__borders {
