@@ -1,0 +1,34 @@
+.opacity__range {
+	margin: 0 auto;
+	width: 220px; //for FF
+ 	border: 1px solid color('light-grey'); //for FF to hide outline
+	//Webkit
+	-webkit-appearance: none;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.opacity__range::-webkit-slider-runnable-track {
+    width: 220px;
+    height: 3px;
+    background-color: color('range-bg');
+    border: none;
+    border-radius: 1px;
+}
+
+.opacity__range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 24px;
+    width: 24px;
+    background: transparent url('../images/thumb.png') no-repeat left top;
+    border-radius: 50%;
+    border: none;
+    margin-top: -10px;
+    cursor: pointer;
+}
+
+.opacity__range::-webkit-slider-thumb:hover {
+	background-position: left bottom;
+}
