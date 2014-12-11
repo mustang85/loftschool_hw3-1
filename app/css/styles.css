@@ -878,6 +878,12 @@ p
     border-right: none;
     border-radius: 3px 0 0 3px;
 }
+.style__input.loaded
+{
+    font-weight: bold; 
+
+    color: #2e3641;
+}
 
 .ui-slider
 {

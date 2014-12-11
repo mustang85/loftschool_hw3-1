@@ -1,3 +1,4 @@
+//Share buttons Module
 var showShare = {
 	close: function (close) {
 		var gc = showShare.gContainer, //Page COntainer
@@ -36,6 +37,7 @@ var showShare = {
 	}
 };
 
+//Select type of watermark fill-in Module
 var selectType = {
 	show: function (e) {
 		e.preventDefault();
@@ -72,9 +74,32 @@ var selectType = {
 	}
 };
 
+//Upload Module
+var uploadImages = {
+	showFileName: function (e) {
+		var $input = $(e.currentTarget),
+			fileName = $input.val().replace(/\\/g, '/').replace(/.*\//, ''),
+			abstract = $input.siblings('.upload-block__style');
+
+		abstract.find('.style__input').addClass('loaded').html(fileName);
+
+	},
+	listener: function (obj) {
+		obj.on('change', this.showFileName);
+	},
+	init: function ($input) {
+		this.obj = $input;
+
+		this.listener( this.obj );
+
+		console.info('listen for uploading');
+	}
+};
+
 $(function() {
 	console.info('start app');
 
 	showShare.init( $('.socials') );
 	selectType.init( $('.application-types') );
+	uploadImages.init( $('.input--upload') );
 });

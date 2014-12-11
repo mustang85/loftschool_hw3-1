@@ -34,4 +34,9 @@
 	color: color('input-color');
 	font-size: 1.2rem;
 	line-height: 25px;
+
+	&.loaded {
+		color: color('deep-blue');
+		font-weight: bold;
+	}
 }
