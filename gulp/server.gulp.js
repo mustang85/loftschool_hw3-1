@@ -14,7 +14,7 @@ gulp.task('browser-sync', function () {
 	browserSync({
 		startPath: 'index.html',
         server: {
-            baseDir: ["app", '.tmp']
+            baseDir: ['app']
         },
         files: files
     });

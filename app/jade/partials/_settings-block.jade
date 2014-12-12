@@ -1,0 +1,101 @@
+block settings
+	.generator__settings
+		h2.h2 Настройки
+		//Отправляем/получаем данные через ajax
+		form.settings__form&attributes({
+			action: "#",
+			method: "post"
+		})
+			fieldset.form__block
+				.form__upload-block
+					label.p Исходное изображение
+					.upload-block__wrap
+						//Стилизуем загрузку
+						.upload-block__style
+							.form__input.style__input Image.png
+							.btn--upload Загрузить
+						//Само поле загрузки, opacity: 0
+						input.form__input.input--upload&attributes({
+							type: "file",
+							name: "original",
+							id: "file-original"
+						})
+				.form__upload-block
+					label.p Водяной знак 
+					.upload-block__wrap
+						//Стилизуем загрузку
+						.upload-block__style
+							.form__input.style__input Image.png
+							.btn--upload Загрузить
+						//Само поле загрузки, opacity: 0
+						input.form__input.input--upload&attributes({
+							type: "file",
+							name: "watermark",
+							id: "file-watermark"
+						})
+			fieldset.form__block
+				.block__header
+					h3.p Положение
+					//Выбор типа наложения, .btn--active show active tab
+					.application-types
+						button.btn--four-marks.js-use-four 4 Вотермарка
+						button.btn--one-mark.btn--active.js-use-one 1 Вотермарк
+				.positioning
+					//Настройки для одного вотермарка 
+					.positioning__block.block--coordinates
+						.positioning__visual
+							//Визуальное отображение расположения вотермарка
+							include _visual-box
+						.positioning__switch
+							.switch__block
+								p.p.p--big X
+								input#x-cord.form__input.input--switch&attributes({
+									type: "text",
+									name: "xValue",
+									value: "0"
+								})
+								.switch__controls
+									button.btn--up.js-move-obj(data-direction="x-up") Больше
+									button.btn--down.js-move-obj(data-direction="x-down") Меньше
+							.switch__block
+								p.p.p--big Y
+								input#y-cord.form__input.input--switch&attributes({
+									type: "text",
+									name: "yValue",
+									value: "0"
+								})
+								.switch__controls
+									button.btn--up.js-move-obj(data-direction="y-up") Больше
+									button.btn--down.js-move-obj(data-direction="y-down") Меньше	
+					.positioning__block.block--borders.block--hidden
+						.positioning__visual
+							//Визуальное отображение расположения вотермарка (расстояние между границами)
+							include _visual-borders
+							include _visual-box
+						.positioning__switch
+							.switch__block.block--vertical
+								input#y-border.form__input.input--switch&attributes({
+									type: "text",
+									value: "12",
+									name: "yBorder"
+								})
+								.switch__controls
+									button.btn--up.js-switch-border(data-border="y-b-up") Больше
+									button.btn--down.js-switch-border(data-border="y-b-down") Меньше
+							.switch__block.block--horizontal
+								input#x-border.form__input.input--switch&attributes({
+									type: "text",
+									value: "12",
+									name: "xBorder"
+								})
+								.switch__controls
+									button.btn--up.js-switch-border(data-border="x-b-up") Больше
+									button.btn--down.js-switch-border(data-border="x-b-down") Меньше
+			fieldset.form__block
+				.block__header
+					p.p Прозрачность
+					//TODO: Подключить default слайдер из jQuery UI и стилизовать его (http://jqueryui.com/slider/#default) 
+					.opacity__slider				
+			fieldset.form__block.block--send
+				button.btn--reset(type="reset") Сброс
+				button.btn--submit(type="submit") Скачать
