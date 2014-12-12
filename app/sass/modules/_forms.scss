@@ -27,6 +27,17 @@
 		border-top: 10px solid color('light-grey');
 		content: "";
 	}
+
+	&.block--send {
+		margin: 45px 0 0;
+		padding: 0 10px;
+		border: none;
+
+		&:after,
+		&:before {
+			display: none;
+		}
+	}
 }
 
 .form__input {

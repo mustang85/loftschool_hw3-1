@@ -767,19 +767,6 @@ p
     margin-right: 77px;
 }
 
-.block--send
-{
-    margin: 45px 0 0;
-    padding: 0 10px;
-
-    border: none;
-}
-.block--send:after,
-.block--send:before
-{
-    display: none;
-}
-
 .form__block
 {
     position: relative;
@@ -818,6 +805,18 @@ p
     border-top: 10px solid #f1f1f5;
     border-right: 9px solid transparent;
     border-left: 9px solid transparent;
+}
+.form__block.block--send
+{
+    margin: 45px 0 0;
+    padding: 0 10px;
+
+    border: none;
+}
+.form__block.block--send:after,
+.form__block.block--send:before
+{
+    display: none;
 }
 
 .form__input
@@ -1105,7 +1104,7 @@ p
 
     border: none;
     border-radius: 1px; 
-    background-color: #dbe1e8;
+    background-color: #9eb2c0;
 }
 
 .opacity__range::-webkit-slider-thumb
@@ -1126,4 +1125,81 @@ p
 .opacity__range::-webkit-slider-thumb:hover
 {
     background-position: left bottom;
+}
+
+.opacity__range::-moz-range-track
+{
+    width: 220px;
+    height: 3px;
+
+    border: none;
+    border-radius: 1px; 
+    background-color: #9eb2c0;
+}
+
+.opacity__range::-moz-range-thumb
+{
+    width: 24px;
+    height: 24px;
+    margin-top: -10px;
+
+    cursor: pointer; 
+
+    border: none;
+    border-radius: 50%;
+    background: transparent url('../images/thumb.png') no-repeat left top;
+
+    -webkit-appearance: none;
+}
+
+.opacity__range::-moz-range-thumb:hover
+{
+    background-position: left bottom;
+}
+
+.opacity__range:-moz-focusring
+{
+    outline: 1px solid white;
+    outline-offset: -1px;
+}
+
+.opacity__range
+{
+    margin-top: -12px\9;
+}
+
+.opacity__range::-ms-track
+{
+    width: 220px;
+    height: 3px;
+
+    color: transparent; 
+    border-width: 12px 0;
+    border-color: transparent;
+    background: transparent;
+}
+
+.opacity__range::-ms-fill-lower
+{
+    border-radius: 3px; 
+    background-color: #9eb2c0;
+}
+
+.opacity__range::-ms-fill-upper
+{
+    border-radius: 3px; 
+    background-color: #dbe1e8;
+}
+
+.opacity__range::-ms-thumb
+{
+    width: 24px;
+    height: 24px;
+    margin-top: 0;
+
+    cursor: pointer; 
+
+    border: none;
+    border-radius: 50%;
+    background: transparent url('../images/thumb.png') no-repeat left top;
 }
