@@ -2,15 +2,14 @@
 @import 'buttons';
 
 @import 'container__globals';
+
 @import 'generator__result';
-
-@import 'forms';
-
-
-
-
 @import 'result__block';
+
 @import 'generator__settings';
+@import 'forms';
 @import 'form__upload';
-@import 'slider';
 @import 'form__position';
+@import 'form__opacity';
+// @import 'slider';
+

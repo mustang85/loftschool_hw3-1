@@ -1,14 +1,21 @@
 .btn {
 	@extend %btn;
 
-	@at-root .box__cell & {
+	&--cell {
 		display: block;
 		overflow: hidden;
 		width: 100%;
 		height: 100%;
 		background-color: transparent;
 		text-indent: -9999px;
+		border: none;
+		cursor: pointer;
+	
+		&:hover {
+			background-color: #c7ccd2;
+		}
 	}
+
 
 	&:hover {
 		color: color('light-grey');

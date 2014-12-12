@@ -97,7 +97,7 @@ block settings
 				.block__header
 					p.p Прозрачность
 					//TODO: Подключить default слайдер из jQuery UI и стилизовать его (http://jqueryui.com/slider/#default) 
-					.opacity__slider				
+					input#opacity-range.opacity__range(type = "range", name="opacity", value="80")		
 			fieldset.form__block.block--send
 				button.btn--reset(type="reset") Сброс
 				button.btn--submit(type="submit") Скачать

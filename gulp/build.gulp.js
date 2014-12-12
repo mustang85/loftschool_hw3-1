@@ -43,11 +43,13 @@ gulp.task('html', ['wiredep'], function () {
 gulp.task('images', function () {
 	return gulp.src(paths.images)
 		.pipe(pls.size())
+		/*
 		.pipe(cache(imagemin({
 			optimizationLevel: 5,
 			progressive: true,
 			interlaced: true
 		})))
+		*/
 		.pipe(gulp.dest('dist/images'))
 		.pipe(pls.size());
 });
