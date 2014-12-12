@@ -54,7 +54,7 @@
 <p>Для работы над проектом в консоли набираем <code>gulp server</code> (выполняется build, подключается watch и запускается browser-sync), просто "сбилдить проект" <code>gulp</code></p> 
 <h2>Ветки</h2>
 <ul>
-	<li><strong>static</strong> &mdash; статичная версия макета</li>
+	<li><strike><strong>static</strong> &mdash; статичная версия макета</strike> - <code>слито с master</code></li>
 	<li><strong>js</strong> &mdash; версия макета с js</li>
 	<li><strong>php</strong> &mdash; макет с php</li>
 </ul>
