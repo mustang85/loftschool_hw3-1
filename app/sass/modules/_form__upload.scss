@@ -1,5 +1,10 @@
 .form__upload-block {
 	margin: 0 0 24px;
+
+	@at-root .block--noborder & {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
 }
 
 .upload-block__wrap {

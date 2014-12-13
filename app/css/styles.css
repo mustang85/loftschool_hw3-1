@@ -806,15 +806,15 @@ p
     border-right: 9px solid transparent;
     border-left: 9px solid transparent;
 }
-.form__block.block--send
+.form__block.block--noborder
 {
     margin: 45px 0 0;
     padding: 0 10px;
 
     border: none;
 }
-.form__block.block--send:after,
-.form__block.block--send:before
+.form__block.block--noborder:after,
+.form__block.block--noborder:before
 {
     display: none;
 }
@@ -830,6 +830,11 @@ p
 .form__upload-block
 {
     margin: 0 0 24px;
+}
+.block--noborder .form__upload-block
+{
+    margin-right: 10px; 
+    margin-left: 10px;
 }
 
 .upload-block__wrap
