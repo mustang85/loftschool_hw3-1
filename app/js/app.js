@@ -104,8 +104,6 @@ var setOpacity = {
 		$(wm).css({
 			opacity: val/100
 		});
-
-		console.log(val)
 	},
 	styleRange: function () {
 		this.slider.slider({
