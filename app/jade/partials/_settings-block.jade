@@ -7,7 +7,7 @@ block settings
 			method: "post",
 			enctype: "multipart/form-data"
 		})
-			fieldset.form__block
+			fieldset.form__block.block--noborder
 				.form__upload-block
 					label.p Исходное изображение
 					.upload-block__wrap
@@ -110,6 +110,6 @@ block settings
 					.slider-range
 					input#opacity-value.opacity-val(type="text", name="opacity", value="80", readonly, hidden)
 					//- input#opacity-range.opacity__range(type = "range", name="opacity", value="80")		
-			fieldset.form__block.block--send
+			fieldset.form__block.block--noborder
 				button.btn--reset(type="reset") Сброс
 				button.btn--submit(type="submit") Скачать
