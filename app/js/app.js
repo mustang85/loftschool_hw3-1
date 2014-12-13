@@ -5,11 +5,11 @@ var showShare = {
 			btn = showShare.obj.find('.js-show-share'), //Button with Thumb up
 			timer;
 
-		if ( gc.hasClass('show--share') ) {
-			timer = setTimeout(function () {
-				btn.trigger('click');
-			}, 2500);
-		}
+		// if ( gc.hasClass('show--share') ) {
+		// 	timer = setTimeout(function () {
+		// 		btn.trigger('click');
+		// 	}, 2500);
+		// }
 	},
 	show: function () {
 		var gc = showShare.gContainer; //Page Container
@@ -96,10 +96,64 @@ var uploadImages = {
 	}
 };
 
+//Opacity slider
+var setOpacity = {
+	changeOpacity: function (val) {
+		var wm = this.elems.watermark;
+
+		$(wm).css({
+			opacity: val/100
+		});
+	},
+	styleRange: function () {
+		this.slider.slider({
+			min: 0,
+			max: 100,
+			step: 1,
+			value: 80,
+			orientation: 'horizontal',
+			create: function (e, ui) {
+				$(this)
+					.append(setOpacity.lower)
+					.find('.slider--lower')
+						.css({
+							width: ui.value + '%'
+						});
+
+				$('#opacity-value').attr('value', ui.value);
+			},
+			slide: function(e, ui) {
+				$('.slider--lower').css({
+					width: ui.value + '%'
+				});
+
+				$('#opacity-value').attr('value', ui.value);
+
+				setOpacity.changeOpacity(ui.value);
+			} 
+		});
+
+		console.info('style opacity');
+	},
+	init: function ($slider, objs) {
+		this.elems = objs;
+		this.slider = $slider;
+		this.lower = $('<span />', {'class': 'slider--lower'});
+
+		this.styleRange();
+	}
+};
+
 $(function() {
 	console.info('start app');
+
+	var objects = {
+		watermark: '.watermark__image',
+		image: '.root__image'
+	};
 
 	showShare.init( $('.socials') );
 	selectType.init( $('.application-types') );
 	uploadImages.init( $('.input--upload') );
+	setOpacity.init( $('.slider-range'), objects );
 });

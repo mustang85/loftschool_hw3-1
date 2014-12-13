@@ -221,8 +221,8 @@
             <fieldset class="form__block">
               <div class="block__header">
                 <p class="p">Прозрачность</p>
-                <!--TODO: Подключить default слайдер из jQuery UI и стилизовать его (http://jqueryui.com/slider/#default) -->
-                <input id="opacity-range" type="range" name="opacity" value="80" class="opacity__range">
+                <div class="slider-range"></div>
+                <input id="opacity-value" type="text" name="opacity" value="80" readonly hidden class="opacity-val">
               </div>
             </fieldset>
             <fieldset class="form__block block--send">
