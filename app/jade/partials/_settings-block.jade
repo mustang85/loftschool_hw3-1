@@ -4,7 +4,8 @@ block settings
 		//Отправляем/получаем данные через ajax
 		form.settings__form&attributes({
 			action: "#",
-			method: "post"
+			method: "post",
+			enctype: "multipart/form-data"
 		})
 			fieldset.form__block
 				.form__upload-block
@@ -20,6 +21,12 @@ block settings
 							name: "original",
 							id: "file-original"
 						})
+		form.settings__form&attributes({
+			action: "#",
+			method: "post",
+			enctype: "multipart/form-data"
+		})
+			fieldset.form__block		
 				.form__upload-block
 					label.p Водяной знак 
 					.upload-block__wrap
@@ -33,6 +40,10 @@ block settings
 							name: "watermark",
 							id: "file-watermark"
 						})
+		form.settings__form&attributes({
+			action: "#",
+			method: "post"
+		})
 			fieldset.form__block
 				.block__header
 					h3.p Положение
