@@ -19,7 +19,8 @@ block settings
 						input.form__input.input--upload&attributes({
 							type: "file",
 							name: "original",
-							id: "file-original"
+							id: "file-original",
+							'data-type': 'original'
 						})
 						input#send-image(type="submit", value="", hidden)
 		form.settings__form.form--upload&attributes({
@@ -39,7 +40,8 @@ block settings
 						input.form__input.input--upload&attributes({
 							type: "file",
 							name: "watermark",
-							id: "file-watermark"
+							id: "file-watermark",
+							'data-type': 'watermark'
 						})
 						input#send-wm(type="submit", value="", hidden)
 		form.settings__form&attributes({
