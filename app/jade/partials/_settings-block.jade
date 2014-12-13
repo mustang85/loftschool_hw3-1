@@ -2,7 +2,7 @@ block settings
 	.generator__settings
 		h2.h2 Настройки
 		//Отправляем/получаем данные через ajax
-		form.settings__form&attributes({
+		form.settings__form.from--upload&attributes({
 			action: "#",
 			method: "post",
 			enctype: "multipart/form-data"
@@ -21,7 +21,8 @@ block settings
 							name: "original",
 							id: "file-original"
 						})
-		form.settings__form&attributes({
+						input#send-image(type="submit", value="", hidden)
+		form.settings__form.from--upload&attributes({
 			action: "#",
 			method: "post",
 			enctype: "multipart/form-data"
@@ -40,6 +41,7 @@ block settings
 							name: "watermark",
 							id: "file-watermark"
 						})
+						input#send-wm(type="submit", value="", hidden)
 		form.settings__form&attributes({
 			action: "#",
 			method: "post"

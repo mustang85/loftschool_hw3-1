@@ -2,13 +2,24 @@
 	margin: 0 0 24px;
 
 	@at-root .block--noborder & {
-		margin-left: 10px;
-		margin-right: 10px;
+		margin: 0 10px 25px;
+	}
+}
+
+.from--upload {
+	.form__block {
+		padding-bottom: 5px;
+	}
+
+	.block--noborder {
+		margin-top: 0;
+		padding-bottom: 0;
 	}
 }
 
 .upload-block__wrap {
 	position: relative;
+	height: 27px;
 	cursor: pointer;
 }	
 
