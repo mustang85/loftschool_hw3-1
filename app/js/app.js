@@ -106,21 +106,26 @@ var setOpacity = {
 		});
 	},
 	styleRange: function () {
+		var defaultVal = 52; 
+
 		this.slider.slider({
 			min: 0,
 			max: 100,
 			step: 1,
-			value: 80,
+			value: defaultVal,
 			orientation: 'horizontal',
 			create: function (e, ui) {
 				$(this)
 					.append(setOpacity.lower)
 					.find('.slider--lower')
 						.css({
-							width: ui.value + '%'
+							width: defaultVal + '%'
 						});
 
-				$('#opacity-value').attr('value', ui.value);
+				console.log(ui,e)
+
+				$('#opacity-value').attr('value', defaultVal);
+				setOpacity.changeOpacity(defaultVal);
 			},
 			slide: function(e, ui) {
 				$('.slider--lower').css({
