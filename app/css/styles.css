@@ -1083,123 +1083,150 @@ p
     display: none;
 }
 
-.opacity__range
+.ui-slider
 {
-    width: 220px;
-    margin: 0 auto;
+    position: relative;
 
-    border: 1px solid #f1f1f5;
-
-    -webkit-appearance: none;
-}
-.opacity__range:focus
-{
-    outline: none;
-}
-
-.opacity__range::-webkit-slider-runnable-track
-{
-    width: 220px;
+    width: 218px;
     height: 3px;
+    margin: 25px 0 30px;
 
-    border: none;
-    border-radius: 1px; 
-    background-color: #9eb2c0;
-}
-
-.opacity__range::-webkit-slider-thumb
-{
-    width: 24px;
-    height: 24px;
-    margin-top: -10px;
-
-    cursor: pointer; 
-
-    border: none;
-    border-radius: 50%;
-    background: transparent url('../images/thumb.png') no-repeat left top;
-
-    -webkit-appearance: none;
-}
-
-.opacity__range::-webkit-slider-thumb:hover
-{
-    background-position: left bottom;
-}
-
-.opacity__range::-moz-range-track
-{
-    width: 220px;
-    height: 3px;
-
-    border: none;
-    border-radius: 1px; 
-    background-color: #9eb2c0;
-}
-
-.opacity__range::-moz-range-thumb
-{
-    width: 24px;
-    height: 24px;
-    margin-top: -10px;
-
-    cursor: pointer; 
-
-    border: none;
-    border-radius: 50%;
-    background: transparent url('../images/thumb.png') no-repeat left top;
-
-    -webkit-appearance: none;
-}
-
-.opacity__range::-moz-range-thumb:hover
-{
-    background-position: left bottom;
-}
-
-.opacity__range:-moz-focusring
-{
-    outline: 1px solid white;
-    outline-offset: -1px;
-}
-
-.opacity__range
-{
-    margin-top: -12px\9;
-}
-
-.opacity__range::-ms-track
-{
-    width: 220px;
-    height: 3px;
-
-    color: transparent; 
-    border-width: 12px 0;
-    border-color: transparent;
-    background: transparent;
-}
-
-.opacity__range::-ms-fill-lower
-{
-    border-radius: 3px; 
-    background-color: #9eb2c0;
-}
-
-.opacity__range::-ms-fill-upper
-{
     border-radius: 3px; 
     background-color: #dbe1e8;
 }
 
-.opacity__range::-ms-thumb
+.ui-slider-handle
 {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    bottom: 0;
+
     width: 24px;
     height: 24px;
-    margin-top: 0;
+    margin: auto 0 auto -10px;
 
     cursor: pointer; 
 
-    border: none;
-    border-radius: 50%;
+    outline: none;
     background: transparent url('../images/thumb.png') no-repeat left top;
 }
+.ui-slider-handle:hover,
+.ui-slider-handle:active
+{
+    background-position: left bottom;
+}
+
+.slider--lower
+{
+    position: absolute;
+    z-index: 50;
+    top: 0;
+    left: 0;
+
+    width: 80%;
+    height: 100%;
+
+    background-color: #9eb2c0;
+}
+
+/*
+.opacity__range {
+    margin: 0 auto;
+    width: 220px; //for FF
+    border: 1px solid color('light-grey'); //for FF to hide outline
+    //Webkit
+    -webkit-appearance: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.opacity__range::-webkit-slider-runnable-track {
+    width: 220px;
+    height: 3px;
+    background-color: color('range-lower');
+    border: none;
+    border-radius: 1px;
+}
+
+.opacity__range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 24px;
+    width: 24px;
+    background: transparent url('../images/thumb.png') no-repeat left top;
+    border-radius: 50%;
+    border: none;
+    margin-top: -10px;
+    cursor: pointer;
+}
+
+.opacity__range::-webkit-slider-thumb:hover {
+    background-position: left bottom;
+}
+
+//FF
+.opacity__range::-moz-range-track {
+    width: 220px;
+    height: 3px;
+    background-color: color('range-lower');
+    border: none;
+    border-radius: 1px;
+}
+
+.opacity__range::-moz-range-thumb {
+    -webkit-appearance: none;
+    height: 24px;
+    width: 24px;
+    background: transparent url('../images/thumb.png') no-repeat left top;
+    border-radius: 50%;
+    border: none;
+    margin-top: -10px;
+    cursor: pointer;
+}
+
+.opacity__range::-moz-range-thumb:hover  {
+    background-position: left bottom;
+}
+
+//Hide outline
+.opacity__range:-moz-focusring{
+    outline: 1px solid white;
+    outline-offset: -1px;
+}
+
+//IE10 
+.opacity__range {
+    margin-top: -12px\9;
+}
+
+.opacity__range::-ms-track  {
+    width: 220px;
+    height: 3px;
+    background: transparent;
+    border-color: transparent;
+    border-width: 12px 0;
+    color: transparent;
+}
+
+.opacity__range::-ms-fill-lower {
+    background-color: color('range-lower');
+    border-radius: 3px;
+}
+
+.opacity__range::-ms-fill-upper {
+    background-color: color('range-bg');
+    border-radius: 3px;
+}
+
+.opacity__range::-ms-thumb {
+    height: 24px;
+    width: 24px;
+    background: transparent url('../images/thumb.png') no-repeat left top;
+    border-radius: 50%;
+    border: none;
+    margin-top: 0;
+    cursor: pointer;
+}
+*/

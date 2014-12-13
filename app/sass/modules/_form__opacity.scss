@@ -1,13 +1,53 @@
-.opacity__range {
-	margin: 0 auto;
-	width: 220px; //for FF
- 	border: 1px solid color('light-grey'); //for FF to hide outline
-	//Webkit
-	-webkit-appearance: none;
+//StylejQuery UI Slider
+.ui-slider {
+    position: relative;
+    margin: 25px 0 30px;
+    width: 218px;
+    height: 3px;
+    background-color: color('range-bg');
+    border-radius: 3px;
+}
 
-	&:focus {
-		outline: none;
-	}
+.ui-slider-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    margin: auto 0 auto -10px;
+    width: 24px;
+    height: 24px;
+    background: transparent url('../images/thumb.png') no-repeat left top;
+    outline: none;
+    cursor: pointer;
+
+    &:hover,
+    &:active {
+        background-position: left bottom;
+    }
+}
+
+.slider--lower {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    height: 100%;
+    width: 80%;
+    background-color: color('range-lower');
+}
+
+//======STYLES For input[type=range]
+/*
+.opacity__range {
+    margin: 0 auto;
+    width: 220px; //for FF
+    border: 1px solid color('light-grey'); //for FF to hide outline
+    //Webkit
+    -webkit-appearance: none;
+
+    &:focus {
+        outline: none;
+    }
 }
 
 .opacity__range::-webkit-slider-runnable-track {
@@ -30,7 +70,7 @@
 }
 
 .opacity__range::-webkit-slider-thumb:hover {
-	background-position: left bottom;
+    background-position: left bottom;
 }
 
 //FF
@@ -96,3 +136,4 @@
     margin-top: 0;
     cursor: pointer;
 }
+*/
