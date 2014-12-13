@@ -772,7 +772,7 @@ p
     position: relative;
 
     margin-bottom: 15px;
-    padding: 0 20px 15px; 
+    padding: 0 20px 30px; 
 
     border-bottom: 1px solid #f97e76;
 }
@@ -833,13 +833,24 @@ p
 }
 .block--noborder .form__upload-block
 {
-    margin-right: 10px; 
-    margin-left: 10px;
+    margin: 0 10px 25px;
+}
+
+.from--upload .form__block
+{
+    padding-bottom: 5px;
+}
+.from--upload .block--noborder
+{
+    margin-top: 0;
+    padding-bottom: 0;
 }
 
 .upload-block__wrap
 {
     position: relative;
+
+    height: 27px;
 
     cursor: pointer;
 }
