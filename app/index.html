@@ -59,7 +59,7 @@
         <div class="generator__settings">
           <h2 class="h2">Настройки</h2>
           <!--Отправляем/получаем данные через ajax-->
-          <form class="settings__form from--upload" action="#" method="post" enctype="multipart/form-data">
+          <form class="settings__form form--upload" action="#" method="post" enctype="multipart/form-data">
             <fieldset class="form__block block--noborder">
               <div class="form__upload-block">
                 <label class="p">Исходное изображение</label>
@@ -70,13 +70,13 @@
                     <div class="btn--upload">Загрузить</div>
                   </div>
                   <!--Само поле загрузки, opacity: 0-->
-                  <input class="form__input input--upload" type="file" name="original" id="file-original">
+                  <input class="form__input input--upload" type="file" name="original" id="file-original" data-type="original">
                   <input id="send-image" type="submit" value="" hidden>
                 </div>
               </div>
             </fieldset>
           </form>
-          <form class="settings__form from--upload" action="#" method="post" enctype="multipart/form-data">
+          <form class="settings__form form--upload" action="#" method="post" enctype="multipart/form-data">
             <fieldset class="form__block">		
               <div class="form__upload-block">
                 <label class="p">Водяной знак </label>
@@ -87,7 +87,7 @@
                     <div class="btn--upload">Загрузить</div>
                   </div>
                   <!--Само поле загрузки, opacity: 0-->
-                  <input class="form__input input--upload" type="file" name="watermark" id="file-watermark">
+                  <input class="form__input input--upload" type="file" name="watermark" id="file-watermark" data-type="watermark">
                   <input id="send-wm" type="submit" value="" hidden>
                 </div>
               </div>

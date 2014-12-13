@@ -836,11 +836,11 @@ p
     margin: 0 10px 25px;
 }
 
-.from--upload .form__block
+.form--upload .form__block
 {
     padding-bottom: 5px;
 }
-.from--upload .block--noborder
+.form--upload .block--noborder
 {
     margin-top: 0;
     padding-bottom: 0;
