@@ -46,7 +46,7 @@ block settings
 						input#send-wm(type="submit", value="", hidden)
 		form.settings__form&attributes({
 			action: "#",
-			method: "post"
+			method: "get"
 		})
 			fieldset.form__block
 				.block__header
@@ -94,7 +94,8 @@ block settings
 								input#y-border.form__input.input--switch&attributes({
 									type: "text",
 									value: "12",
-									name: "yBorder"
+									name: "yBorder",
+									disabled: "true"
 								})
 								.switch__controls
 									button.btn--up.js-switch-border(data-border="y-b-up") Больше
@@ -103,7 +104,8 @@ block settings
 								input#x-border.form__input.input--switch&attributes({
 									type: "text",
 									value: "12",
-									name: "xBorder"
+									name: "xBorder",
+									disabled: "true"
 								})
 								.switch__controls
 									button.btn--up.js-switch-border(data-border="x-b-up") Больше
