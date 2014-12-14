@@ -43,23 +43,34 @@ var selectType = {
 	show: function (e) {
 		e.preventDefault();
 
-		var $target = $(e.currentTarget);
+		var $target = $(e.currentTarget),
+			cont = selectType.container;
 
 		$target.addClass('btn--active')
 			.siblings().removeClass('btn--active');
 
 		if ($target.data('type') === 'use-four') {
-			selectType.container
+			cont
 				.find('.block--borders')
 				.removeClass('block--hidden')
+					.find('.input--switch')
+					.removeAttr( 'disabled' )
+				.end()
 				.siblings()
-				.addClass('block--hidden');
+				.addClass('block--hidden')
+					.find('.input--switch')
+					.attr('disabled', 'disabled');
 		} else {
-			selectType.container
+			cont
 				.find('.block--coordinates')
 				.removeClass('block--hidden')
+					.find('.input--switch')
+					.removeAttr( 'disabled' )
+				.end()
 				.siblings()
-				.addClass('block--hidden');
+				.addClass('block--hidden')
+					.find('.input--switch')
+					.attr('disabled', 'disabled');
 		}
 	},
 	listener: function (obj) {
@@ -122,8 +133,6 @@ var setOpacity = {
 						.css({
 							width: defaultVal + '%'
 						});
-
-				console.log(ui,e)
 
 				$('#opacity-value').attr('value', defaultVal);
 				setOpacity.changeOpacity(defaultVal);
