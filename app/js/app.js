@@ -1,3 +1,4 @@
+"use strict";
 //Share buttons Module
 var showShare = {
 	close: function (close) {
