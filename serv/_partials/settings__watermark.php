@@ -1,4 +1,3 @@
-                <!--Настройки для одного вотермарка -->
                 <div class="positioning__block block--coordinates">
                   <div class="positioning__visual">
                     <!--Визуальное отображение расположения вотермарка-->

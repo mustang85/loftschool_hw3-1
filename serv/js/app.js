@@ -42,23 +42,34 @@ var selectType = {
 	show: function (e) {
 		e.preventDefault();
 
-		var $target = $(e.currentTarget);
+		var $target = $(e.currentTarget),
+			cont = selectType.container;
 
 		$target.addClass('btn--active')
 			.siblings().removeClass('btn--active');
 
 		if ($target.data('type') === 'use-four') {
-			selectType.container
+			cont
 				.find('.block--borders')
 				.removeClass('block--hidden')
+					.find('.input--switch')
+					.removeAttr( 'disabled' )
+				.end()
 				.siblings()
-				.addClass('block--hidden');
+				.addClass('block--hidden')
+					.find('.input--switch')
+					.attr('disabled', 'disabled');
 		} else {
-			selectType.container
+			cont
 				.find('.block--coordinates')
 				.removeClass('block--hidden')
+					.find('.input--switch')
+					.removeAttr( 'disabled' )
+				.end()
 				.siblings()
-				.addClass('block--hidden');
+				.addClass('block--hidden')
+					.find('.input--switch')
+					.attr('disabled', 'disabled');
 		}
 	},
 	listener: function (obj) {
@@ -85,6 +96,10 @@ var uploadImages = {
 			target = (data.type === 'original') ? '.block__root' : '.block__watermark';
 
 		$(target).append(img);
+
+		//Cache uploaded images
+		uploadImages.image = (data.type === 'original') ? data.path : uploadImages.image;
+		uploadImages.wm = (data.type === 'watermark') ? data.path : uploadImages.wm;
 
 		if (data.type === 'watermark') {
 			setOpacity.changeOpacity();
@@ -217,11 +232,46 @@ var setOpacity = {
 
 //Reset form or Download
 var doneForm = {
+	downloadImg: function (e) {
+		e.preventDefault();
+
+		var img = uploadImages.image || '',
+			wm = uploadImages.wm || '';
+
+		if ( img.length > 0 && wm.length > 0 ) {
+
+			var val = $(this).serialize() + '&image=' + img.replace('/', '^') + '&wm=' + wm.replace('/', '^');
+
+			console.log(val);
+
+			var jqxhr = $.ajax({
+				url: 'handlers/download.php',
+				type: "POST",
+				data: val,
+				cache: true,
+				dataType: 'json'
+			}),
+			success = function (data) {
+				console.log('ok', data);
+			},
+			failure = function (data) {
+				console.log('err', data);
+			};
+
+			jqxhr.done(success);
+			jqxhr.fail(failure);
+		} else {
+			console.log(img, wm);
+			console.log('нет изображений');
+			return false;
+		}
+	},
 	resetForm: function () {
 		setOpacity.resetOpacity();
 	},
 	listener: function () {
 		this.form.on('click', '.btn--reset', this.resetForm);
+		this.form.on('submit', this.downloadImg);
 	},
 	init: function ($form) {
 		this.form = $form;

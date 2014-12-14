@@ -45,14 +45,14 @@
                   </div>
                   <div class="positioning__switch">
                     <div class="switch__block block--vertical">
-                      <input id="y-border" class="form__input input--switch" type="text" value="12" name="yBorder">
+                      <input id="y-border" class="form__input input--switch" type="text" value="12" name="yBorder" disabled="true">
                       <div class="switch__controls">
                         <button data-border="y-b-up" class="btn--up js-switch-border">Больше</button>
                         <button data-border="y-b-down" class="btn--down js-switch-border">Меньше</button>
                       </div>
                     </div>
                     <div class="switch__block block--horizontal">
-                      <input id="x-border" class="form__input input--switch" type="text" value="12" name="xBorder">
+                      <input id="x-border" class="form__input input--switch" type="text" value="12" name="xBorder" disabled="true">
                       <div class="switch__controls">
                         <button data-border="x-b-up" class="btn--up js-switch-border">Больше</button>
                         <button data-border="x-b-down" class="btn--down js-switch-border">Меньше</button>

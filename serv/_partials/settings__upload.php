@@ -1,4 +1,4 @@
-          <form class="settings__form form--upload" action="handlers/upload.php" method="post" enctype="multipart/form-data">
+          <form class="form--upload" action="handlers/upload.php" method="post" enctype="multipart/form-data">
             <fieldset class="form__block block--noborder">
               <div class="form__upload-block">
                 <label class="p">Исходное изображение</label>
@@ -15,7 +15,7 @@
               </div>
             </fieldset>
           </form>
-          <form class="settings__form form--upload" action="handlers/upload.php" method="post" enctype="multipart/form-data">
+          <form class="form--upload" action="handlers/upload.php" method="post" enctype="multipart/form-data">
             <fieldset class="form__block">		
               <div class="form__upload-block">
                 <label class="p">Водяной знак </label>
