@@ -1,7 +1,10 @@
                 <div class="positioning__block block--borders block--hidden">
                   <div class="positioning__visual">
                     <!--Визуальное отображение расположения вотермарка (расстояние между границами)-->
-                    <div class="visual__borders"><span class="border__line line--x">горизонтальная линия</span><span class="border__line line--y">вертикальная линия</span></div>
+                    <div class="visual__borders">
+                      <span class="border__line line--x">горизонтальная линия</span>
+                      <span class="border__line line--y">вертикальная линия</span>
+                    </div>
                     <table class="visual__box">
                       <tbody class="box__body">
                         <tr class="box__row">

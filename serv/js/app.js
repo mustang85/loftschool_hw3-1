@@ -152,15 +152,27 @@ var setOpacity = {
 		watermark: '.watermark__image',
 		image: '.root__image'
 	},
+	resetOpacity: function () {
+		//Change Opacity Value to Default one
+		this.op = 52;
+		//Change Opacity Value on Watermark
+		this.changeOpacity(this.op);
+		//Return handle to default position
+		$('.slider-range').slider('value', this.op);
+		//Return lower to default position
+		$('.slider--lower').css({
+			width: this.op + '%'
+		});
+		//Set hidden input value to defauklt
+		$('#opacity-value').attr('value', this.op);
+	},
 	changeOpacity: function (val) {
 		var wm = this.elems.watermark;
 
 		val = val || this.op;
 
-		this.op = val/100;
-
 		$(wm).css({
-			opacity: this.op
+			opacity: val/100
 		});
 	},
 	styleRange: function () {
@@ -181,13 +193,15 @@ var setOpacity = {
 				$('#opacity-value').attr('value', setOpacity.op);
 			},
 			slide: function(e, ui) {
+				setOpacity.op = ui.value;
+
 				$('.slider--lower').css({
-					width: ui.value + '%'
+					width: setOpacity.op + '%'
 				});
 
-				$('#opacity-value').attr('value', ui.value);
+				$('#opacity-value').attr('value', setOpacity.op);
 
-				setOpacity.changeOpacity(ui.value);
+				setOpacity.changeOpacity(setOpacity.op);
 			} 
 		});
 
@@ -202,7 +216,18 @@ var setOpacity = {
 };
 
 //Reset form or Download
-var doneForm = {};
+var doneForm = {
+	resetForm: function () {
+		setOpacity.resetOpacity();
+	},
+	listener: function () {
+		this.form.on('click', '.btn--reset', this.resetForm);
+	},
+	init: function ($form) {
+		this.form = $form;
+		this.listener();
+	}
+};
 
 $(function() {
 	console.info('start app');
@@ -211,4 +236,5 @@ $(function() {
 	selectType.init( $('.application-types') );
 	uploadImages.init( $('.input--upload') );
 	setOpacity.init( $('.slider-range') );
+	doneForm.init( $('.settings__form') );
 });

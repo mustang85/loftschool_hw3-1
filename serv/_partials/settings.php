@@ -5,7 +5,7 @@
           <?php
             include 'settings__upload.php';
           ?>
-          <form class="settings__form" action="#" method="post">
+          <form class="settings__form" action="handlers/download.php" method="post">
             <fieldset class="form__block">
               <div class="block__header">
                 <h3 class="p">Положение</h3>
