@@ -86,6 +86,10 @@ gulp.task('sass', ['fonts'], function () {
 //JS
 gulp.task('js', function() {
 	return gulp.src(paths.js)
+		.pipe(pls.jshint())
+		.pipe(pls.jshint.reporter('jshint-stylish'))
+		.pipe(gulp.dest('app/js'))
+		.pipe(pls.uglify())
 		.pipe(gulp.dest('dist/js'))
 		.pipe(pls.notify('JS compile complete!'));
 });

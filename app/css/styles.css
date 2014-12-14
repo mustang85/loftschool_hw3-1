@@ -683,11 +683,20 @@ p
 
     display: table-cell;
 
-    width: 631px; 
-    height: 514px;
+    width: inherit;
+    height: inherit;
 
-    text-align: center;
+    text-align: center; 
     vertical-align: middle;
+}
+
+.root__image
+{
+    display: inline-block;
+
+    max-width: 100%;
+
+    vertical-align: bottom;
 }
 
 .watermark__image
@@ -699,7 +708,12 @@ p
 
 .result__block .block__watermark
 {
-    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
 }
 .result-block--four .block__watermark
 {
