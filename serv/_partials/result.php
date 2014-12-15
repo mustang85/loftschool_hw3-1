@@ -8,8 +8,6 @@
               <div class="block__watermark">
                 <!-- <img src="images/watermark.png" alt="Вотермарк" class="watermark__image"> -->
               </div>
-              <!--Если вотермарков должно быть много-->
-              <div style="display: none;" class="block__watermark watermark--fill-in"><img src="images/watermark.png" alt="Вотермарк" class="watermark__image"></div>
               <!-- <img src="images/root.jpg" alt="Основная картинка" class="root__image"> -->
             </div>
           </div>

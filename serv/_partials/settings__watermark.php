@@ -42,7 +42,7 @@
                   <div class="positioning__switch">
                     <div class="switch__block">
                       <p class="p p--big">X</p>
-                      <input id="x-cord" class="form__input input--switch" type="text" name="xValue" value="0">
+                      <input id="x-cord" class="form__input input--switch" type="text" name="xValue" value="10">
                       <div class="switch__controls">
                         <button data-direction="x-up" class="btn--up js-move-obj">Больше</button>
                         <button data-direction="x-down" class="btn--down js-move-obj">Меньше</button>
@@ -50,7 +50,7 @@
                     </div>
                     <div class="switch__block">
                       <p class="p p--big">Y</p>
-                      <input id="y-cord" class="form__input input--switch" type="text" name="yValue" value="0">
+                      <input id="y-cord" class="form__input input--switch" type="text" name="yValue" value="10">
                       <div class="switch__controls">
                         <button data-direction="y-up" class="btn--up js-move-obj">Больше</button>
                         <button data-direction="y-down" class="btn--down js-move-obj">Меньше	</button>
