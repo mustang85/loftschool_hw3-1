@@ -3,6 +3,14 @@
 	$target_wm = $_SERVER["DOCUMENT_ROOT"].'wmapp/'.str_replace('^', '/', $_POST['wm']);
 	$opacity = $_POST['opacity'];
 
+	if (isset($_POST['xValue']) && isset($_POST['yValue'])) {
+		$x = $_POST['xValue'];
+		$y = $_POST['yValue'];
+	} else if (isset($_POST['xBorder']) && isset($_POST['yBorder'])) {
+		$xB = $_POST['xBorder'];
+		$yB = $_POST['yBorder'];
+	}
+
 	//Create Image
 	if (exif_imagetype($target_image) === IMAGETYPE_JPEG) {
 		$img = imagecreatefromjpeg($target_image);
@@ -16,11 +24,14 @@
 		$wm = imagecreatefrompng($target_wm);
 	}
 
-	imagecopy($img, $wm, 0, 0, 0, 0, imagesx($wm), imagesy($wm));
+	imagealphablending($wm, true); 
+	imagesavealpha($wm, true);
+
+	imagecopymerge($img, $wm, 0, 0, -$x, -$y, imagesx($wm), imagesy($wm), $opacity);
 
 	// Вывод и освобождение памяти
-	header('Content-type: image/png');
-	header('Content-Disposition: attachment; filename=generated.png');
+	// header('Content-type: image/png');
+	// header('Content-Disposition: attachment; filename=generated.png');
 	imagepng($img, $_SERVER["DOCUMENT_ROOT"].'wmapp/generated/generated.png');
 	imagedestroy($img);
 

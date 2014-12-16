@@ -1,9 +1,10 @@
 //Share buttons Module
 var showShare = {
+	//Close Social Buttons Block
 	close: function (close) {
-		var gc = showShare.gContainer, //Page COntainer
+		var gc = showShare.gContainer, //Page Container
 			btn = showShare.obj.find('.js-show-share'), //Button with Thumb up
-			timer;
+			timer; //Timer to close automatically after 1s
 
 		// if ( gc.hasClass('show--share') ) {
 		// 	timer = setTimeout(function () {
@@ -11,6 +12,7 @@ var showShare = {
 		// 	}, 2500);
 		// }
 	},
+	//Show Buttons Block (now it is show/hide)
 	show: function () {
 		var gc = showShare.gContainer; //Page Container
 		
@@ -18,12 +20,14 @@ var showShare = {
 
 		return false;
 	},
+	//Listen to Evenets on Block
 	listener: function (obj, container) {
 		obj.on('click', '.js-show-share', showShare.show);
 		container.on('mouseleave', function () {
 			showShare.close(true);
 		});
 	},
+	//Init Function for Socials Block
 	init: function ($object) {
 		//Cache DOM elements
 		this.obj = $object; //Button with thumb up
@@ -39,7 +43,9 @@ var showShare = {
 
 //Select type of watermark fill-in Module
 var selectType = {
+	//Switch Type
 	show: function (e) {
+		//Prevents Default Behaviour
 		e.preventDefault();
 
 		var $target = $(e.currentTarget),
@@ -48,6 +54,9 @@ var selectType = {
 		$target.addClass('btn--active')
 			.siblings().removeClass('btn--active');
 
+		//The main idea is to add or remove 'disabled'
+		//Attribute to inputs. This lets us to send
+		//Only data that we have chosen
 		if ($target.data('type') === 'use-four') {
 			cont
 				.find('.block--borders')
@@ -72,14 +81,17 @@ var selectType = {
 					.attr('disabled', 'disabled');
 		}
 	},
+	//Listener
 	listener: function (obj) {
 		obj.on('click', '.js-switch-type', selectType.show)
 	},
+	//Init Module
 	init: function ($object) {
-		this.obj = $object,
-		this.container = this.obj.closest('.form__block');
+		//Cache DOM objects
+		this.obj = $object, //Cache switcher
+		this.container = this.obj.closest('.form__block'); //Cache container
 
-		this.listener( this.obj );
+		this.listener( this.obj ); //Start Listen to Events on Buttons
 
 		console.info('listen to type selector');
 	}
@@ -87,24 +99,46 @@ var selectType = {
 
 //Upload Module
 var uploadImages = {
+	//Add Uploaded Images to DOM
 	createElems: function (data) {
-		var img = $('<img />', {
+		//Classes for elements
+		var classes = {
+				img: 'root__image',
+				wm: 'watermark__image'
+			},
+			img = null, //Holder for generated image
+			target = null; //Holder for element where we'll append img
+
+		//Check if we have already created images
+		//If we have - so we just update src value
+		//Else we genereate image and append to target holder
+		if ( data.type === 'original' && $('.' + classes.img).length > 0 ) {
+			$('.' + classes.img).attr('src', data.path);
+		} else if (data.type === 'watermark' && $('.' + classes.wm).length > 0) {
+			$('.' + classes.wm).attr('src', data.path);
+		} else {
+			img = $('<img />', {
 				src: data.path,
-				class: (data.type === 'original') ? 'root__image' : 'watermark__image',
+				class: (data.type === 'original') ? classes.img : classes.wm,
 				alt: (data.type === 'original') ? 'Основная картинка' : 'Вотермарк'
-			}),
+			});
 			target = (data.type === 'original') ? '.block__root' : '.block__watermark';
 
-		$(target).append(img);
+			$(target).append(img);
+		}
 
 		//Cache uploaded images
 		uploadImages.image = (data.type === 'original') ? data.path : uploadImages.image;
 		uploadImages.wm = (data.type === 'watermark') ? data.path : uploadImages.wm;
 
+		//If we upload watermark image we need to give it
+		//Appropriate opacity level, that we set with
+		//Opacity slider range
 		if (data.type === 'watermark') {
 			setOpacity.changeOpacity();
 		}
 	},
+	//Generate AJAX response to upload file
 	loadFile: function (e) {
 		e.preventDefault();
 
@@ -130,6 +164,7 @@ var uploadImages = {
 		jqxhr.done(success);
 		jqxhr.fail(failure);
 	},
+	//Add filename to styled inputs
 	showFileName: function (e) {
 		var $input = $(e.currentTarget),
 			fileName = $input.val().replace(/\\/g, '/').replace(/.*\//, ''),
@@ -146,15 +181,17 @@ var uploadImages = {
 				.addClass('loaded')
 				.html(fileName);
 	},
+	//Listen for uploading
 	listener: function (obj, form) {
 		obj.on('change', this.showFileName);
 		form.on('submit', this.loadFile)
 	},
+	//Init MOdule
 	init: function ($input) {
-		this.obj = $input;
-		this.form = $input.closest('.form--upload');
+		this.obj = $input; //Cache inputs
+		this.form = $input.closest('.form--upload'); //Cache forms
 
-		this.listener( this.obj, this.form );
+		this.listener( this.obj, this.form ); //Init listener for Events
 
 		console.info('listen for uploading');
 	}
@@ -163,10 +200,12 @@ var uploadImages = {
 //Opacity slider
 var setOpacity = {
 	op: 52, //Default opacity value
+	//Cache classes for images
 	elems: {
 		watermark: '.watermark__image',
 		image: '.root__image'
 	},
+	//Reset Opacity Value to Default
 	resetOpacity: function () {
 		//Change Opacity Value to Default one
 		this.op = 52;
@@ -181,6 +220,7 @@ var setOpacity = {
 		//Set hidden input value to defauklt
 		$('#opacity-value').attr('value', this.op);
 	},
+	//Function that changes Image opacity Level
 	changeOpacity: function (val) {
 		var wm = this.elems.watermark;
 
@@ -190,6 +230,7 @@ var setOpacity = {
 			opacity: val/100
 		});
 	},
+	//Style Slider Range with jQuery UI
 	styleRange: function () {
 		this.slider.slider({
 			min: 0,
@@ -197,6 +238,7 @@ var setOpacity = {
 			step: 1,
 			value: setOpacity.op,
 			orientation: 'horizontal',
+			//Add darken element after styling main element
 			create: function (e, ui) {
 				$(this)
 					.append(setOpacity.lower)
@@ -207,6 +249,7 @@ var setOpacity = {
 
 				$('#opacity-value').attr('value', setOpacity.op);
 			},
+			//Executes on slide event
 			slide: function(e, ui) {
 				setOpacity.op = ui.value;
 
@@ -222,22 +265,25 @@ var setOpacity = {
 
 		console.info('style opacity');
 	},
+	//Init Module
 	init: function ($slider) {
-		this.slider = $slider;
-		this.lower = $('<span />', {'class': 'slider--lower'});
+		this.slider = $slider; //Slide element
+		this.lower = $('<span />', {'class': 'slider--lower'}); //Create darken element
 
-		this.styleRange();
+		this.styleRange(); //Style our this.slider element
 	}
 };
 
 //Reset form or Download
 var doneForm = {
+	//DOwnload generated Image with Watermark
 	downloadImg: function (e) {
 		e.preventDefault();
 
 		var img = uploadImages.image || '',
 			wm = uploadImages.wm || '';
 
+		//If we uploaded Images we can send query to generate one image
 		if ( img.length > 0 && wm.length > 0 ) {
 
 			var val = $(this).serialize() + '&image=' + img.replace('/', '^') + '&wm=' + wm.replace('/', '^');
@@ -253,6 +299,14 @@ var doneForm = {
 			}),
 			success = function (data) {
 				console.log('ok', data);
+
+				// $('body')
+				// 	.append($('<a />', {
+				// 		href: data.link,
+				// 		class: 'js-download-result',
+				// 		download: 'true'
+				// 	}))
+				// 	.find('.js-download-result').trigger('click');
 			},
 			failure = function (data) {
 				console.log('err', data);
@@ -266,16 +320,19 @@ var doneForm = {
 			return false;
 		}
 	},
+	//Reset All values to Default
 	resetForm: function () {
 		setOpacity.resetOpacity();
 	},
+	//Listen on Button clicks
 	listener: function () {
 		this.form.on('click', '.btn--reset', this.resetForm);
 		this.form.on('submit', this.downloadImg);
 	},
+	//Init Module
 	init: function ($form) {
-		this.form = $form;
-		this.listener();
+		this.form = $form; //Cache form
+		this.listener(); //Start listening
 	}
 };
 
