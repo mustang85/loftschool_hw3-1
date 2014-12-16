@@ -5,7 +5,7 @@
 <h2>Рабочая группа</h2>
 <ul>
   <li>Черепов Антон (<a href="https://github.com/chekit/">chekit</a>)</li>
-  <li>Сергей Ямпольский (<a href="https://github.com/serjyamp">serjyamp</a>)</li>
+  <li><strike>Сергей Ямпольский (<a href="https://github.com/serjyamp">serjyamp</a>)</strike></li>
   <li>Николай Журавлёв (<a href="https://github.com/verbaux">verbaux</a>)</li>
   <li>Гранев Кирилл (<a href="https://github.com/mustang85">mustang85</a>)</li>
 </ul>
@@ -13,6 +13,8 @@
 <dl>
   <dt><code>Вёрстка</code><dt>
   <dd>Николай Журавлёв, Гранев Кирилл, Черепов Антон</dd>
+  <dt><code>PHP</code><dt>
+  <dd>Черепов Антон</dd>
 </dl>
 <h2>Структура проекта</h2>
 <h3>Дирректоррии</h3>
