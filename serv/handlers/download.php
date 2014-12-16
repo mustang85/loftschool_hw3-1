@@ -28,5 +28,5 @@
 		'link' => 'generated/generated.png'
 	);
 
-	echo json_encode($result);
+	echo $result);
 ?>
