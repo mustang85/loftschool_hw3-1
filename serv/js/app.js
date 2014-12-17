@@ -293,12 +293,15 @@ var doneForm = (function() {
 		//If we uploaded Images we can send query to generate one image
 		if ( img.length > 0 && wm.length > 0 ) {
 
-			var val = $(e.target).serialize() + '&image=' + img.replace('/', '^') + '&wm=' + wm.replace('/', '^');
+			var val = null, //POST params
+				jqxhr = null; //Ajax Request
+
+			val = $(e.target).serialize() + '&image=' + img.replace('/', '^') + '&wm=' + wm.replace('/', '^');
 
 //TODO: DELETE AFTER ADD PARTICIPANTS CODE
 			console.log(val);
 
-			var jqxhr = $.ajax({
+			jqxhr = $.ajax({
 				url: paths.download,
 				type: "POST",
 				data: val,
