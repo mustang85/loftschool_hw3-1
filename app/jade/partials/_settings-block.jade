@@ -1,6 +1,6 @@
 block settings
 	.generator__settings
-		h2.h2 Настройки
+		h2.h2.js-settings-name Настройки
 		//Отправляем/получаем данные через ajax
 		form.form--upload&attributes({
 			action: "#",
@@ -9,7 +9,7 @@ block settings
 		})
 			fieldset.form__block.block--noborder
 				.form__upload-block
-					label.p Исходное изображение
+					label.p.js-image-upload-name Исходное изображение
 					.upload-block__wrap
 						//Стилизуем загрузку
 						.upload-block__style
@@ -30,7 +30,7 @@ block settings
 		})
 			fieldset.form__block		
 				.form__upload-block
-					label.p Водяной знак 
+					label.p.js-wm-upload-name Водяной знак 
 					.upload-block__wrap
 						//Стилизуем загрузку
 						.upload-block__style
@@ -50,7 +50,7 @@ block settings
 		})
 			fieldset.form__block
 				.block__header
-					h3.p Положение
+					h3.p.js-position-name Положение
 					//Выбор типа наложения, .btn--active show active tab
 					.application-types
 						button.btn--four-marks.js-switch-type(data-type="use-four") 4 Вотермарка
@@ -112,10 +112,10 @@ block settings
 									button.btn--down.js-switch-border(data-border="x-b-down") Меньше
 			fieldset.form__block
 				.block__header
-					p.p Прозрачность
+					p.p.js-opacity-name Прозрачность
 					.slider-range
 					input#opacity-value.opacity-val(type="text", name="opacity", value="80", readonly, hidden)
 					//- input#opacity-range.opacity__range(type = "range", name="opacity", value="80")		
 			fieldset.form__block.block--noborder
-				button.btn--reset(type="reset") Сброс
-				button.btn--submit(type="submit") Скачать
+				button.btn--reset.js-reset-name(type="reset") Сброс
+				button.btn--submit.js-download-name(type="submit") Скачать
