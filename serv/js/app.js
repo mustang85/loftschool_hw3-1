@@ -132,7 +132,7 @@ var uploadImages = {
 		uploadImages.wm = (data.type === 'watermark') ? data.path : uploadImages.wm;
 
 		//If we upload watermark image we need to give it
-		//Appropriate opacity level, that we set with
+		//Appropriate opacity level, that we have set with
 		//Opacity slider range
 		if (data.type === 'watermark') {
 			setOpacity.changeOpacity();
