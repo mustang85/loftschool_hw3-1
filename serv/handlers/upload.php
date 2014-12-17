@@ -1,5 +1,7 @@
 <?php
-	$target_dir = $_SERVER["DOCUMENT_ROOT"].'wmapp/uploads/';
+	include_once '../config.php';
+	
+	$target_dir = $path.$uploads;
 	$uploadOk = 1;
 	$type = (array_key_exists('original', $_FILES)) ? 'original' : 'watermark';
 
@@ -23,7 +25,7 @@
 		);
 	}
 
-	//If the file size less than 700kb
+	//If the file size more than 700kb
 	if ($_FILES[$type]['size'] > 700000) {
 		$uploadOk = 0;
 		$result = array(

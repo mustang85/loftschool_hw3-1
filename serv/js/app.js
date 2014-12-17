@@ -274,10 +274,17 @@ var setOpacity = {
 	}
 };
 
-//Reset form or Download
-var doneForm = {
-	//DOwnload generated Image with Watermark
-	downloadImg: function (e) {
+//Reset form or Download (Made it with private variables to keep pathes in secret)
+var doneForm = (function() {
+	//Paths
+	var paths = {
+		download: 'handlers/download.php',
+		getfile: 'handlers/getfile.php'
+	};
+
+	//Download generated Image with Watermark
+	//It gets Event object from click on submit button
+	var downloadImg = function (e) {
 		e.preventDefault();
 
 		var img = uploadImages.image || '',
@@ -286,30 +293,24 @@ var doneForm = {
 		//If we uploaded Images we can send query to generate one image
 		if ( img.length > 0 && wm.length > 0 ) {
 
-			var val = $(this).serialize() + '&image=' + img.replace('/', '^') + '&wm=' + wm.replace('/', '^');
+			var val = $(e.target).serialize() + '&image=' + img.replace('/', '^') + '&wm=' + wm.replace('/', '^');
 
+//TODO: DELETE AFTER ADD PARTICIPANTS CODE
 			console.log(val);
 
 			var jqxhr = $.ajax({
-				url: 'handlers/download.php',
+				url: paths.download,
 				type: "POST",
 				data: val,
 				cache: true,
 				dataType: 'json'
 			}),
 			success = function (data) {
-				console.log('ok', data);
-
-				// $('body')
-				// 	.append($('<a />', {
-				// 		href: data.link,
-				// 		class: 'js-download-result',
-				// 		download: 'true'
-				// 	}))
-				// 	.find('.js-download-result').trigger('click');
+				console.info('file generated');
+				window.location = paths.getfile + '?link=' + data.link;
 			},
 			failure = function (data) {
-				console.log('err', data);
+				console.warn('can\'t generate file', data);
 			};
 
 			jqxhr.done(success);
@@ -319,22 +320,26 @@ var doneForm = {
 			console.log('нет изображений');
 			return false;
 		}
-	},
-	//Reset All values to Default
-	resetForm: function () {
+	};
+
+ 	//Reset All values to Default
+	var resetForm = function () {
 		setOpacity.resetOpacity();
-	},
-	//Listen on Button clicks
-	listener: function () {
-		this.form.on('click', '.btn--reset', this.resetForm);
-		this.form.on('submit', this.downloadImg);
-	},
-	//Init Module
-	init: function ($form) {
-		this.form = $form; //Cache form
-		this.listener(); //Start listening
+	};
+
+	return {
+		//Listen on Button clicks
+		listener: function ($form) {
+			$form.on('click', '.btn--reset', resetForm);
+			$form.on('submit', downloadImg);
+		},
+		//Init Module
+		init: function ($form) {
+			// this.form = $form; //Cache form
+			this.listener($form); //Start listening
+		}
 	}
-};
+})();
 
 $(function() {
 	console.info('start app');

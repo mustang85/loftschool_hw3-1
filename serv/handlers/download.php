@@ -1,6 +1,8 @@
 <?php 
-	$target_image = $_SERVER["DOCUMENT_ROOT"].'wmapp/'.str_replace('^', '/', $_POST['image']);
-	$target_wm = $_SERVER["DOCUMENT_ROOT"].'wmapp/'.str_replace('^', '/', $_POST['wm']);
+	include_once '../config.php';
+
+	$target_image = $path.str_replace('^', '/', $_POST['image']);
+	$target_wm = $path.str_replace('^', '/', $_POST['wm']);
 	$opacity = $_POST['opacity'];
 
 	if (isset($_POST['xValue']) && isset($_POST['yValue'])) {
@@ -29,14 +31,13 @@
 
 	imagecopymerge($img, $wm, 0, 0, -$x, -$y, imagesx($wm), imagesy($wm), $opacity);
 
-	// Вывод и освобождение памяти
-	// header('Content-type: image/png');
-	// header('Content-Disposition: attachment; filename=generated.png');
-	imagepng($img, $_SERVER["DOCUMENT_ROOT"].'wmapp/generated/generated.png');
+	$flpath = $path.$created; //File Path to generated image
+
+	imagejpeg($img, $flpath);
 	imagedestroy($img);
 
 	$result = array(
-		'link' => 'generated/generated.png'
+		'link' => $created
 	);
 
 	echo $result);
