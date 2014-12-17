@@ -1,7 +1,7 @@
           <form class="form--upload" action="handlers/upload.php" method="post" enctype="multipart/form-data">
             <fieldset class="form__block block--noborder">
               <div class="form__upload-block">
-                <label class="p">Исходное изображение</label>
+                <label class="p js-image-upload-name">Исходное изображение</label>
                 <div class="upload-block__wrap">
                   <!--Стилизуем загрузку-->
                   <div class="upload-block__style">
@@ -18,7 +18,7 @@
           <form class="form--upload" action="handlers/upload.php" method="post" enctype="multipart/form-data">
             <fieldset class="form__block">		
               <div class="form__upload-block">
-                <label class="p">Водяной знак </label>
+                <label class="p js-wm-upload-name">Водяной знак </label>
                 <div class="upload-block__wrap">
                   <!--Стилизуем загрузку-->
                   <div class="upload-block__style">

@@ -1,3 +1,50 @@
+'use strict';
+
+var ruEng = (function () {
+	var langs = {
+		rus: {
+			'js-app-name' 		   : 'Генератор водяных знаков',
+			'js-settings-name' 	   : 'Настройки',
+			'js-image-upload-name' : 'Исходное изображение',
+			'js-wm-upload-name'    : 'Водяной знак',
+			'js-position-name'	   : 'Положение',
+			'js-opacity-name'	   : 'Прозрачность',
+			'js-reset-name' 	   : 'Сброс',
+			'js-download-name'	   : 'Скачать'
+		},
+		eng: {
+			'js-app-name'	   : 'Watermarks generator',
+			'js-settings-name' : 'Settings',
+			'js-image-upload-name'  : 'Original image',
+			'js-wm-upload-name'	   : 'Watermark',
+			'js-position-name' : 'Place',
+			'js-opacity-name'  : 'Opacity',
+			'js-reset-name'	   : 'Reset',
+			'js-download-name' : 'Download'
+		}
+	};
+
+	var changeLang = function (e) {
+		e.preventDefault();
+
+		var lang = $(e.currentTarget).data('lang'),
+			l = langs[lang];
+
+		for (var selector in l) {
+			$('.' + selector).html( l[selector] );
+		}
+	};
+
+	return {
+		listener: function ($block) {
+			$block.on('click', '.globals__btn', changeLang);
+		},
+		init: function ($block) {
+			this.listener($block);
+		}
+	}
+})();
+
 //Share buttons Module
 var showShare = {
 	//Close Social Buttons Block
@@ -352,4 +399,5 @@ $(function() {
 	uploadImages.init( $('.input--upload') );
 	setOpacity.init( $('.slider-range') );
 	doneForm.init( $('.settings__form') );
+	ruEng.init( $('.globals__lang') );
 });

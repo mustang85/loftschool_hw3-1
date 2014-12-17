@@ -6,8 +6,8 @@
         <!--Choose Language-->
         <ul class="globals__lang">
           <li class="lang__item">
-            <button class="globals__btn">Рус</button>
-            <button class="globals__btn">Eng</button>
+            <button class="globals__btn" data-lang="rus">Рус</button>
+            <button class="globals__btn" data-lang="eng">Eng</button>
           </li>
         </ul>
         <!--Share-->

@@ -1,6 +1,6 @@
         <!--Result Block-->
         <div class="generator__result">
-          <h1 class="h1">Генератор водяных знаков</h1>
+          <h1 class="h1 js-app-name">Генератор водяных знаков</h1>
           <!--чтобы показать таблицу из 4 элементов, добавь к result__block класс result-block--four-->
           <div class="result__block">
             <div class="block__root">
