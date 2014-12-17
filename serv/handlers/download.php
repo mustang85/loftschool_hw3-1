@@ -40,5 +40,5 @@
 		'link' => $created
 	);
 
-	echo $result);
+	echo json_encode($result);
 ?>

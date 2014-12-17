@@ -341,8 +341,9 @@ var doneForm = (function() {
 		if ( img.length > 0 && wm.length > 0 ) {
 
 			var val = null, //POST params
-				jqxhr = null; //Ajax Request
-
+				jqxhr = null, //Ajax Request
+				success = null, //hold function when we get positive response
+				failure = null; //holds function if we get error
 			val = $(e.target).serialize() + '&image=' + img.replace('/', '^') + '&wm=' + wm.replace('/', '^');
 
 //TODO: DELETE AFTER ADD PARTICIPANTS CODE
@@ -354,11 +355,11 @@ var doneForm = (function() {
 				data: val,
 				cache: true,
 				dataType: 'json'
-			}),
+			});
 			success = function (data) {
 				console.info('file generated');
 				window.location = paths.getfile + '?link=' + data.link;
-			},
+			};
 			failure = function (data) {
 				console.warn('can\'t generate file', data);
 			};
