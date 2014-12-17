@@ -26,8 +26,8 @@
         <!--Choose Language-->
         <ul class="globals__lang">
           <li class="lang__item">
-            <button class="globals__btn">Рус</button>
-            <button class="globals__btn">Eng</button>
+            <button data-lang="rus" class="globals__btn">Рус</button>
+            <button data-lang="eng" class="globals__btn">Eng</button>
           </li>
         </ul>
         <!--Share-->
@@ -44,7 +44,7 @@
       <div class="container__generator">
         <!--Result Block-->
         <div class="generator__result">
-          <h1 class="h1">Генератор водяных знаков</h1>
+          <h1 class="h1 js-app-name">Генератор водяных знаков</h1>
           <!--чтобы показать таблицу из 4 элементов, добавь к result__block класс result-block--four-->
           <div class="result__block">
             <div class="block__root">
@@ -55,12 +55,12 @@
         </div>
         <!--Setting Block-->
         <div class="generator__settings">
-          <h2 class="h2">Настройки</h2>
+          <h2 class="h2 js-settings-name">Настройки</h2>
           <!--Отправляем/получаем данные через ajax-->
           <form class="form--upload" action="#" method="post" enctype="multipart/form-data">
             <fieldset class="form__block block--noborder">
               <div class="form__upload-block">
-                <label class="p">Исходное изображение</label>
+                <label class="p js-image-upload-name">Исходное изображение</label>
                 <div class="upload-block__wrap">
                   <!--Стилизуем загрузку-->
                   <div class="upload-block__style">
@@ -77,7 +77,7 @@
           <form class="form--upload" action="#" method="post" enctype="multipart/form-data">
             <fieldset class="form__block">		
               <div class="form__upload-block">
-                <label class="p">Водяной знак </label>
+                <label class="p js-wm-upload-name">Водяной знак </label>
                 <div class="upload-block__wrap">
                   <!--Стилизуем загрузку-->
                   <div class="upload-block__style">
@@ -94,7 +94,7 @@
           <form class="settings__form" action="#" method="post">
             <fieldset class="form__block">
               <div class="block__header">
-                <h3 class="p">Положение</h3>
+                <h3 class="p js-position-name">Положение</h3>
                 <!--Выбор типа наложения, .btn--active show active tab-->
                 <div class="application-types">
                   <button data-type="use-four" class="btn--four-marks js-switch-type">4 Вотермарка</button>
@@ -226,14 +226,14 @@
             </fieldset>
             <fieldset class="form__block">
               <div class="block__header">
-                <p class="p">Прозрачность</p>
+                <p class="p js-opacity-name">Прозрачность</p>
                 <div class="slider-range"></div>
                 <input id="opacity-value" type="text" name="opacity" value="80" readonly hidden class="opacity-val">
               </div>
             </fieldset>
             <fieldset class="form__block block--noborder">
-              <button type="reset" class="btn--reset">Сброс</button>
-              <button type="submit" class="btn--submit">Скачать</button>
+              <button type="reset" class="btn--reset js-reset-name">Сброс</button>
+              <button type="submit" class="btn--submit js-download-name">Скачать</button>
             </fieldset>
           </form>
         </div>
