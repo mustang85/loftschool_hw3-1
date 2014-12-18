@@ -13,7 +13,7 @@
 <dl>
   <dt><code>Вёрстка</code><dt>
   <dd>Николай Журавлёв, Гранев Кирилл, Черепов Антон</dd>
-  <dt><code>PHP</code><dt>
+  <dt><code>JS</code><dt>
   <dd>Черепов Антон, Гранев Кирилл</dd>
   <dt><code>PHP</code><dt>
   <dd>Черепов Антон</dd>
