@@ -9,3 +9,4 @@ npm-debug.log
 .sublime-gulp.cache
 sublime-gulp.log
 prepros.cfg
+composer.lock
