@@ -5,9 +5,12 @@ var gulp = require('gulp'),
 
 var files = [
 	'./app/sass/**/*',
+	'./app/sass/base/fonts/**/*',
 	'./app/*.html',
 	'./bower.json',
-	'./app/jade/**/*.jade'
+	'./app/jade/**/*.jade',
+	'./app/js/*.js',
+	'app/images/**/*.{png,jpg,gif,svg}'
 ];
 
 gulp.task('browser-sync', function () {
