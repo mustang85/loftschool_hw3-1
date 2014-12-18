@@ -5,7 +5,7 @@ var gulp = require('gulp'),
 	gulpif = require('gulp-if'),
 	cache = require('gulp-cache'),
 	del = require('del'),
-	imagemin = require('gulp-imagemin'),
+	// imagemin = require('gulp-imagemin'),
 	pls = require('gulp-load-plugins')();
 
 //Error Handler
