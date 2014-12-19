@@ -1,14 +1,15 @@
 block settings
 	.generator__settings
-		h2.h2 Настройки
+		h2.h2.js-settings-name Настройки
 		//Отправляем/получаем данные через ajax
-		form.settings__form&attributes({
+		form.form--upload&attributes({
 			action: "#",
-			method: "post"
+			method: "post",
+			enctype: "multipart/form-data"
 		})
-			fieldset.form__block
+			fieldset.form__block.block--noborder
 				.form__upload-block
-					label.p Исходное изображение
+					label.p.js-image-upload-name Исходное изображение
 					.upload-block__wrap
 						//Стилизуем загрузку
 						.upload-block__style
@@ -18,10 +19,18 @@ block settings
 						input.form__input.input--upload&attributes({
 							type: "file",
 							name: "original",
-							id: "file-original"
+							id: "file-original",
+							'data-type': 'original'
 						})
+						input#send-image(type="submit", value="", hidden)
+		form.form--upload&attributes({
+			action: "#",
+			method: "post",
+			enctype: "multipart/form-data"
+		})
+			fieldset.form__block		
 				.form__upload-block
-					label.p Водяной знак 
+					label.p.js-wm-upload-name Водяной знак 
 					.upload-block__wrap
 						//Стилизуем загрузку
 						.upload-block__style
@@ -31,20 +40,27 @@ block settings
 						input.form__input.input--upload&attributes({
 							type: "file",
 							name: "watermark",
-							id: "file-watermark"
+							id: "file-watermark",
+							'data-type': 'watermark'
 						})
+						input#send-wm(type="submit", value="", hidden)
+		form.settings__form&attributes({
+			action: "#",
+			method: "post"
+		})
 			fieldset.form__block
 				.block__header
-					h3.p Положение
+					h3.p.js-position-name Положение
 					//Выбор типа наложения, .btn--active show active tab
 					.application-types
-						button.btn--four-marks.js-use-four 4 Вотермарка
-						button.btn--one-mark.btn--active.js-use-one 1 Вотермарк
+						button.btn--four-marks.js-switch-type(data-type="use-four") 4 Вотермарка
+						button.btn--one-mark.btn--active.js-switch-type(data-type="use-one") 1 Вотермарк
 				.positioning
 					//Настройки для одного вотермарка 
 					.positioning__block.block--coordinates
 						.positioning__visual
 							//Визуальное отображение расположения вотермарка
+							- var firstCell = ['box__cell', 'cell--active']
 							include _visual-box
 						.positioning__switch
 							.switch__block
@@ -71,13 +87,15 @@ block settings
 						.positioning__visual
 							//Визуальное отображение расположения вотермарка (расстояние между границами)
 							include _visual-borders
+							- var firstCell = ['box__cell']
 							include _visual-box
 						.positioning__switch
 							.switch__block.block--vertical
 								input#y-border.form__input.input--switch&attributes({
 									type: "text",
 									value: "12",
-									name: "yBorder"
+									name: "yBorder",
+									disabled: "true"
 								})
 								.switch__controls
 									button.btn--up.js-switch-border(data-border="y-b-up") Больше
@@ -86,16 +104,18 @@ block settings
 								input#x-border.form__input.input--switch&attributes({
 									type: "text",
 									value: "12",
-									name: "xBorder"
+									name: "xBorder",
+									disabled: "true"
 								})
 								.switch__controls
 									button.btn--up.js-switch-border(data-border="x-b-up") Больше
 									button.btn--down.js-switch-border(data-border="x-b-down") Меньше
 			fieldset.form__block
 				.block__header
-					p.p Прозрачность
-					//TODO: Подключить default слайдер из jQuery UI и стилизовать его (http://jqueryui.com/slider/#default) 
-					.opacity__slider				
-			fieldset.form__block.block--send
-				button.btn--reset(type="reset") Сброс
-				button.btn--submit(type="submit") Скачать
+					p.p.js-opacity-name Прозрачность
+					.slider-range
+					input#opacity-value.opacity-val(type="text", name="opacity", value="80", readonly, hidden)
+					//- input#opacity-range.opacity__range(type = "range", name="opacity", value="80")		
+			fieldset.form__block.block--noborder
+				button.btn--reset.js-reset-name(type="reset") Сброс
+				button.btn--submit.js-download-name(type="submit") Скачать

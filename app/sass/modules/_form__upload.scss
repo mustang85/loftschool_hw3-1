@@ -1,9 +1,25 @@
 .form__upload-block {
 	margin: 0 0 24px;
+
+	@at-root .block--noborder & {
+		margin: 0 10px 25px;
+	}
+}
+
+.form--upload {
+	.form__block {
+		padding-bottom: 5px;
+	}
+
+	.block--noborder {
+		margin-top: 0;
+		padding-bottom: 0;
+	}
 }
 
 .upload-block__wrap {
 	position: relative;
+	height: 27px;
 	cursor: pointer;
 }	
 
@@ -34,4 +50,9 @@
 	color: color('input-color');
 	font-size: 1.2rem;
 	line-height: 25px;
+
+	&.loaded {
+		color: color('deep-blue');
+		font-weight: bold;
+	}
 }

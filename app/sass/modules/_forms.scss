@@ -2,7 +2,7 @@
 	position: relative;
 	margin-bottom: 15px;
 	border-bottom: 1px solid color('red');
-	padding: 0 20px 15px;
+	padding: 0 20px 30px;
 
 	&:after {
 		position: absolute;
@@ -26,6 +26,17 @@
 		border-right: 9px solid transparent;
 		border-top: 10px solid color('light-grey');
 		content: "";
+	}
+
+	&.block--noborder {
+		margin: 45px 0 0;
+		padding: 0 10px;
+		border: none;
+
+		&:after,
+		&:before {
+			display: none;
+		}
 	}
 }
 
