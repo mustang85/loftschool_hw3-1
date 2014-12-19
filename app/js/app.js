@@ -204,6 +204,263 @@ var setOpacity = {
 	}
 };
 
+
+/* module movement and positioning of votermark */
+var posWatermarkOne = {
+	// property module
+	watermark : $('.one__watermark'),
+	switch_controls: $('.switch__controls'),
+	switch_buttons: $('.switch__controls button'),
+	switchInputX: $('#x-cord'),
+	switchInputY: $('#y-cord'),
+	btnUpX: $(this.switchInputX)
+				.closest('.switch__block')
+				.find('.btn--up'),
+	btnUpY: $(this.switchInputY)
+				.closest('.switch__block')
+				.find('.btn--up'),				
+	step: 10,
+	maxCoordX: 440,
+	minCoordX: 0,
+	maxChoiceX: 440,
+	maxCoordY: 310,
+	minCoordY: 0,
+	maxChoiceY: 310,
+	residueY: 5,
+	moveSpeed: 100,
+
+	// init module, set $('.visual__box')
+	init: function (visual__box) {
+		console.info('start posWatermarkOne');
+		this.vBox = visual__box;
+		this.listener(this.vBox);
+
+		posWatermarkOne.watermarkDrag();
+
+	}, 
+
+	// associate events to move the grid and 
+	// connect events for selection buttons
+	listener: function (obj) {
+		var $obj = obj.find('.js-set-cord'),
+			switch_buttons = posWatermarkOne.switch_buttons;
+
+		$obj.on('click', posWatermarkOne.moveOnGridWatermark);
+		switch_buttons.on('click', posWatermarkOne.identifyAxis);
+	},
+
+	// movement votermark grid
+	moveOnGridWatermark: function (e) {
+		e.preventDefault();
+
+
+		var $target = $(e.currentTarget),
+			posX = $target.data().cordX,
+			posY = $target.data().cordY,
+			watermark = posWatermarkOne.watermark;
+
+		watermark
+				.animate({
+					'left': posX + "px",
+					'top': posY + "px"
+				}, posWatermarkOne.moveSpeed);
+
+		$('.box__cell').removeClass('cell--active');
+		
+		$target
+				.closest('.box__cell')
+				.addClass('cell--active');
+
+		posWatermarkOne.switchInputX.val(posX);
+		posWatermarkOne.switchInputY.val(posY);
+	},
+
+	// returns the current position votermark
+	getCoordWatermark: function () {
+		var position = {
+			x: parseInt( posWatermarkOne.watermark.css('left'), 10),
+			y: parseInt( posWatermarkOne.watermark.css('top'), 10)
+		};
+
+		return position;
+	},
+
+	// definition of the current selector switch for
+	// axis adjustment facility to switch the selector votermark
+	// motion along the axis
+	identifyAxis: function (e) {
+		e.preventDefault();
+
+		var $target = $(e.currentTarget),
+			axis = $target.data().direction,
+			optionX = {
+				input: posWatermarkOne.switchInputX,
+				maxX: posWatermarkOne.maxCoordX,
+				minX: posWatermarkOne.minCoordX,
+				currentPosition: posWatermarkOne.getCoordWatermark().x
+			},
+			optionY = {
+				input: posWatermarkOne.switchInputY,
+				maxY: posWatermarkOne.maxCoordY,
+				minY: posWatermarkOne.minCoordY,
+				currentPosition: posWatermarkOne.getCoordWatermark().y
+			};
+
+		switch (axis !== '') {
+			case axis == 'x-up':
+				posWatermarkOne.plusCoordXSwitch(optionX);
+				break;
+			case axis == 'x-down':
+				posWatermarkOne.minusCoordXSwitch(optionX);
+				break;
+			case axis == 'y-up':
+				posWatermarkOne.plusCoordYSwitch(optionY);
+				break;
+			case axis == 'y-down':
+				posWatermarkOne.minusCoordYSwitch(optionY);
+				console.log('y-down');
+				break;	
+			default: 
+			 	console.log('будь проклят тот день, когда я сел за клавиатуру этого пылесоса..');
+		}
+	},
+
+	// increase the value of axis motion
+	// currentPosition + step
+	plusCoordXSwitch: function (obj) {
+		
+		var currentX = posWatermarkOne.getCoordSwitch(obj.input);
+		
+		if ( currentX < obj.maxX) {
+			posWatermarkOne.switchInputX.val(currentX + posWatermarkOne.step);
+			posWatermarkOne.moveOnXWatermark(obj.currentPosition + posWatermarkOne.step);
+		}
+	},
+
+	// decrease the value of axis motion
+	// currentPosition - step
+	minusCoordXSwitch: function (obj) {
+		var currentX = posWatermarkOne.getCoordSwitch(obj.input);
+
+		if (currentX == posWatermarkOne.maxCoordX) {
+			posWatermarkOne.btnUpX.removeAttr('disabled');
+		}
+		
+		if ( currentX > obj.minX) {
+			posWatermarkOne.switchInputX.val(currentX - posWatermarkOne.step);
+			posWatermarkOne.moveOnXWatermark(obj.currentPosition - posWatermarkOne.step);
+		}
+	},
+
+	// increase the value of axis motion
+	// currentPosition + step
+	plusCoordYSwitch: function (obj) {
+		var currentY = posWatermarkOne.getCoordSwitch(obj.input);
+
+		if ( (obj.maxY - currentY ) == posWatermarkOne.residueY) {
+			posWatermarkOne.moveOnYWatermark(posWatermarkOne.maxChoiceY);
+			posWatermarkOne.switchInputY.val(posWatermarkOne.maxChoiceY);
+			return;
+		}
+		
+		if ( currentY < obj.maxY) {
+			posWatermarkOne.switchInputY.val(currentY + 10);
+			posWatermarkOne.moveOnYWatermark(obj.currentPosition + posWatermarkOne.step);
+		}
+	},
+
+	// increase the value of axis motion
+	// currentPosition - step
+	minusCoordYSwitch: function (obj) {
+		var currentY = posWatermarkOne.getCoordSwitch(obj.input);
+
+		if (currentY == posWatermarkOne.residueY) {
+			posWatermarkOne.moveOnYWatermark(posWatermarkOne.minCoordY);
+			posWatermarkOne.switchInputY.val(posWatermarkOne.minCoordY);
+			return;
+		}
+
+		if (currentY == posWatermarkOne.maxCoordY) {
+			posWatermarkOne.btnUpY.removeAttr('disabled');
+			
+		}
+		
+		if ( currentY > obj.minY ) {
+			posWatermarkOne.switchInputY.val(currentY - 10);
+			posWatermarkOne.moveOnYWatermark(obj.currentPosition - posWatermarkOne.step);
+		}
+	},
+
+	// return the value of the input input - switch
+	// and transform into a number
+	getCoordSwitch: function ($obj) {
+		return parseInt( $obj.val(), 10);
+	},
+
+	// votermark movement along the x axis
+	moveOnXWatermark: function (xCord) {
+
+		if (xCord === posWatermarkOne.maxChoiceX) {
+			
+			posWatermarkOne.watermark
+				.stop(true,true)
+				.animate({
+				'left': xCord +'px'
+				}, posWatermarkOne.moveSpeed);
+
+			posWatermarkOne.btnUpX.attr({'disabled': 'disabled'});
+
+			return;
+		}
+		
+		posWatermarkOne.watermark.animate({
+			'left': xCord  +'px'
+			}, posWatermarkOne.moveSpeed);
+		
+	},
+
+	// votermark movement along the y axis
+	moveOnYWatermark: function (yCord) {
+
+		if (yCord === posWatermarkOne.maxChoiceY) {
+			
+			posWatermarkOne.watermark
+				.stop(true,true)
+				.animate({
+				'top': yCord +'px'
+				}, posWatermarkOne.moveSpeed);
+
+			posWatermarkOne.btnUpY
+				.attr({'disabled': 'disabled'});
+
+			return;
+		}
+		
+		posWatermarkOne.watermark.animate({
+			'top': yCord  +'px'
+			}, posWatermarkOne.moveSpeed);
+	},
+
+	// votermark drag grid
+	watermarkDrag: function () {
+		posWatermarkOne.watermark.attr({
+			'id': 'draggable'
+		});
+		console.log('tedt');
+
+		posWatermarkOne.watermark.draggable({
+			containment: ".result__block",
+			grid: [10,10],
+			drag: function () {
+				posWatermarkOne.switchInputX.val(posWatermarkOne.getCoordWatermark().x)
+				posWatermarkOne.switchInputY.val(posWatermarkOne.getCoordWatermark().y)
+			}
+		});
+	}
+
+
+};
+
 $(function() {
 	console.info('start app');
 
@@ -217,4 +474,6 @@ $(function() {
 	uploadImages.init( $('.input--upload') );
 	setOpacity.init( $('.slider-range'), objects );
 	ruEng.init( $('.globals__lang') );
+
+	posWatermarkOne.init( $('.visual__box') );
 });

@@ -699,21 +699,11 @@ p
     vertical-align: bottom;
 }
 
-.watermark__image
-{
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
 .result__block .block__watermark
 {
     position: absolute;
     top: 0;
     left: 0;
-
-    width: 100%;
-    height: 100%;
 }
 .result-block--four .block__watermark
 {
